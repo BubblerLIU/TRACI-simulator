@@ -3,7 +3,104 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "common.h"
+
+packet_buffer_t pkt_buffer;
+net_device_t devices[MAX_DEVICES];
+int device_count = 0;
+
+/*
+ * common_init - 扫描网络设备并创建对应线程
+ */
+int common_init(void) {
+    char errbuf[PCAP_ERRBUF_SIZE];
+
+    // 初始化包缓冲区
+    memset(&pkt_buffer, 0, sizeof(pkt_buffer));
+    pkt_buffer.head = pkt_buffer.tail = 0;
+    pthread_mutex_init(&pkt_buffer.lock, NULL);
+
+    // 扫描网络设备
+    pcap_if_t *alldevs;
+    if (pcap_findalldevs(&alldevs, errbuf) == -1) {
+        fprintf(stderr, "Failed to find devices: %s\n", errbuf);
+        return -1;
+    }
+
+    // 对目标设备创建监听线程
+    pcap_if_t *d;
+    for (d = alldevs; d != NULL && device_count < MAX_DEVICES; d = d->next) {
+        if (strncmp(d->name, "gpu", 3) == 0 || 
+            strncmp(d->name, "leaf", 4) == 0 ||
+            strncmp(d->name, "spine", 5) == 0) {
+
+            strncpy(devices[device_count].name, d->name, 31);
+            devices[device_count].index = device_count;
+
+            // 创建监听句柄
+            devices[device_count].handle = pcap_open_live(d->name,
+                PACKET_BUF_SIZE, 1, 1000, errbuf);
+            if (!devices[device_count].handle) {
+                fprintf(stderr, "Failed to open device %s: %s\n",
+                    d->name, errbuf);
+                continue;
+            }
+
+            // 创建监听线程
+            if (pthread_create(&devices[device_count].thread_id,
+                NULL, capture_thread, &devices[device_count]) != 0) {
+                    fprintf(stderr, "Failed to create thread for %s\n", d->name);
+                pcap_close(devices[device_count].handle);
+                continue;
+            }
+
+            device_count++;
+        }
+    }
+
+    pcap_freealldevs(alldevs);
+    printf("Initialized %d network devices\n", device_count);
+    return device_count > 0 ? 0 : -1;
+}
+
+/*
+ * capture_thread - 监听线程
+ */
+void *capture_thread(void *arg) {
+    net_device_t *dev = (net_device_t *)arg;
+    struct pcap_pkthdr header;
+    const u_char *packet;
+    
+    printf("Starting capture on %s\n", dev->name);
+    
+    while (1) {
+        packet = pcap_next(dev->handle, &header);
+        if (!packet) continue;        
+        
+        pthread_mutex_lock(&pkt_buffer.lock);
+        
+        // 缓冲区已满
+        if ((pkt_buffer.head + 1) % MAX_PACKETS == pkt_buffer.tail) {
+            fprintf(stderr, "Packet buffer full, dropping packet\n");
+            pthread_mutex_unlock(&pkt_buffer.lock);
+            continue;
+        }
+        
+        // 将包存入缓冲区
+        packet_entry_t *entry = &pkt_buffer.packets[pkt_buffer.head];
+        entry->device = dev;
+        entry->len = header.len;
+        entry->timestamp = header.ts.tv_sec * 1000000 + header.ts.tv_usec;
+        memcpy(entry->data, packet, header.len > PACKET_BUF_SIZE ? PACKET_BUF_SIZE : header.len);
+        
+        pkt_buffer.head = (pkt_buffer.head + 1) % MAX_PACKETS;
+        pthread_mutex_unlock(&pkt_buffer.lock);
+    }
+    
+    return NULL;
+}
 
 /*
  * get_mac - 根据端口类型和连接的主机编号确定 MAC 地址
