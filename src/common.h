@@ -74,4 +74,10 @@ static inline uint16_t hash_oaddr(uint16_t oaddr) {
     return h;
 }
 
+/* 全局变量 */
+packet_buffer_t pkt_buffer;
+net_device_t devices[MAX_DEVICES];
+int device_count = 0;
+volatile int stop = 0; // 程序终止标志
+
 #endif // COMMON_H

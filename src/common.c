@@ -7,10 +7,6 @@
 #include <string.h>
 #include "common.h"
 
-packet_buffer_t pkt_buffer;
-net_device_t devices[MAX_DEVICES];
-int device_count = 0;
-
 /*
  * common_init - 扫描网络设备并创建对应线程
  */
