@@ -21,7 +21,8 @@ int common_init(void) {
     // 扫描网络设备
     pcap_if_t *alldevs;
     if (pcap_findalldevs(&alldevs, errbuf) == -1) {
-        fprintf(stderr, "Failed to find devices: %s\n", errbuf);
+        fprintf(stderr, "%s %s: Failed to find devices: %s\n",
+            node_role, node_id, errbuf);
         return -1;
     }
 
@@ -39,15 +40,16 @@ int common_init(void) {
             devices[device_count].handle = pcap_open_live(d->name,
                 PACKET_BUF_SIZE, 1, 1000, errbuf);
             if (!devices[device_count].handle) {
-                fprintf(stderr, "Failed to open device %s: %s\n",
-                    d->name, errbuf);
+                fprintf(stderr, "%s %s:Failed to open device %s: %s\n",
+                    node_role, node_id, d->name, errbuf);
                 continue;
             }
 
             // 创建监听线程
             if (pthread_create(&devices[device_count].thread_id,
                 NULL, capture_thread, &devices[device_count]) != 0) {
-                    fprintf(stderr, "Failed to create thread for %s\n", d->name);
+                    fprintf(stderr, "%s %s: Failed to create thread for %s\n",
+                        node_role, node_id, d->name);
                 pcap_close(devices[device_count].handle);
                 continue;
             }
@@ -57,7 +59,8 @@ int common_init(void) {
     }
 
     pcap_freealldevs(alldevs);
-    printf("Initialized %d network devices\n", device_count);
+    printf("%s %s: Initialized %d network devices\n",
+        node_role, node_id, device_count);
     return device_count > 0 ? 0 : -1;
 }
 
@@ -69,7 +72,7 @@ void *capture_thread(void *arg) {
     struct pcap_pkthdr header;
     const u_char *packet;
     
-    printf("Starting capture on %s\n", dev->name);
+    printf("%s %s: Starting capture on %s\n", node_role, node_id, dev->name);
     
     while (1) {
         packet = pcap_next(dev->handle, &header);
@@ -79,7 +82,8 @@ void *capture_thread(void *arg) {
         
         // 缓冲区已满
         if ((pkt_buffer.head + 1) % MAX_PACKETS == pkt_buffer.tail) {
-            fprintf(stderr, "Packet buffer full, dropping packet\n");
+            fprintf(stderr, "%s %s: Packet buffer full, dropping packet\n",
+                node_role, node_id);
             pthread_mutex_unlock(&pkt_buffer.lock);
             continue;
         }
@@ -118,4 +122,16 @@ void get_mac(char role, int id1, int id2, char *mac_buf) {
             sprintf(mac_buf, "%s:03:%02x:%02x", MAC_PREFIX, id2, id1);
             break;
     }
+}
+
+/*
+ * send_packet - 发送包
+ */
+int send_packet(net_device_t *dev, const uint8_t *data, uint32_t len) {
+    if (pcap_inject(dev->handle, data, len) == -1) {
+        fprintf(stderr, "%s %s: Error sending packet on %s: %s\n",
+               node_role, node_id, dev->name, pcap_geterr(dev->handle));
+        return -1;
+    }
+    return 0;
 }

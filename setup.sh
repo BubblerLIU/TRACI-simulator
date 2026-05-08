@@ -32,7 +32,7 @@ echo "Image build done"
 # 创建并启动容器，通过环境变量传入拓扑信息
 for ((i=0; i<GPU_NUM; i++)); do
     docker container create --network none --cap-add NET_ADMIN \
-        -e NODE_ROLE=gpu -e NODE_ID=$i \
+        -e NODE_ROLE=GPU -e NODE_ID=$i \
         -e GPU_PER_LEAF=$GPU_PER_LEAF -e SPINE_NUM=$SPINE_NUM \
         --name gpu$i node
     docker container start gpu$i
@@ -40,7 +40,7 @@ done
 
 for ((i=0; i<LEAF_NUM; i++)); do
     docker container create --network none --cap-add NET_ADMIN \
-        -e NODE_ROLE=leaf -e NODE_ID=$i \
+        -e NODE_ROLE=Leaf -e NODE_ID=$i \
         -e GPU_PER_LEAF=$GPU_PER_LEAF -e SPINE_NUM=$SPINE_NUM \
         --name leaf$i node
     docker container start leaf$i
@@ -48,7 +48,7 @@ done
 
 for ((i=0; i<SPINE_NUM; i++)); do
     docker container create --network none --cap-add NET_ADMIN \
-        -e NODE_ROLE=spine -e NODE_ID=$i \
+        -e NODE_ROLE=Spine -e NODE_ID=$i \
         -e GPU_PER_LEAF=$GPU_PER_LEAF -e SPINE_NUM=$SPINE_NUM \
         --name spine$i node
     docker container start spine$i
