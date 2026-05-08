@@ -69,7 +69,7 @@ void *capture_thread(void *arg);
 void get_mac(char role, int id1, int id2, uint8_t mac[6]);
 int send_packet(net_device_t *dev, const uint8_t *data, uint32_t len);
 
-static inline uint16_t hash_oaddr(uint16_t oaddr) {
+static inline uint16_t hash_oaddr(uint32_t oaddr) {
     uint32_t h = oaddr;
     h ^= h >> 16;
     h *= UINT32_C(0x85ebca6b);

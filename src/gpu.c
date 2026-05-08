@@ -13,9 +13,9 @@
 #define TRACI_PKT_LEN (sizeof(eth_header_t) + sizeof(traci_header_t))
 
 /* 全局变量 */
-FILE *workload = NULL;
-uint32_t next_seq = 0;
-uint32_t next_line = 0;
+static FILE *workload = NULL;
+static uint32_t next_seq = 0;
+static uint32_t next_line = 0;
 
 /* 地址打包工具 */
 static uint32_t make_traci_addr(uint8_t gpu_id, uint32_t local_addr) {
@@ -25,7 +25,7 @@ static uint32_t make_traci_addr(uint8_t gpu_id, uint32_t local_addr) {
 /*
  * parse_pkt - 解析和处理收到的包
  */
-void parse_pkt(packet_entry_t *entry) {
+static void parse_pkt(packet_entry_t *entry) {
     // 解析以太网头
     eth_header_t *eth = (eth_header_t *)entry->data;
 
@@ -63,7 +63,7 @@ void parse_pkt(packet_entry_t *entry) {
 /*
  * construct_pkt - 为 request 创建包
  */
-uint8_t *construct_pkt(uint8_t input_gpu, 
+static uint8_t *construct_pkt(uint8_t input_gpu, 
     uint32_t input_local_addr, uint32_t output_local_addr) {
 
     uint32_t pkt_len = TRACI_PKT_LEN;
@@ -149,6 +149,8 @@ void gpu() {
             uint8_t *pkt = construct_pkt(input_gpu, input_local_addr,
                 output_local_addr);
             if (pkt == NULL) {
+                fprintf(stderr, "GPU %s: failed to construct packet for line"
+                    "%" PRId32 "\n", node_id, next_line);
                 continue;
             }
 
@@ -188,7 +190,7 @@ int main()
         node_role, node_id, gpu_per_leaf, spine_num);
 
     // 确保当前结点是 GPU
-    if (strcmp(node_role, "gpu") != 0) {
+    if (strcmp(node_role, "GPU") != 0) {
         fprintf(stderr, "Wrong node role: %s, shoule be gpu\n", node_role);
         return 1;
     }

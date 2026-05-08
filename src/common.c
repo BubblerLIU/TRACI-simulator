@@ -56,6 +56,11 @@ int common_init(void) {
                     node_role, node_id, d->name, errbuf);
                 continue;
             }
+            if (pcap_setdirection(devices[device_count].handle, PCAP_D_IN) == -1) {
+                fprintf(stderr, "%s %s: Failed to set direction for %s: %s\n",
+                    node_role, node_id, d->name,
+                    pcap_geterr(devices[device_count].handle));
+            }
 
             // 创建监听线程
             if (pthread_create(&devices[device_count].thread_id,
@@ -103,9 +108,10 @@ void *capture_thread(void *arg) {
         // 将包存入缓冲区
         packet_entry_t *entry = &pkt_buffer.packets[pkt_buffer.head];
         entry->device = dev;
-        entry->len = header.len;
+        entry->len = header.caplen > PACKET_BUF_SIZE ?
+            PACKET_BUF_SIZE : header.caplen;
         entry->timestamp = header.ts.tv_sec * 1000000 + header.ts.tv_usec;
-        memcpy(entry->data, packet, header.len > PACKET_BUF_SIZE ? PACKET_BUF_SIZE : header.len);
+        memcpy(entry->data, packet, entry->len);
         
         pkt_buffer.head = (pkt_buffer.head + 1) % MAX_PACKETS;
         pthread_mutex_unlock(&pkt_buffer.lock);
