@@ -66,7 +66,7 @@ typedef struct {
 /* 函数签名 */
 int common_init(void);
 void *capture_thread(void *arg);
-void get_mac(char role, int id1, int id2, char *mac_buf);
+void get_mac(char role, int id1, int id2, uint8_t mac[6]);
 int send_packet(net_device_t *dev, const uint8_t *data, uint32_t len);
 
 static inline uint16_t hash_oaddr(uint16_t oaddr) {
@@ -80,15 +80,15 @@ static inline uint16_t hash_oaddr(uint16_t oaddr) {
 }
 
 /* 全局变量 */
-packet_buffer_t pkt_buffer;
-net_device_t devices[MAX_DEVICES];
-int device_count = 0;
-volatile int stop = 0; // 程序终止标志
+extern packet_buffer_t pkt_buffer;
+extern net_device_t devices[MAX_DEVICES];
+extern int device_count;
+extern volatile int stop; // 程序终止标志
 
 /* 本地环境变量 */
-const char *node_role = NULL;
-const char *node_id = NULL;
-const char *gpu_per_leaf = NULL;
-const char *spine_num = NULL;
+extern const char *node_role;
+extern const char *node_id;
+extern const char *gpu_per_leaf;
+extern const char *spine_num;
 
 #endif // COMMON_H

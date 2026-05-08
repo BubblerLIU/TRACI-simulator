@@ -7,6 +7,18 @@
 #include <string.h>
 #include "common.h"
 
+/* 全局变量 */
+packet_buffer_t pkt_buffer;
+net_device_t devices[MAX_DEVICES];
+int device_count = 0;
+volatile int stop = 0; // 程序终止标志
+
+/* 本地环境变量 */
+const char *node_role = NULL;
+const char *node_id = NULL;
+const char *gpu_per_leaf = NULL;
+const char *spine_num = NULL;
+
 /*
  * common_init - 扫描网络设备并创建对应线程
  */
@@ -107,19 +119,36 @@ void *capture_thread(void *arg) {
  *           符合 setup.sh 中的 MAC 地址分配规则
  *           默认 id1 靠近 GPU 而 id2 靠近 Spine
  */
-void get_mac(char role, int id1, int id2, char *mac_buf) {
+void get_mac(char role, int id1, int id2, uint8_t mac[6]) {
+    mac[0] = 0xaa;
+    mac[1] = 0xbb;
+    mac[2] = 0xcc;
+
     switch (role) {
         case 'G': // GPU-Leaf 端口
-            sprintf(mac_buf, "%s:00:00:%02x", MAC_PREFIX, id1);
+            mac[3] = 0x00;
+            mac[4] = 0x00;
+            mac[5] = (uint8_t)id1;
             break;
         case 'D': // Leaf-GPU 下行端口
-            sprintf(mac_buf, "%s:01:00:%02x", MAC_PREFIX, id1);
+            mac[3] = 0x01;
+            mac[4] = 0x00;
+            mac[5] = (uint8_t)id1;
             break;
         case 'U': // Leaf-Spine 上行端口
-            sprintf(mac_buf, "%s:02:%02x:%02x", MAC_PREFIX, id1, id2);
+            mac[3] = 0x02;
+            mac[4] = (uint8_t)id1;
+            mac[5] = (uint8_t)id2;
             break;
         case 'S': // Spine-Leaf 端口
-            sprintf(mac_buf, "%s:03:%02x:%02x", MAC_PREFIX, id2, id1);
+            mac[3] = 0x03;
+            mac[4] = (uint8_t)id2;
+            mac[5] = (uint8_t)id1;
+            break;
+        default:
+            mac[3] = 0x00;
+            mac[4] = 0x00;
+            mac[5] = 0x00;
             break;
     }
 }
