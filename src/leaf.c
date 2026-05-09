@@ -182,7 +182,7 @@ int main()
     leaf_id = atoi(node_id);
     spine_count = atoi(spine_num);
     gpu_count_per_leaf = atoi(gpu_per_leaf);
-    if (spine_count <= 0) {
+    if (spine_count < 0) {
         fprintf(stderr, "Leaf %s: invalid SPINE_NUM=%s\n", node_id, spine_num);
         return 1;
     }
