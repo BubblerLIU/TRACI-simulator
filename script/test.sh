@@ -4,29 +4,59 @@
 
 set -euo pipefail
 
+# ========== 基本配置 ==========
+
+# 目录结构
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 CONFIG_FILE="$ROOT_DIR/.fat_tree_config"
 SRC_DIR="$ROOT_DIR/src"
 APP_DIR="/traci"
 
-if [ $# -gt 1 ]; then
-    echo "Usage: $0 [GPU_START_DELAY_SECONDS]"
+# 兼容旧用法，同时允许通过目录名选择 workload 集
+usage() {
+    echo "Usage: $0 [GPU_START_DELAY_SECONDS] [WORKLOAD_DIR]"
+    echo "   or: $0 [WORKLOAD_DIR]"
+}
+
+if [ $# -gt 2 ]; then
+    usage
     exit 1
 fi
 
-GPU_START_DELAY="${1:-3}"
-if ! [[ "$GPU_START_DELAY" =~ ^[0-9]+$ ]]; then
-    echo "Error: GPU_START_DELAY_SECONDS must be a non-negative integer"
-    exit 1
-fi
+GPU_START_DELAY=3
+WORKLOAD_SET="simple"
+delay_specified=0
+workload_specified=0
 
+for arg in "$@"; do
+    if [[ "$arg" =~ ^[0-9]+$ ]]; then
+        if [ "$delay_specified" -eq 1 ]; then
+            usage
+            exit 1
+        fi
+        GPU_START_DELAY="$arg"
+        delay_specified=1
+    else
+        if [ "$workload_specified" -eq 1 ]; then
+            usage
+            exit 1
+        fi
+        WORKLOAD_SET="$arg"
+        workload_specified=1
+    fi
+done
+
+WORKLOAD_DIR="$ROOT_DIR/workloads/$WORKLOAD_SET"
+
+# 检查配置文件是否存在
 if [ ! -f "$CONFIG_FILE" ]; then
     echo "Error: Configuration file not found at $CONFIG_FILE"
     echo "Please run script/setup.sh first."
     exit 1
 fi
 
+# 读取配置文件
 source "$CONFIG_FILE" 2>/dev/null
 if [ -z "${GPU_NUM:-}" ] || [ -z "${LEAF_NUM:-}" ] ||
     [ -z "${SPINE_NUM:-}" ]; then
@@ -41,16 +71,20 @@ fi
 
 GPU_PER_LEAF=$((GPU_NUM / LEAF_NUM))
 
-if ! command -v docker >/dev/null 2>&1; then
-    echo "Error: docker command not found"
+if [ ! -d "$WORKLOAD_DIR" ]; then
+    echo "Error: workload directory not found at $WORKLOAD_DIR"
     exit 1
 fi
 
+# 检查配置信息
 echo "======== FAT-TREE-TEST ========"
 echo "$GPU_NUM GPUs, $LEAF_NUM leaf switches, $SPINE_NUM spine switches"
 echo "$GPU_PER_LEAF GPUs under a leaf switch"
 echo "GPU request start delay: ${GPU_START_DELAY}s"
+echo "Workload directory: $WORKLOAD_SET"
 echo "==============================="
+
+# ========== 设置容器 ==========
 
 # 检查容器是否存在且在运行
 require_container() {
@@ -131,8 +165,8 @@ copy_workload_if_present() {
 
     if [ -f "$ROOT_DIR/$workload_name" ]; then
         workload_src="$ROOT_DIR/$workload_name"
-    elif [ -f "$ROOT_DIR/workloads/simple/$workload_name.txt" ]; then
-        workload_src="$ROOT_DIR/workloads/simple/$workload_name.txt"
+    elif [ -f "$WORKLOAD_DIR/$workload_name.txt" ]; then
+        workload_src="$WORKLOAD_DIR/$workload_name.txt"
     fi
 
     if [ -n "$workload_src" ]; then

@@ -1,3 +1,6 @@
+setup_4:
+	./script/setup.sh 4 2 2
+
 setup_16:
 	./script/setup.sh 16 2 2
 

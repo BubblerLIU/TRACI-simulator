@@ -20,6 +20,7 @@ if [ -z "$GPU_NUM" ] || [ -z "$LEAF_NUM" ] || [ -z "$SPINE_NUM" ]; then
     exit 1
 fi
 
+# 容器内程序终止逻辑
 is_container_running() {
     local container="$1"
     local running
