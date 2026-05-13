@@ -39,13 +39,25 @@ static uint32_t make_traci_addr(uint8_t gpu_id, uint32_t local_addr) {
  * parse_pkt - 解析和处理收到的包
  */
 static void parse_pkt(packet_entry_t *entry) {
+    if (entry->len < TRACI_PKT_LEN) {
+        return;
+    }
+
     // 解析以太网头
     eth_header_t *eth = (eth_header_t *)entry->data;
+    if (eth->ether_type != ETH_TYPE) {
+        return;
+    }
 
     // 检查包是不是发给自己的
+    int self_id = atoi(node_id);
     int dst_id = (int)eth->dst_mac[5];
     int src_id = (int)eth->src_mac[5];
-    if (dst_id != atoi(node_id)) {
+    if (dst_id != self_id) {
+        if (src_id == self_id) {
+            return;
+        }
+
         fprintf(stderr, "GPU %s: got a wrong packet from GPU %d, "
             "should be sent to GPU %d\n", node_id, src_id, dst_id);
     }
@@ -57,13 +69,13 @@ static void parse_pkt(packet_entry_t *entry) {
         // 收到 response
         if (traci->traci_type == 2) {
             printf("GPU %s: got a response from GPU %d, "
-                "seq_num=%" PRIu32 "\n", node_id, traci->seq_num, src_id);
+                "seq_num=%" PRIu32 "\n", node_id, src_id, traci->seq_num);
             return;
         }
 
         // 收到 request, 发回 response
         printf("GPU %s: got a request from GPU %d, "
-            "seq_num=%" PRIu32 "\n", node_id, traci->seq_num, src_id);
+            "seq_num=%" PRIu32 "\n", node_id, src_id, traci->seq_num);
         uint8_t tmp[6];
         memcpy(tmp, eth->src_mac, 6);
         memcpy(eth->src_mac, eth->dst_mac, 6);

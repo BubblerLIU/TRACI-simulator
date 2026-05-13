@@ -71,6 +71,10 @@ static void parse_pkt(packet_entry_t *entry) {
     }
 
     eth_header_t *eth = (eth_header_t *)entry->data;
+    if (eth->ether_type != ETH_TYPE) {
+        return;
+    }
+
     traci_header_t *traci =
         (traci_header_t *)(entry->data + sizeof(eth_header_t));
 
