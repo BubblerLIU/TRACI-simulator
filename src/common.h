@@ -8,6 +8,7 @@
 #include <stdint.h>
 #include <pcap/pcap.h>
 #include <pthread.h>
+#include <signal.h>
 
 /* 处理 VSCode 插件报错 */
 #if defined(__INTELLISENSE__) || !defined(__u_char_defined)
@@ -64,7 +65,9 @@ typedef struct {
 } packet_buffer_t;
 
 /* 函数签名 */
+void common_setup_signal_handlers(void);
 int common_init(void);
+void common_shutdown(void);
 void *capture_thread(void *arg);
 void get_mac(char role, int id1, int id2, uint8_t mac[6]);
 int send_packet(net_device_t *dev, const uint8_t *data, uint32_t len);
@@ -83,7 +86,7 @@ static inline uint16_t hash_oaddr(uint32_t oaddr) {
 extern packet_buffer_t pkt_buffer;
 extern net_device_t devices[MAX_DEVICES];
 extern int device_count;
-extern volatile int stop; // 程序终止标志
+extern volatile sig_atomic_t stop; // 程序终止标志
 
 /* 本地环境变量 */
 extern const char *node_role;

@@ -127,7 +127,7 @@ static void parse_pkt(packet_entry_t *entry) {
  * leaf - 执行 Leaf Switch 的行为：接收和转发包 
  */
 void leaf() {
-    while (1) {
+    while (!stop) {
         int operation = 0;
         int has_packet = 0;
         packet_entry_t entry;
@@ -158,6 +158,8 @@ void leaf() {
 
 int main()
 {
+    common_setup_signal_handlers();
+
     node_role = getenv("NODE_ROLE");
     node_id = getenv("NODE_ID");
     gpu_per_leaf = getenv("GPU_PER_LEAF");
@@ -195,11 +197,13 @@ int main()
     // 扫描设备并启动监听
     if (common_init() == -1) {
         fprintf(stderr, "Devices initalization error\n");
+        common_shutdown();
         return 1;
     }
 
     // 运行主进程
     leaf();
+    common_shutdown();
 
     return 0;
 }

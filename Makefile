@@ -1,8 +1,11 @@
 setup_16:
-	./setup.sh 16 2 2
+	./script/setup.sh 16 2 2
 
 setup_64:
-	./setup.sh 64 8 4
+	./script/setup.sh 64 8 4
+
+test:
+	./script/test.sh
 
 clean:
-	./clean.sh
+	./script/clean.sh

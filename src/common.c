@@ -5,19 +5,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <signal.h>
 #include "common.h"
 
 /* 全局变量 */
 packet_buffer_t pkt_buffer;
 net_device_t devices[MAX_DEVICES];
 int device_count = 0;
-volatile int stop = 0; // 程序终止标志
+volatile sig_atomic_t stop = 0; // 程序终止标志
+static int pkt_buffer_initialized = 0;
 
 /* 本地环境变量 */
 const char *node_role = NULL;
 const char *node_id = NULL;
 const char *gpu_per_leaf = NULL;
 const char *spine_num = NULL;
+
+/*
+ * handle_signal - 收到终止信号时只设置退出标志
+ */
+static void handle_signal(int signo) {
+    (void)signo;
+    stop = 1;
+}
+
+/*
+ * common_setup_signal_handlers - 注册主程序终止信号
+ */
+void common_setup_signal_handlers(void) {
+    struct sigaction action;
+
+    memset(&action, 0, sizeof(action));
+    action.sa_handler = handle_signal;
+    sigemptyset(&action.sa_mask);
+
+    sigaction(SIGINT, &action, NULL);
+    sigaction(SIGTERM, &action, NULL);
+    sigaction(SIGHUP, &action, NULL);
+}
 
 /*
  * common_init - 扫描网络设备并创建对应线程
@@ -29,6 +54,7 @@ int common_init(void) {
     memset(&pkt_buffer, 0, sizeof(pkt_buffer));
     pkt_buffer.head = pkt_buffer.tail = 0;
     pthread_mutex_init(&pkt_buffer.lock, NULL);
+    pkt_buffer_initialized = 1;
 
     // 扫描网络设备
     pcap_if_t *alldevs;
@@ -68,6 +94,7 @@ int common_init(void) {
                     fprintf(stderr, "%s %s: Failed to create thread for %s\n",
                         node_role, node_id, d->name);
                 pcap_close(devices[device_count].handle);
+                devices[device_count].handle = NULL;
                 continue;
             }
 
@@ -82,6 +109,39 @@ int common_init(void) {
 }
 
 /*
+ * common_shutdown - 清理抓包线程、pcap 句柄和缓冲区锁
+ */
+void common_shutdown(void) {
+    stop = 1;
+
+    for (int i = 0; i < device_count; ++i) {
+        if (devices[i].handle != NULL) {
+            pcap_breakloop(devices[i].handle);
+        }
+    }
+
+    for (int i = 0; i < device_count; ++i) {
+        pthread_join(devices[i].thread_id, NULL);
+    }
+
+    for (int i = 0; i < device_count; ++i) {
+        if (devices[i].handle != NULL) {
+            pcap_close(devices[i].handle);
+            devices[i].handle = NULL;
+        }
+    }
+
+    if (pkt_buffer_initialized) {
+        pthread_mutex_destroy(&pkt_buffer.lock);
+        pkt_buffer_initialized = 0;
+    }
+
+    memset(&pkt_buffer, 0, sizeof(pkt_buffer));
+    memset(devices, 0, sizeof(devices));
+    device_count = 0;
+}
+
+/*
  * capture_thread - 监听线程
  */
 void *capture_thread(void *arg) {
@@ -91,9 +151,9 @@ void *capture_thread(void *arg) {
     
     printf("%s %s: Starting capture on %s\n", node_role, node_id, dev->name);
     
-    while (1) {
+    while (!stop) {
         packet = pcap_next(dev->handle, &header);
-        if (!packet) continue;        
+        if (!packet || stop) continue;
         
         pthread_mutex_lock(&pkt_buffer.lock);
         
@@ -116,6 +176,8 @@ void *capture_thread(void *arg) {
         pkt_buffer.head = (pkt_buffer.head + 1) % MAX_PACKETS;
         pthread_mutex_unlock(&pkt_buffer.lock);
     }
+
+    printf("%s %s: Stopping capture on %s\n", node_role, node_id, dev->name);
     
     return NULL;
 }
@@ -163,6 +225,10 @@ void get_mac(char role, int id1, int id2, uint8_t mac[6]) {
  * send_packet - 发送包
  */
 int send_packet(net_device_t *dev, const uint8_t *data, uint32_t len) {
+    if (stop) {
+        return -1;
+    }
+
     if (pcap_inject(dev->handle, data, len) == -1) {
         fprintf(stderr, "%s %s: Error sending packet on %s: %s\n",
                node_role, node_id, dev->name, pcap_geterr(dev->handle));

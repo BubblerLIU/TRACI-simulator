@@ -17,6 +17,19 @@ static FILE *workload = NULL;
 static uint32_t next_seq = 0;
 static uint32_t next_line = 0;
 
+/*
+ * get_gpu_start_delay - 获取发送 request 前的等待时间
+ */
+static unsigned int get_gpu_start_delay(void) {
+    const char *delay = getenv("GPU_START_DELAY");
+    if (delay == NULL || delay[0] == '\0') {
+        return 0;
+    }
+
+    int seconds = atoi(delay);
+    return seconds > 0 ? (unsigned int)seconds : 0;
+}
+
 /* 地址打包工具 */
 static uint32_t make_traci_addr(uint8_t gpu_id, uint32_t local_addr) {
     return ((uint32_t)gpu_id << 24) | (local_addr & LOCAL_ADDR_MASK);
@@ -106,7 +119,7 @@ void gpu() {
     }
 
     // 循环检查缓冲区和待发 request
-    while (1) {
+    while (!stop) {
         int operation = 0; // 标记本次循环是否有操作
         int has_packet = 0;
         packet_entry_t entry;
@@ -173,6 +186,8 @@ void gpu() {
 
 int main()
 {
+    common_setup_signal_handlers();
+
     // 从环境变量中获取当前结点信息
     node_role = getenv("NODE_ROLE");
     node_id = getenv("NODE_ID");
@@ -207,9 +222,28 @@ int main()
     // 扫描设备并启动监听
     if (common_init() == -1) {
         fprintf(stderr, "Devices initalization error\n");
+        if (workload != NULL) {
+            fclose(workload);
+            workload = NULL;
+        }
+        common_shutdown();
         return 1;
+    }
+
+    unsigned int start_delay = get_gpu_start_delay();
+    if (start_delay > 0) {
+        printf("GPU %s: wait %u seconds before sending requests\n",
+            node_id, start_delay);
+        sleep(start_delay);
     }
 
     // 启动主线程行为
     gpu();
+    if (workload != NULL) {
+        fclose(workload);
+        workload = NULL;
+    }
+    common_shutdown();
+
+    return 0;
 }

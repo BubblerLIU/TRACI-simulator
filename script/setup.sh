@@ -2,6 +2,9 @@
 
 # 自动配置 fat-tree 拓扑结构
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+
 if [ $# -ne 3 ]; then
     echo "Usage: $0 <GPU> <Leaf> <Spine>"
     exit 1
@@ -26,7 +29,7 @@ echo "$GPU_PER_LEAF GPUs under a leaf switch"
 echo "==============================="
 
 # 创建镜像
-docker image build -t node .
+docker image build -t node "$ROOT_DIR"
 echo "Image build done"
 
 # 创建并启动容器，通过环境变量传入拓扑信息
@@ -120,7 +123,7 @@ echo "Leaf-Spine connect done"
 
 # 保存配置信息
 
-CONFIG_FILE="./.fat_tree_config"
+CONFIG_FILE="$ROOT_DIR/.fat_tree_config"
 
 cat > "$CONFIG_FILE" <<EOF
 GPU_NUM=$GPU_NUM

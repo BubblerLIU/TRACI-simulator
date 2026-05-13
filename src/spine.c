@@ -87,7 +87,7 @@ static void parse_pkt(packet_entry_t *entry) {
  * spine - 执行 Spine Switch 的行为：接收并转发来自 Leaf 的包
  */
 void spine() {
-    while (1) {
+    while (!stop) {
         int operation = 0;
         int has_packet = 0;
         packet_entry_t entry;
@@ -118,6 +118,8 @@ void spine() {
 
 int main()
 {
+    common_setup_signal_handlers();
+
     node_role = getenv("NODE_ROLE");
     node_id = getenv("NODE_ID");
     gpu_per_leaf = getenv("GPU_PER_LEAF");
@@ -150,11 +152,13 @@ int main()
     // 扫描设备并启动监听
     if (common_init() == -1) {
         fprintf(stderr, "Devices initalization error\n");
+        common_shutdown();
         return 1;
     }
 
     // 运行主进程
     spine();
+    common_shutdown();
 
     return 0;
 }
