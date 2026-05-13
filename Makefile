@@ -10,5 +10,8 @@ setup_64:
 test:
 	./script/test.sh
 
+logs:
+	./script/logs.sh
+
 clean:
 	./script/clean.sh
