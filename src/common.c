@@ -39,9 +39,7 @@ void common_setup_signal_handlers(void) {
     action.sa_handler = handle_signal;
     sigemptyset(&action.sa_mask);
 
-    sigaction(SIGINT, &action, NULL);
     sigaction(SIGTERM, &action, NULL);
-    sigaction(SIGHUP, &action, NULL);
 }
 
 /*
