@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 打印 fat-tree 拓扑中所有容器内的运行日志
+# 保存 fat-tree 拓扑中所有容器内的运行日志
 
 set -euo pipefail
 
@@ -8,6 +8,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 CONFIG_FILE="$ROOT_DIR/.fat_tree_config"
 APP_DIR="/traci"
+RESULT_LOG="/result/logs.txt"
 
 container_exists() {
     local container="$1"
@@ -62,31 +63,37 @@ print_log() {
 # ========== main ==========
 
 if ! command -v docker >/dev/null 2>&1; then
-    echo "Error: docker command not found"
+    echo "Error: docker command not found" >&2
     exit 1
 fi
 
 if [ ! -f "$CONFIG_FILE" ]; then
-    echo "Error: Configuration file not found at $CONFIG_FILE"
-    echo "Please run script/setup.sh first."
+    echo "Error: Configuration file not found at $CONFIG_FILE" >&2
+    echo "Please run script/setup.sh first." >&2
     exit 1
 fi
 
 source "$CONFIG_FILE" 2>/dev/null
 if [ -z "${GPU_NUM:-}" ] || [ -z "${LEAF_NUM:-}" ] ||
     [ -z "${SPINE_NUM:-}" ]; then
-    echo "Error: Invalid configuration file (missing topology parameters)"
+    echo "Error: Invalid configuration file (missing topology parameters)" >&2
     exit 1
 fi
 
-for ((i=0; i<GPU_NUM; i++)); do
-    print_log "gpu$i"
-done
+mkdir -p "$(dirname "$RESULT_LOG")"
 
-for ((i=0; i<LEAF_NUM; i++)); do
-    print_log "leaf$i"
-done
+{
+    for ((i=0; i<GPU_NUM; i++)); do
+        print_log "gpu$i"
+    done
 
-for ((i=0; i<SPINE_NUM; i++)); do
-    print_log "spine$i"
-done
+    for ((i=0; i<LEAF_NUM; i++)); do
+        print_log "leaf$i"
+    done
+
+    for ((i=0; i<SPINE_NUM; i++)); do
+        print_log "spine$i"
+    done
+} > "$RESULT_LOG"
+
+echo "Logs saved to $RESULT_LOG"
