@@ -9,24 +9,6 @@ ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 CONFIG_FILE="$ROOT_DIR/.fat_tree_config"
 APP_DIR="/traci"
 
-if ! command -v docker >/dev/null 2>&1; then
-    echo "Error: docker command not found"
-    exit 1
-fi
-
-if [ ! -f "$CONFIG_FILE" ]; then
-    echo "Error: Configuration file not found at $CONFIG_FILE"
-    echo "Please run script/setup.sh first."
-    exit 1
-fi
-
-source "$CONFIG_FILE" 2>/dev/null
-if [ -z "${GPU_NUM:-}" ] || [ -z "${LEAF_NUM:-}" ] ||
-    [ -z "${SPINE_NUM:-}" ]; then
-    echo "Error: Invalid configuration file (missing topology parameters)"
-    exit 1
-fi
-
 container_exists() {
     local container="$1"
     docker container inspect "$container" >/dev/null 2>&1
@@ -76,6 +58,26 @@ print_log() {
     rm -rf "$tmp_dir"
     echo
 }
+
+# ========== main ==========
+
+if ! command -v docker >/dev/null 2>&1; then
+    echo "Error: docker command not found"
+    exit 1
+fi
+
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "Error: Configuration file not found at $CONFIG_FILE"
+    echo "Please run script/setup.sh first."
+    exit 1
+fi
+
+source "$CONFIG_FILE" 2>/dev/null
+if [ -z "${GPU_NUM:-}" ] || [ -z "${LEAF_NUM:-}" ] ||
+    [ -z "${SPINE_NUM:-}" ]; then
+    echo "Error: Invalid configuration file (missing topology parameters)"
+    exit 1
+fi
 
 for ((i=0; i<GPU_NUM; i++)); do
     print_log "gpu$i"

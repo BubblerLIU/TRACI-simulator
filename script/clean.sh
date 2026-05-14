@@ -2,23 +2,10 @@
 
 # 清理配置
 
+# 目录变量
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 CONFIG_FILE="$ROOT_DIR/.fat_tree_config"
-
-# 确保配置文件存在
-if [ ! -f "$CONFIG_FILE" ]; then
-    echo "Error: Configuration file not found at $CONFIG_FILE"
-    echo "Please run script/setup.sh first."
-    exit 1
-fi
-
-# 读取配置
-source "$CONFIG_FILE" 2>/dev/null
-if [ -z "$GPU_NUM" ] || [ -z "$LEAF_NUM" ] || [ -z "$SPINE_NUM" ]; then
-    echo "Error: Invalid configuration file (missing topology parameters)"
-    exit 1
-fi
 
 # 容器内程序终止逻辑
 is_container_running() {
@@ -64,6 +51,22 @@ stop_program() {
         fi
     " >/dev/null 2>&1 || true
 }
+
+# ========== main ==========
+
+# 确保配置文件存在
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "Error: Configuration file not found at $CONFIG_FILE"
+    echo "Please run script/setup.sh first."
+    exit 1
+fi
+
+# 读取配置
+source "$CONFIG_FILE" 2>/dev/null
+if [ -z "$GPU_NUM" ] || [ -z "$LEAF_NUM" ] || [ -z "$SPINE_NUM" ]; then
+    echo "Error: Invalid configuration file (missing topology parameters)"
+    exit 1
+fi
 
 # 停止并删除容器
 
