@@ -79,7 +79,13 @@ static inline uint16_t hash_oaddr(uint32_t oaddr) {
     h ^= h >> 13;
     h *= UINT32_C(0xc2b2ae35);
     h ^= h >> 16;
-    return h;
+
+    /*
+     * Leaf uses hash_oaddr(oaddr) % spine_count.  For small power-of-two
+     * spine counts that mostly samples the low bits, so fold middle bits
+     * down instead of returning the raw low 16 bits.
+     */
+    return (uint16_t)(h ^ (h >> 8));
 }
 
 /* 全局变量 */
