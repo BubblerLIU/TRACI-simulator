@@ -13,39 +13,26 @@ CONFIG_FILE="$ROOT_DIR/.fat_tree_config"
 SRC_DIR="$ROOT_DIR/src"
 APP_DIR="/traci"
 
-# 兼容旧用法，同时允许通过目录名选择 workload 集
+# 通过目录名选择必需的 workload 集
 usage() {
-    echo "Usage: $0 [GPU_START_DELAY_SECONDS] [WORKLOAD_DIR]"
-    echo "   or: $0 [WORKLOAD_DIR]"
+    echo "Usage: $0 <WORKLOAD_DIR> [GPU_START_DELAY_SECONDS]"
 }
 
-if [ $# -gt 2 ]; then
+if [ $# -lt 1 ] || [ $# -gt 2 ]; then
     usage
     exit 1
 fi
 
 GPU_START_DELAY=3
-WORKLOAD_SET="simple"
-delay_specified=0
-workload_specified=0
+WORKLOAD_SET="$1"
 
-for arg in "$@"; do
-    if [[ "$arg" =~ ^[0-9]+$ ]]; then
-        if [ "$delay_specified" -eq 1 ]; then
-            usage
-            exit 1
-        fi
-        GPU_START_DELAY="$arg"
-        delay_specified=1
-    else
-        if [ "$workload_specified" -eq 1 ]; then
-            usage
-            exit 1
-        fi
-        WORKLOAD_SET="$arg"
-        workload_specified=1
+if [ $# -eq 2 ]; then
+    if [[ ! "$2" =~ ^[0-9]+$ ]]; then
+        usage
+        exit 1
     fi
-done
+    GPU_START_DELAY="$2"
+fi
 
 WORKLOAD_DIR="$ROOT_DIR/workloads/$WORKLOAD_SET"
 
