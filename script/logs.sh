@@ -24,7 +24,7 @@ if [ -z "$RESULT_LOG_NAME" ] || [[ "$RESULT_LOG_NAME" == */* ]]; then
     exit 1
 fi
 
-RESULT_LOG="/result/$RESULT_LOG_NAME"
+RESULT_LOG="$ROOT_DIR/result/$RESULT_LOG_NAME"
 
 container_exists() {
     local container="$1"

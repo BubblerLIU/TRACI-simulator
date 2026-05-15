@@ -1,0 +1,86 @@
+===== gpu0 =====
+Hello from GPU 0, 2 GPUs per Leaf, 2 Spines
+GPU 0: mode=Baseline
+GPU 0: Initialized 1 network devices
+GPU 0: wait 1 seconds before sending requests
+GPU 0: Starting capture on gpu0-eth0
+GPU 0: sent a request to GPU 1, seq_num=0
+GPU 0: sent a request to GPU 2, seq_num=1
+GPU 0: sent a request to GPU 3, seq_num=2
+GPU 0: got a response from GPU 1, seq_num=0
+GPU 0: got a response from GPU 3, seq_num=2
+GPU 0: got a response from GPU 2, seq_num=1
+
+===== gpu1 =====
+Hello from GPU 1, 2 GPUs per Leaf, 2 Spines
+GPU 1: mode=Baseline
+GPU 1: Failed to open workload file
+GPU 1: Initialized 1 network devices
+GPU 1: Starting capture on gpu1-eth0
+GPU 1: wait 1 seconds before sending requests
+GPU 1: got a request from GPU 0, seq_num=0
+
+===== gpu2 =====
+Hello from GPU 2, 2 GPUs per Leaf, 2 Spines
+GPU 2: mode=Baseline
+GPU 2: Failed to open workload file
+GPU 2: Initialized 1 network devices
+GPU 2: wait 1 seconds before sending requests
+GPU 2: Starting capture on gpu2-eth0
+GPU 2: got a request from GPU 0, seq_num=1
+
+===== gpu3 =====
+Hello from GPU 3, 2 GPUs per Leaf, 2 Spines
+GPU 3: mode=Baseline
+GPU 3: Failed to open workload file
+GPU 3: Initialized 1 network devices
+GPU 3: wait 1 seconds before sending requests
+GPU 3: Starting capture on gpu3-eth0
+GPU 3: got a request from GPU 0, seq_num=2
+
+===== leaf0 =====
+Hello from Leaf 0, 2 GPUs per Leaf, 2 Spines
+Leaf 0: mode=Baseline
+Leaf 0: Starting capture on leaf0-gpu0
+Leaf 0: Starting capture on leaf0-gpu1
+Leaf 0: Starting capture on leaf0-spine0
+Leaf 0: Initialized 4 network devices
+Leaf 0: Starting capture on leaf0-spine1
+Leaf 0: forwarded seq_num=0 from leaf0-gpu0 to GPU 1
+Leaf 0: forwarded seq_num=1 from leaf0-gpu0 to spine 1
+Leaf 0: forwarded seq_num=2 from leaf0-gpu0 to spine 1
+Leaf 0: forwarded seq_num=0 from leaf0-gpu1 to GPU 0
+Leaf 0: forwarded seq_num=2 from leaf0-spine1 to GPU 0
+Leaf 0: forwarded seq_num=1 from leaf0-spine1 to GPU 0
+
+===== leaf1 =====
+Hello from Leaf 1, 2 GPUs per Leaf, 2 Spines
+Leaf 1: mode=Baseline
+Leaf 1: Starting capture on leaf1-gpu2
+Leaf 1: Starting capture on leaf1-gpu3
+Leaf 1: Starting capture on leaf1-spine0
+Leaf 1: Initialized 4 network devices
+Leaf 1: Starting capture on leaf1-spine1
+Leaf 1: forwarded seq_num=1 from leaf1-spine1 to GPU 2
+Leaf 1: forwarded seq_num=2 from leaf1-spine1 to GPU 3
+Leaf 1: forwarded seq_num=2 from leaf1-gpu3 to spine 1
+Leaf 1: forwarded seq_num=1 from leaf1-gpu2 to spine 1
+
+===== spine0 =====
+Hello from Spine 0, 2 GPUs per Leaf, 2 Spines
+Spine 0: mode=Baseline
+Spine 0: Starting capture on spine0-leaf0
+Spine 0: Initialized 2 network devices
+Spine 0: Starting capture on spine0-leaf1
+
+===== spine1 =====
+Hello from Spine 1, 2 GPUs per Leaf, 2 Spines
+Spine 1: mode=Baseline
+Spine 1: Starting capture on spine1-leaf0
+Spine 1: Initialized 2 network devices
+Spine 1: Starting capture on spine1-leaf1
+Spine 1: forwarded seq_num=1 from spine1-leaf0 to leaf 1 for GPU 2
+Spine 1: forwarded seq_num=2 from spine1-leaf0 to leaf 1 for GPU 3
+Spine 1: forwarded seq_num=2 from spine1-leaf1 to leaf 0 for GPU 0
+Spine 1: forwarded seq_num=1 from spine1-leaf1 to leaf 0 for GPU 0
+
