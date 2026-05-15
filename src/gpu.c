@@ -16,6 +16,7 @@
 static FILE *workload = NULL;
 static uint32_t next_seq = 0;
 static uint32_t next_line = 0;
+static sim_mode_t sim_mode = SIM_MODE_BASELINE;
 
 /*
  * get_gpu_start_delay - 获取发送 request 前的等待时间
@@ -33,6 +34,13 @@ static unsigned int get_gpu_start_delay(void) {
 /* 地址打包工具 */
 static uint32_t make_traci_addr(uint8_t gpu_id, uint32_t local_addr) {
     return ((uint32_t)gpu_id << 24) | (local_addr & LOCAL_ADDR_MASK);
+}
+
+/*
+ * make_response_data - 本模拟器不建模真实向量，使用本地地址作为标量数据
+ */
+static uint32_t make_response_data(uint32_t iaddr) {
+    return iaddr & LOCAL_ADDR_MASK;
 }
 
 /*
@@ -67,9 +75,19 @@ static void parse_pkt(packet_entry_t *entry) {
             (traci_header_t *)(entry->data + sizeof(eth_header_t));
 
         // 收到 response
-        if (traci->traci_type == 2) {
-            printf("GPU %s: got a response from GPU %d, "
-                "seq_num=%" PRIu32 "\n", node_id, src_id, traci->seq_num);
+        if (traci->traci_type == TRACI_TYPE_RESPONSE) {
+            if (sim_mode == SIM_MODE_TRACI) {
+                printf("GPU %s: got a response from GPU %d, "
+                    "seq_num=%" PRIu32 ", count=%" PRIu32
+                    ", data=%" PRIu32 "\n",
+                    node_id, src_id, traci->seq_num,
+                    traci->count, traci->data);
+            }
+            else {
+                printf("GPU %s: got a response from GPU %d, "
+                    "seq_num=%" PRIu32 "\n",
+                    node_id, src_id, traci->seq_num);
+            }
             return;
         }
 
@@ -80,7 +98,9 @@ static void parse_pkt(packet_entry_t *entry) {
         memcpy(tmp, eth->src_mac, 6);
         memcpy(eth->src_mac, eth->dst_mac, 6);
         memcpy(eth->dst_mac, tmp, 6);
-        traci->traci_type = 2;
+        traci->count = 1;
+        traci->data = make_response_data(traci->iaddr);
+        traci->traci_type = TRACI_TYPE_RESPONSE;
         send_packet(entry->device, entry->data, entry->len);
     }
 }
@@ -108,7 +128,9 @@ static uint8_t *construct_pkt(uint8_t input_gpu,
     traci->seq_num = next_seq++;
     traci->iaddr = make_traci_addr(input_gpu, input_local_addr);
     traci->oaddr = make_traci_addr((uint8_t)atoi(node_id), output_local_addr);
-    traci->traci_type = 1;
+    traci->count = 0;
+    traci->data = 0;
+    traci->traci_type = TRACI_TYPE_REQUEST;
 
     return data;
 }
@@ -196,9 +218,13 @@ void gpu() {
     }
 }
 
-int main()
+int main(int argc, char **argv)
 {
     common_setup_signal_handlers();
+
+    if (parse_sim_mode_args(argc, argv, &sim_mode, argv[0]) == -1) {
+        return 1;
+    }
 
     // 从环境变量中获取当前结点信息
     node_role = getenv("NODE_ROLE");
@@ -215,6 +241,7 @@ int main()
     // 检查信息
     printf("Hello from %s %s, %s GPUs per Leaf, %s Spines\n",
         node_role, node_id, gpu_per_leaf, spine_num);
+    printf("GPU %s: mode=%s\n", node_id, sim_mode_name(sim_mode));
 
     // 确保当前结点是 GPU
     if (strcmp(node_role, "GPU") != 0) {

@@ -15,24 +15,41 @@ APP_DIR="/traci"
 
 # 通过目录名选择必需的 workload 集
 usage() {
-    echo "Usage: $0 <WORKLOAD_DIR> [GPU_START_DELAY_SECONDS]"
+    echo "Usage: $0 <WORKLOAD_DIR> [-b|-t] [GPU_START_DELAY_SECONDS]"
 }
 
-if [ $# -lt 1 ] || [ $# -gt 2 ]; then
+if [ $# -lt 1 ] || [ $# -gt 3 ]; then
     usage
     exit 1
 fi
 
 GPU_START_DELAY=3
 WORKLOAD_SET="$1"
+RUN_MODE="-b"
+delay_specified=0
+mode_specified=0
+shift
 
-if [ $# -eq 2 ]; then
-    if [[ ! "$2" =~ ^[0-9]+$ ]]; then
+for arg in "$@"; do
+    if [[ "$arg" =~ ^[0-9]+$ ]]; then
+        if [ "$delay_specified" -eq 1 ]; then
+            usage
+            exit 1
+        fi
+        GPU_START_DELAY="$arg"
+        delay_specified=1
+    elif [ "$arg" = "-b" ] || [ "$arg" = "-t" ]; then
+        if [ "$mode_specified" -eq 1 ]; then
+            usage
+            exit 1
+        fi
+        RUN_MODE="$arg"
+        mode_specified=1
+    else
         usage
         exit 1
     fi
-    GPU_START_DELAY="$2"
-fi
+done
 
 WORKLOAD_DIR="$ROOT_DIR/workloads/$WORKLOAD_SET"
 
@@ -69,6 +86,7 @@ echo "$GPU_NUM GPUs, $LEAF_NUM leaf switches, $SPINE_NUM spine switches"
 echo "$GPU_PER_LEAF GPUs under a leaf switch"
 echo "GPU request start delay: ${GPU_START_DELAY}s"
 echo "Workload directory: $WORKLOAD_SET"
+echo "Run mode: $RUN_MODE"
 echo "==============================="
 
 # ========== 设置容器 ==========
@@ -167,10 +185,11 @@ copy_workload_if_present() {
 start_node() {
     local container="$1"
     local binary="$2"
-    shift 2
+    local mode_arg="$3"
+    shift 3
 
     docker exec -d -w "$APP_DIR" "$@" "$container" sh -c \
-        "exec stdbuf -oL -eL '$APP_DIR/bin/$binary' > '$APP_DIR/logs/$container.log' 2>&1"
+        "exec stdbuf -oL -eL '$APP_DIR/bin/$binary' '$mode_arg' > '$APP_DIR/logs/$container.log' 2>&1"
 }
 
 echo "Copying sources and compiling inside containers..."
@@ -190,19 +209,19 @@ echo "Compilation done"
 
 echo "Starting leaf switches..."
 for ((i=0; i<LEAF_NUM; i++)); do
-    start_node "leaf$i" "leaf"
+    start_node "leaf$i" "leaf" "$RUN_MODE"
 done
 
 echo "Starting spine switches..."
 for ((i=0; i<SPINE_NUM; i++)); do
-    start_node "spine$i" "spine"
+    start_node "spine$i" "spine" "$RUN_MODE"
 done
 
 sleep 1
 
 echo "Starting GPUs..."
 for ((i=0; i<GPU_NUM; i++)); do
-    start_node "gpu$i" "gpu" -e "GPU_START_DELAY=$GPU_START_DELAY"
+    start_node "gpu$i" "gpu" "$RUN_MODE" -e "GPU_START_DELAY=$GPU_START_DELAY"
 done
 
 echo "Test programs started"

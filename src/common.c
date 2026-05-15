@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <signal.h>
+#include <inttypes.h>
 #include "common.h"
 
 /* 全局变量 */
@@ -233,4 +234,140 @@ int send_packet(net_device_t *dev, const uint8_t *data, uint32_t len) {
         return -1;
     }
     return 0;
+}
+
+/*
+ * parse_sim_mode_args - 解析 -b/-t 模式参数
+ */
+int parse_sim_mode_args(int argc, char **argv, sim_mode_t *mode,
+    const char *program) {
+
+    if (mode == NULL) {
+        return -1;
+    }
+
+    *mode = SIM_MODE_BASELINE;
+    int mode_specified = 0;
+    for (int i = 1; i < argc; ++i) {
+        if (strcmp(argv[i], "-b") == 0) {
+            if (mode_specified) {
+                fprintf(stderr, "Usage: %s [-b|-t]\n", program);
+                return -1;
+            }
+            *mode = SIM_MODE_BASELINE;
+            mode_specified = 1;
+        }
+        else if (strcmp(argv[i], "-t") == 0) {
+            if (mode_specified) {
+                fprintf(stderr, "Usage: %s [-b|-t]\n", program);
+                return -1;
+            }
+            *mode = SIM_MODE_TRACI;
+            mode_specified = 1;
+        }
+        else {
+            fprintf(stderr, "Usage: %s [-b|-t]\n", program);
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+const char *sim_mode_name(sim_mode_t mode) {
+    return mode == SIM_MODE_TRACI ? "TRACI" : "Baseline";
+}
+
+/*
+ * rtb_init - 初始化 RTB
+ */
+void rtb_init(rtb_table_t *rtb) {
+    memset(rtb, 0, sizeof(*rtb));
+}
+
+static rtb_entry_t *rtb_find(rtb_table_t *rtb, uint32_t tag) {
+    for (int i = 0; i < RTB_ENTRY_NUM; ++i) {
+        if (rtb->entries[i].valid && rtb->entries[i].tag == tag) {
+            return &rtb->entries[i];
+        }
+    }
+    return NULL;
+}
+
+static rtb_entry_t *rtb_find_free(rtb_table_t *rtb) {
+    for (int i = 0; i < RTB_ENTRY_NUM; ++i) {
+        if (!rtb->entries[i].valid) {
+            return &rtb->entries[i];
+        }
+    }
+    return NULL;
+}
+
+/*
+ * rtb_track_request - request 经过交换机时按 OAddr 创建/命中 RTB
+ */
+rtb_request_result_t rtb_track_request(rtb_table_t *rtb,
+    const traci_header_t *traci, int can_stall) {
+
+    rtb_entry_t *entry = rtb_find(rtb, traci->oaddr);
+    if (entry == NULL) {
+        entry = rtb_find_free(rtb);
+        if (entry == NULL) {
+            return can_stall ? RTB_REQUEST_STALL : RTB_REQUEST_BYPASS;
+        }
+
+        memset(entry, 0, sizeof(*entry));
+        entry->valid = 1;
+        entry->tag = traci->oaddr;
+        entry->seq_num = traci->seq_num;
+    }
+
+    entry->waiting_count += 1;
+    return RTB_REQUEST_TRACKED;
+}
+
+/*
+ * rtb_reduce_response - response 命中 RTB 时累加并按需生成聚合 response
+ */
+rtb_response_result_t rtb_reduce_response(rtb_table_t *rtb,
+    traci_header_t *traci) {
+
+    rtb_entry_t *entry = rtb_find(rtb, traci->oaddr);
+    if (entry == NULL) {
+        return RTB_RESPONSE_BYPASS;
+    }
+
+    if (entry->waiting_count == 0) {
+        fprintf(stderr, "%s %s: RTB entry for OAddr=%" PRIu32
+            " has zero waiting count\n", node_role, node_id, traci->oaddr);
+        entry->valid = 0;
+        return RTB_RESPONSE_BYPASS;
+    }
+
+    uint32_t response_count = traci->count == 0 ? 1 : traci->count;
+    if (response_count > entry->waiting_count) {
+        fprintf(stderr, "%s %s: RTB response count %" PRIu32
+            " exceeds waiting count %" PRIu32 " for OAddr=%" PRIu32 "\n",
+            node_role, node_id, response_count, entry->waiting_count,
+            traci->oaddr);
+        response_count = entry->waiting_count;
+    }
+
+    entry->data += traci->data;
+    entry->waiting_count -= response_count;
+    entry->arrived_count += response_count;
+
+    if (entry->waiting_count > 0) {
+        return RTB_RESPONSE_DROP;
+    }
+
+    traci->seq_num = entry->seq_num;
+    traci->iaddr = 0;
+    traci->oaddr = entry->tag;
+    traci->count = entry->arrived_count;
+    traci->data = entry->data;
+    traci->traci_type = TRACI_TYPE_RESPONSE;
+    entry->valid = 0;
+
+    return RTB_RESPONSE_EVOKE;
 }

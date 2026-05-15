@@ -24,6 +24,9 @@ typedef unsigned char u_char;
 #define MAX_PACKETS 1024
 #define MAX_LINE 21
 #define MAX_FILENAME 21
+#define RTB_ENTRY_NUM 64
+#define TRACI_TYPE_REQUEST 1
+#define TRACI_TYPE_RESPONSE 2
 
 /* 以太网头 */
 typedef struct {
@@ -37,8 +40,42 @@ typedef struct {
     uint32_t seq_num;
     uint32_t iaddr;
     uint32_t oaddr;
+    uint32_t count;
+    uint32_t data;
     uint8_t traci_type; // 0x01 request, 0x02 response
 } __attribute__((packed)) traci_header_t;
+
+/* 模拟模式 */
+typedef enum {
+    SIM_MODE_BASELINE = 0,
+    SIM_MODE_TRACI = 1,
+} sim_mode_t;
+
+/* RTB 表项 */
+typedef struct {
+    int valid;
+    uint32_t tag;
+    uint32_t data;
+    uint32_t waiting_count;
+    uint32_t arrived_count;
+    uint32_t seq_num;
+} rtb_entry_t;
+
+typedef struct {
+    rtb_entry_t entries[RTB_ENTRY_NUM];
+} rtb_table_t;
+
+typedef enum {
+    RTB_REQUEST_TRACKED = 0,
+    RTB_REQUEST_BYPASS = 1,
+    RTB_REQUEST_STALL = 2,
+} rtb_request_result_t;
+
+typedef enum {
+    RTB_RESPONSE_BYPASS = 0,
+    RTB_RESPONSE_DROP = 1,
+    RTB_RESPONSE_EVOKE = 2,
+} rtb_response_result_t;
 
 /* 网络设备 */
 typedef struct {
@@ -71,6 +108,14 @@ void common_shutdown(void);
 void *capture_thread(void *arg);
 void get_mac(char role, int id1, int id2, uint8_t mac[6]);
 int send_packet(net_device_t *dev, const uint8_t *data, uint32_t len);
+int parse_sim_mode_args(int argc, char **argv, sim_mode_t *mode,
+    const char *program);
+const char *sim_mode_name(sim_mode_t mode);
+void rtb_init(rtb_table_t *rtb);
+rtb_request_result_t rtb_track_request(rtb_table_t *rtb,
+    const traci_header_t *traci, int can_stall);
+rtb_response_result_t rtb_reduce_response(rtb_table_t *rtb,
+    traci_header_t *traci);
 
 static inline uint16_t hash_oaddr(uint32_t oaddr) {
     uint32_t h = oaddr;

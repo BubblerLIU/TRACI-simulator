@@ -8,7 +8,23 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 CONFIG_FILE="$ROOT_DIR/.fat_tree_config"
 APP_DIR="/traci"
-RESULT_LOG="/result/logs.txt"
+
+usage() {
+    echo "Usage: $0 [LOG_FILE_NAME]"
+}
+
+if [ $# -gt 1 ]; then
+    usage
+    exit 1
+fi
+
+RESULT_LOG_NAME="${1:-logs.txt}"
+if [ -z "$RESULT_LOG_NAME" ] || [[ "$RESULT_LOG_NAME" == */* ]]; then
+    usage
+    exit 1
+fi
+
+RESULT_LOG="/result/$RESULT_LOG_NAME"
 
 container_exists() {
     local container="$1"

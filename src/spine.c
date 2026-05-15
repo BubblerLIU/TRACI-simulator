@@ -13,6 +13,8 @@
 
 static int spine_id = 0;
 static int gpu_count_per_leaf = 0;
+static sim_mode_t sim_mode = SIM_MODE_BASELINE;
+static rtb_table_t rtb;
 
 /*
  * find_device - 根据名称查找设备
@@ -61,6 +63,64 @@ static void forward_to_leaf(packet_entry_t *entry, eth_header_t *eth,
 }
 
 /*
+ * baseline_route_packet - Baseline 模式原始转发逻辑
+ */
+static void baseline_route_packet(packet_entry_t *entry, eth_header_t *eth,
+    traci_header_t *traci) {
+
+    if (strstr(entry->device->name, "-leaf") != NULL) {
+        forward_to_leaf(entry, eth, traci);
+    }
+    else {
+        fprintf(stderr, "Spine %s: unknown ingress device %s\n",
+            node_id, entry->device->name);
+    }
+}
+
+/*
+ * traci_route_packet - TRACI 模式：RTB 处理后复用 Baseline 转发路径
+ */
+static void traci_route_packet(packet_entry_t *entry, eth_header_t *eth,
+    traci_header_t *traci) {
+
+    if (traci->traci_type == TRACI_TYPE_REQUEST) {
+        rtb_request_result_t result = rtb_track_request(&rtb, traci, 0);
+        if (result == RTB_REQUEST_BYPASS) {
+            printf("Spine %s: RTB full, bypassed request seq_num=%" PRIu32
+                ", oaddr=%" PRIu32 "\n",
+                node_id, traci->seq_num, traci->oaddr);
+        }
+
+        baseline_route_packet(entry, eth, traci);
+        return;
+    }
+
+    if (traci->traci_type == TRACI_TYPE_RESPONSE) {
+        rtb_response_result_t result = rtb_reduce_response(&rtb, traci);
+
+        if (result == RTB_RESPONSE_DROP) {
+            printf("Spine %s: RTB reduced and dropped response "
+                "seq_num=%" PRIu32 ", oaddr=%" PRIu32 "\n",
+                node_id, traci->seq_num, traci->oaddr);
+            return;
+        }
+        if (result == RTB_RESPONSE_EVOKE) {
+            printf("Spine %s: RTB emitted response seq_num=%" PRIu32
+                ", oaddr=%" PRIu32 ", count=%" PRIu32
+                ", data=%" PRIu32 "\n",
+                node_id, traci->seq_num, traci->oaddr,
+                traci->count, traci->data);
+        }
+
+        baseline_route_packet(entry, eth, traci);
+        return;
+    }
+
+    fprintf(stderr, "Spine %s: unknown TRACI packet type %" PRIu8
+        " from %s\n", node_id, traci->traci_type, entry->device->name);
+}
+
+/*
  * parse_pkt - 处理包
  */
 static void parse_pkt(packet_entry_t *entry) {
@@ -78,13 +138,12 @@ static void parse_pkt(packet_entry_t *entry) {
     traci_header_t *traci =
         (traci_header_t *)(entry->data + sizeof(eth_header_t));
 
-    if (strstr(entry->device->name, "-leaf") != NULL) {
-        forward_to_leaf(entry, eth, traci);
+    if (sim_mode == SIM_MODE_TRACI) {
+        traci_route_packet(entry, eth, traci);
+        return;
     }
-    else {
-        fprintf(stderr, "Spine %s: unknown ingress device %s\n",
-            node_id, entry->device->name);
-    }
+
+    baseline_route_packet(entry, eth, traci);
 }
 
 /*
@@ -120,9 +179,13 @@ void spine() {
     }
 }
 
-int main()
+int main(int argc, char **argv)
 {
     common_setup_signal_handlers();
+
+    if (parse_sim_mode_args(argc, argv, &sim_mode, argv[0]) == -1) {
+        return 1;
+    }
 
     node_role = getenv("NODE_ROLE");
     node_id = getenv("NODE_ID");
@@ -138,6 +201,7 @@ int main()
     // 检查信息
     printf("Hello from %s %s, %s GPUs per Leaf, %s Spines\n",
         node_role, node_id, gpu_per_leaf, spine_num);
+    printf("Spine %s: mode=%s\n", node_id, sim_mode_name(sim_mode));
 
     // 检查节点类型
     if (strcmp(node_role, "Spine") != 0) {
@@ -152,6 +216,7 @@ int main()
             node_id, gpu_per_leaf);
         return 1;
     }
+    rtb_init(&rtb);
 
     // 扫描设备并启动监听
     if (common_init() == -1) {
