@@ -15,6 +15,7 @@ static int spine_id = 0;
 static int gpu_count_per_leaf = 0;
 static sim_mode_t sim_mode = SIM_MODE_BASELINE;
 static rtb_table_t rtb;
+static isc_table_t isc;
 
 /*
  * find_device - 根据名称查找设备
@@ -78,6 +79,51 @@ static void baseline_route_packet(packet_entry_t *entry, eth_header_t *eth,
 }
 
 /*
+ * make_isc_response - 将命中 ISC 的 request 改写成本地生成的 response
+ */
+static void make_isc_response(eth_header_t *eth, traci_header_t *traci,
+    uint32_t data) {
+
+    uint8_t tmp[6];
+    memcpy(tmp, eth->src_mac, 6);
+    memcpy(eth->src_mac, eth->dst_mac, 6);
+    memcpy(eth->dst_mac, tmp, 6);
+
+    traci->count = 1;
+    traci->data = data;
+    traci->traci_type = TRACI_TYPE_RESPONSE;
+}
+
+static void traci_handle_response(packet_entry_t *entry, eth_header_t *eth,
+    traci_header_t *traci) {
+
+    if (traci->count == 1 && traci->iaddr != 0) {
+        isc_insert(&isc, traci->iaddr, traci->data);
+        printf("Spine %s: ISC inserted iaddr=%" PRIu32
+            ", data=%" PRIu32 "\n",
+            node_id, traci->iaddr, traci->data);
+    }
+
+    rtb_response_result_t result = rtb_reduce_response(&rtb, traci);
+
+    if (result == RTB_RESPONSE_DROP) {
+        printf("Spine %s: RTB reduced and dropped response "
+            "seq_num=%" PRIu32 ", oaddr=%" PRIu32 "\n",
+            node_id, traci->seq_num, traci->oaddr);
+        return;
+    }
+    if (result == RTB_RESPONSE_EVOKE) {
+        printf("Spine %s: RTB emitted response seq_num=%" PRIu32
+            ", oaddr=%" PRIu32 ", count=%" PRIu32
+            ", data=%" PRIu32 "\n",
+            node_id, traci->seq_num, traci->oaddr,
+            traci->count, traci->data);
+    }
+
+    baseline_route_packet(entry, eth, traci);
+}
+
+/*
  * traci_route_packet - TRACI 模式：RTB 处理后复用 Baseline 转发路径
  */
 static void traci_route_packet(packet_entry_t *entry, eth_header_t *eth,
@@ -91,28 +137,23 @@ static void traci_route_packet(packet_entry_t *entry, eth_header_t *eth,
                 node_id, traci->seq_num, traci->oaddr);
         }
 
+        uint32_t cached_data = 0;
+        if (result == RTB_REQUEST_TRACKED &&
+            isc_lookup(&isc, traci->iaddr, &cached_data)) {
+            printf("Spine %s: ISC hit iaddr=%" PRIu32
+                ", generated response seq_num=%" PRIu32 "\n",
+                node_id, traci->iaddr, traci->seq_num);
+            make_isc_response(eth, traci, cached_data);
+            traci_handle_response(entry, eth, traci);
+            return;
+        }
+
         baseline_route_packet(entry, eth, traci);
         return;
     }
 
     if (traci->traci_type == TRACI_TYPE_RESPONSE) {
-        rtb_response_result_t result = rtb_reduce_response(&rtb, traci);
-
-        if (result == RTB_RESPONSE_DROP) {
-            printf("Spine %s: RTB reduced and dropped response "
-                "seq_num=%" PRIu32 ", oaddr=%" PRIu32 "\n",
-                node_id, traci->seq_num, traci->oaddr);
-            return;
-        }
-        if (result == RTB_RESPONSE_EVOKE) {
-            printf("Spine %s: RTB emitted response seq_num=%" PRIu32
-                ", oaddr=%" PRIu32 ", count=%" PRIu32
-                ", data=%" PRIu32 "\n",
-                node_id, traci->seq_num, traci->oaddr,
-                traci->count, traci->data);
-        }
-
-        baseline_route_packet(entry, eth, traci);
+        traci_handle_response(entry, eth, traci);
         return;
     }
 
@@ -217,6 +258,7 @@ int main(int argc, char **argv)
         return 1;
     }
     rtb_init(&rtb);
+    isc_init(&isc);
 
     // 扫描设备并启动监听
     if (common_init() == -1) {

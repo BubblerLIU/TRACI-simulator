@@ -25,6 +25,7 @@ typedef unsigned char u_char;
 #define MAX_LINE 21
 #define MAX_FILENAME 21
 #define RTB_ENTRY_NUM 64
+#define ISC_ENTRY_NUM 64
 #define TRACI_TYPE_REQUEST 1
 #define TRACI_TYPE_RESPONSE 2
 
@@ -77,6 +78,18 @@ typedef enum {
     RTB_RESPONSE_EVOKE = 2,
 } rtb_response_result_t;
 
+/* ISC 表项 */
+typedef struct {
+    int valid;
+    uint32_t tag;
+    uint32_t data;
+} isc_entry_t;
+
+typedef struct {
+    isc_entry_t entries[ISC_ENTRY_NUM];
+    int next_evict;
+} isc_table_t;
+
 /* 网络设备 */
 typedef struct {
     char name[32];
@@ -116,6 +129,9 @@ rtb_request_result_t rtb_track_request(rtb_table_t *rtb,
     const traci_header_t *traci, int can_stall);
 rtb_response_result_t rtb_reduce_response(rtb_table_t *rtb,
     traci_header_t *traci);
+void isc_init(isc_table_t *isc);
+int isc_lookup(isc_table_t *isc, uint32_t iaddr, uint32_t *data);
+void isc_insert(isc_table_t *isc, uint32_t iaddr, uint32_t data);
 
 static inline uint16_t hash_oaddr(uint32_t oaddr) {
     uint32_t h = oaddr;

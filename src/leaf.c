@@ -16,6 +16,7 @@ static int spine_count = 0;
 static int gpu_count_per_leaf = 0;
 static sim_mode_t sim_mode = SIM_MODE_BASELINE;
 static rtb_table_t rtb;
+static isc_table_t isc;
 
 typedef enum {
     PACKET_DONE = 0,
@@ -94,32 +95,69 @@ static void forward_to_gpu(packet_entry_t *entry, eth_header_t *eth,
 static void baseline_route_packet(packet_entry_t *entry, eth_header_t *eth,
     traci_header_t *traci) {
 
-    if (strstr(entry->device->name, "-gpu") != NULL) {
-        if (!(eth->dst_mac[0] == 0xaa && eth->dst_mac[1] == 0xbb &&
-            eth->dst_mac[2] == 0xcc && eth->dst_mac[3] == 0x00 &&
-            eth->dst_mac[4] == 0x00)) {
-            fprintf(stderr, "Leaf %s: packet from %s has non-GPU dst MAC\n",
-                node_id, entry->device->name);
-            return;
-        }
-
-        int dst_gpu = eth->dst_mac[5];
-        int local_gpu_start = leaf_id * gpu_count_per_leaf;
-        int local_gpu_end = local_gpu_start + gpu_count_per_leaf;
-        if (dst_gpu >= local_gpu_start && dst_gpu < local_gpu_end) {
-            forward_to_gpu(entry, eth, traci);
-        }
-        else {
-            forward_to_spine(entry, traci);
-        }
+    if (!(eth->dst_mac[0] == 0xaa && eth->dst_mac[1] == 0xbb &&
+        eth->dst_mac[2] == 0xcc && eth->dst_mac[3] == 0x00 &&
+        eth->dst_mac[4] == 0x00)) {
+        fprintf(stderr, "Leaf %s: packet from %s has non-GPU dst MAC\n",
+            node_id, entry->device->name);
+        return;
     }
-    else if (strstr(entry->device->name, "-spine") != NULL) {
+
+    int dst_gpu = eth->dst_mac[5];
+    int local_gpu_start = leaf_id * gpu_count_per_leaf;
+    int local_gpu_end = local_gpu_start + gpu_count_per_leaf;
+    if (dst_gpu >= local_gpu_start && dst_gpu < local_gpu_end) {
         forward_to_gpu(entry, eth, traci);
     }
     else {
-        fprintf(stderr, "Leaf %s: unknown ingress device %s\n",
-            node_id, entry->device->name);
+        forward_to_spine(entry, traci);
     }
+}
+
+/*
+ * make_isc_response - 将命中 ISC 的 request 改写成本地生成的 response
+ */
+static void make_isc_response(eth_header_t *eth, traci_header_t *traci,
+    uint32_t data) {
+
+    uint8_t tmp[6];
+    memcpy(tmp, eth->src_mac, 6);
+    memcpy(eth->src_mac, eth->dst_mac, 6);
+    memcpy(eth->dst_mac, tmp, 6);
+
+    traci->count = 1;
+    traci->data = data;
+    traci->traci_type = TRACI_TYPE_RESPONSE;
+}
+
+static packet_result_t traci_handle_response(packet_entry_t *entry,
+    eth_header_t *eth, traci_header_t *traci) {
+
+    if (traci->count == 1 && traci->iaddr != 0) {
+        isc_insert(&isc, traci->iaddr, traci->data);
+        printf("Leaf %s: ISC inserted iaddr=%" PRIu32
+            ", data=%" PRIu32 "\n",
+            node_id, traci->iaddr, traci->data);
+    }
+
+    rtb_response_result_t result = rtb_reduce_response(&rtb, traci);
+
+    if (result == RTB_RESPONSE_DROP) {
+        printf("Leaf %s: RTB reduced and dropped response "
+            "seq_num=%" PRIu32 ", oaddr=%" PRIu32 "\n",
+            node_id, traci->seq_num, traci->oaddr);
+        return PACKET_DONE;
+    }
+    if (result == RTB_RESPONSE_EVOKE) {
+        printf("Leaf %s: RTB emitted response seq_num=%" PRIu32
+            ", oaddr=%" PRIu32 ", count=%" PRIu32
+            ", data=%" PRIu32 "\n",
+            node_id, traci->seq_num, traci->oaddr,
+            traci->count, traci->data);
+    }
+
+    baseline_route_packet(entry, eth, traci);
+    return PACKET_DONE;
 }
 
 /*
@@ -145,29 +183,22 @@ static packet_result_t traci_route_packet(packet_entry_t *entry,
                 node_id, traci->seq_num, traci->oaddr);
         }
 
+        uint32_t cached_data = 0;
+        if (result == RTB_REQUEST_TRACKED &&
+            isc_lookup(&isc, traci->iaddr, &cached_data)) {
+            printf("Leaf %s: ISC hit iaddr=%" PRIu32
+                ", generated response seq_num=%" PRIu32 "\n",
+                node_id, traci->iaddr, traci->seq_num);
+            make_isc_response(eth, traci, cached_data);
+            return traci_handle_response(entry, eth, traci);
+        }
+
         baseline_route_packet(entry, eth, traci);
         return PACKET_DONE;
     }
 
     if (traci->traci_type == TRACI_TYPE_RESPONSE) {
-        rtb_response_result_t result = rtb_reduce_response(&rtb, traci);
-
-        if (result == RTB_RESPONSE_DROP) {
-            printf("Leaf %s: RTB reduced and dropped response "
-                "seq_num=%" PRIu32 ", oaddr=%" PRIu32 "\n",
-                node_id, traci->seq_num, traci->oaddr);
-            return PACKET_DONE;
-        }
-        if (result == RTB_RESPONSE_EVOKE) {
-            printf("Leaf %s: RTB emitted response seq_num=%" PRIu32
-                ", oaddr=%" PRIu32 ", count=%" PRIu32
-                ", data=%" PRIu32 "\n",
-                node_id, traci->seq_num, traci->oaddr,
-                traci->count, traci->data);
-        }
-
-        baseline_route_packet(entry, eth, traci);
-        return PACKET_DONE;
+        return traci_handle_response(entry, eth, traci);
     }
 
     fprintf(stderr, "Leaf %s: unknown TRACI packet type %" PRIu8
@@ -305,6 +336,7 @@ int main(int argc, char **argv)
         return 1;
     }
     rtb_init(&rtb);
+    isc_init(&isc);
 
     // 扫描设备并启动监听
     if (common_init() == -1) {

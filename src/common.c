@@ -371,3 +371,58 @@ rtb_response_result_t rtb_reduce_response(rtb_table_t *rtb,
 
     return RTB_RESPONSE_EVOKE;
 }
+
+/*
+ * isc_init - 初始化 ISC
+ */
+void isc_init(isc_table_t *isc) {
+    memset(isc, 0, sizeof(*isc));
+}
+
+/*
+ * isc_lookup - 按 IAddr 查找完整缓存块
+ */
+int isc_lookup(isc_table_t *isc, uint32_t iaddr, uint32_t *data) {
+    for (int i = 0; i < ISC_ENTRY_NUM; ++i) {
+        if (isc->entries[i].valid && isc->entries[i].tag == iaddr) {
+            if (data != NULL) {
+                *data = isc->entries[i].data;
+            }
+            return 1;
+        }
+    }
+
+    return 0;
+}
+
+/*
+ * isc_insert - response 经过交换机时插入/更新缓存
+ */
+void isc_insert(isc_table_t *isc, uint32_t iaddr, uint32_t data) {
+    isc_entry_t *entry = NULL;
+
+    for (int i = 0; i < ISC_ENTRY_NUM; ++i) {
+        if (isc->entries[i].valid && isc->entries[i].tag == iaddr) {
+            entry = &isc->entries[i];
+            break;
+        }
+    }
+
+    if (entry == NULL) {
+        for (int i = 0; i < ISC_ENTRY_NUM; ++i) {
+            if (!isc->entries[i].valid) {
+                entry = &isc->entries[i];
+                break;
+            }
+        }
+    }
+
+    if (entry == NULL) {
+        entry = &isc->entries[isc->next_evict];
+        isc->next_evict = (isc->next_evict + 1) % ISC_ENTRY_NUM;
+    }
+
+    entry->valid = 1;
+    entry->tag = iaddr;
+    entry->data = data;
+}
