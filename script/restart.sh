@@ -7,23 +7,23 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 CONFIG_FILE="$ROOT_DIR/.fat_tree_config"
+LAST_WORKLOAD_FILE="$ROOT_DIR/.last_workload"
 APP_DIR="/traci"
 
 usage() {
-    echo "Usage: $0 <WORKLOAD_DIR> [-b|-r|-i|-t] [GPU_START_DELAY_SECONDS]"
+    echo "Usage: $0 [WORKLOAD_DIR] [-b|-r|-i|-t] [GPU_START_DELAY_SECONDS]"
 }
 
-if [ $# -lt 1 ] || [ $# -gt 3 ]; then
+if [ $# -gt 3 ]; then
     usage
     exit 1
 fi
 
 GPU_START_DELAY=3
-WORKLOAD_SET="$1"
+WORKLOAD_SET=""
 RUN_MODE="-b"
 delay_specified=0
 mode_specified=0
-shift
 
 for arg in "$@"; do
     if [[ "$arg" =~ ^[0-9]+$ ]]; then
@@ -41,11 +41,27 @@ for arg in "$@"; do
         fi
         RUN_MODE="$arg"
         mode_specified=1
+    elif [ -z "$WORKLOAD_SET" ]; then
+        WORKLOAD_SET="$arg"
     else
         usage
         exit 1
     fi
 done
+
+if [ -z "$WORKLOAD_SET" ]; then
+    if [ ! -f "$LAST_WORKLOAD_FILE" ]; then
+        echo "Error: no workload specified and no previous workload found"
+        echo "Please run script/test.sh once or pass WORKLOAD_DIR explicitly."
+        exit 1
+    fi
+    WORKLOAD_SET="$(sed -n '1p' "$LAST_WORKLOAD_FILE")"
+fi
+
+if [ -z "$WORKLOAD_SET" ] || [[ "$WORKLOAD_SET" == */* ]]; then
+    usage
+    exit 1
+fi
 
 WORKLOAD_DIR="$ROOT_DIR/workloads/$WORKLOAD_SET"
 
@@ -73,6 +89,8 @@ if [ ! -d "$WORKLOAD_DIR" ]; then
     echo "Error: workload directory not found at $WORKLOAD_DIR"
     exit 1
 fi
+
+printf '%s\n' "$WORKLOAD_SET" > "$LAST_WORKLOAD_FILE"
 
 require_container() {
     local container="$1"

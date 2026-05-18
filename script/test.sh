@@ -10,6 +10,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 CONFIG_FILE="$ROOT_DIR/.fat_tree_config"
+LAST_WORKLOAD_FILE="$ROOT_DIR/.last_workload"
 SRC_DIR="$ROOT_DIR/src"
 APP_DIR="/traci"
 
@@ -80,6 +81,8 @@ if [ ! -d "$WORKLOAD_DIR" ]; then
     echo "Error: workload directory not found at $WORKLOAD_DIR"
     exit 1
 fi
+
+printf '%s\n' "$WORKLOAD_SET" > "$LAST_WORKLOAD_FILE"
 
 # 检查配置信息
 echo "======== FAT-TREE-TEST ========"
