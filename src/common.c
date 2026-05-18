@@ -51,6 +51,13 @@ int common_init(void) {
 
     // 初始化包缓冲区
     memset(&pkt_buffer, 0, sizeof(pkt_buffer));
+    pkt_buffer.packets = calloc(MAX_PACKETS, sizeof(*pkt_buffer.packets));
+    if (pkt_buffer.packets == NULL) {
+        fprintf(stderr, "%s %s: Failed to allocate packet buffer of size %d\n",
+            node_role, node_id, MAX_PACKETS);
+        return -1;
+    }
+    pkt_buffer.capacity = MAX_PACKETS;
     pkt_buffer.head = pkt_buffer.tail = 0;
     pthread_mutex_init(&pkt_buffer.lock, NULL);
     pkt_buffer_initialized = 1;
@@ -135,6 +142,7 @@ void common_shutdown(void) {
         pkt_buffer_initialized = 0;
     }
 
+    free(pkt_buffer.packets);
     memset(&pkt_buffer, 0, sizeof(pkt_buffer));
     memset(devices, 0, sizeof(devices));
     device_count = 0;
@@ -157,7 +165,7 @@ void *capture_thread(void *arg) {
         pthread_mutex_lock(&pkt_buffer.lock);
         
         // 缓冲区已满
-        if ((pkt_buffer.head + 1) % MAX_PACKETS == pkt_buffer.tail) {
+        if ((pkt_buffer.head + 1) % pkt_buffer.capacity == pkt_buffer.tail) {
             fprintf(stderr, "%s %s: Packet buffer full, dropping packet\n",
                 node_role, node_id);
             pthread_mutex_unlock(&pkt_buffer.lock);
@@ -172,7 +180,7 @@ void *capture_thread(void *arg) {
         entry->timestamp = header.ts.tv_sec * 1000000 + header.ts.tv_usec;
         memcpy(entry->data, packet, entry->len);
         
-        pkt_buffer.head = (pkt_buffer.head + 1) % MAX_PACKETS;
+        pkt_buffer.head = (pkt_buffer.head + 1) % pkt_buffer.capacity;
         pthread_mutex_unlock(&pkt_buffer.lock);
     }
 

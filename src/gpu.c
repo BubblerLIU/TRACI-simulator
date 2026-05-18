@@ -80,7 +80,8 @@ static void parse_pkt(packet_entry_t *entry) {
 
         // 收到 response
         if (traci->traci_type == TRACI_TYPE_RESPONSE) {
-            ++received_responses;
+            uint32_t response_count = traci->count == 0 ? 1 : traci->count;
+            received_responses += response_count;
             if (sim_mode != SIM_MODE_BASELINE) {
                 printf("GPU %s: got a response from GPU %d, "
                     "seq_num=%" PRIu32 ", count=%" PRIu32
@@ -178,7 +179,7 @@ void gpu() {
 
             // 从缓冲区取出一个包
             memcpy(&entry, &pkt_buffer.packets[pkt_buffer.tail], sizeof(entry));
-            pkt_buffer.tail = (pkt_buffer.tail + 1) % MAX_PACKETS;
+            pkt_buffer.tail = (pkt_buffer.tail + 1) % pkt_buffer.capacity;
         }
         pthread_mutex_unlock(&pkt_buffer.lock);
 

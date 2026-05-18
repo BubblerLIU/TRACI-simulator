@@ -279,7 +279,8 @@ sleep 1
 
 echo "Starting GPUs..."
 for ((i=0; i<GPU_NUM; i++)); do
-    start_node "gpu$i" "gpu" "$RUN_MODE" -e "GPU_START_DELAY=$GPU_START_DELAY"
+    start_node "gpu$i" "gpu" "$RUN_MODE" \
+        -e "GPU_START_DELAY=$GPU_START_DELAY"
 done
 
 echo "Restarted test programs"

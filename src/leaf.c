@@ -282,7 +282,7 @@ void leaf() {
 
             // 从缓冲区取出一个包
             memcpy(&entry, &pkt_buffer.packets[pkt_buffer.tail], sizeof(entry));
-            pkt_buffer.tail = (pkt_buffer.tail + 1) % MAX_PACKETS;
+            pkt_buffer.tail = (pkt_buffer.tail + 1) % pkt_buffer.capacity;
         }
         pthread_mutex_unlock(&pkt_buffer.lock);
 

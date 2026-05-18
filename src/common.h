@@ -21,7 +21,7 @@ typedef unsigned char u_char;
 #define ETH_TYPE 0xAAAA
 #define MAX_DEVICES 128
 #define PACKET_BUF_SIZE 2048
-#define MAX_PACKETS 1024
+#define MAX_PACKETS 4096
 #define MAX_LINE 21
 #define MAX_FILENAME 21
 #define RTB_ENTRY_NUM 8192
@@ -110,7 +110,8 @@ typedef struct {
 
 /* 包缓冲区 */
 typedef struct {
-    packet_entry_t packets[MAX_PACKETS];
+    packet_entry_t *packets;
+    int capacity;
     int head;
     int tail;
     pthread_mutex_t lock;
