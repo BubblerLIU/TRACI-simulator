@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="560" viewBox="0 0 920 560">
+<style>
+text { font-family: Arial, sans-serif; fill: #1f2933; }
+.title { font-size: 24px; font-weight: 700; }
+.subtitle { font-size: 13px; fill: #52606d; }
+.axis { stroke: #9aa5b1; stroke-width: 1; }
+.grid { stroke: #e4e7eb; stroke-width: 1; }
+.label { font-size: 14px; }
+.value { font-size: 13px; font-weight: 700; }
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="30" y="38" class="title">Switch Forwarded Packet Count</text>
+<text x="30" y="62" class="subtitle">dlrm16_realistic_complete_b.txt    dlrm16_realistic_complete_i.txt</text>
+<line x1="90" y1="462.0" x2="880" y2="462.0" class="grid"/>
+<text x="22" y="466.0" class="label">0</text>
+<line x1="90" y1="386.0" x2="880" y2="386.0" class="grid"/>
+<text x="22" y="390.01574803149606" class="label">1930</text>
+<line x1="90" y1="310.0" x2="880" y2="310.0" class="grid"/>
+<text x="22" y="313.99212598425197" class="label">3861</text>
+<line x1="90" y1="234.0" x2="880" y2="234.0" class="grid"/>
+<text x="22" y="238.007874015748" class="label">5791</text>
+<line x1="90" y1="158.0" x2="880" y2="158.0" class="grid"/>
+<text x="22" y="161.98425196850394" class="label">7722</text>
+<line x1="90" y1="82.0" x2="880" y2="82.0" class="grid"/>
+<text x="22" y="86.0" class="label">9652</text>
+<line x1="90" y1="82" x2="90" y2="462" class="axis"/>
+<line x1="90" y1="462" x2="880" y2="462" class="axis"/>
+<rect x="171.7" y="176.9" width="46" height="285.1" fill="#4c78a8" rx="3"/>
+<text x="194.66666666666666" y="168.8818897637795" class="value" text-anchor="middle">7242</text>
+<rect x="225.7" y="194.9" width="46" height="267.1" fill="#f58518" rx="3"/>
+<text x="248.66666666666666" y="186.87401574803147" class="value" text-anchor="middle">6785</text>
+<text x="221.66666666666666" y="484" class="label" text-anchor="middle">Leaf</text>
+<rect x="435.0" y="367.1" width="46" height="94.9" fill="#4c78a8" rx="3"/>
+<text x="458.0" y="359.11811023622045" class="value" text-anchor="middle">2410</text>
+<rect x="489.0" y="369.8" width="46" height="92.2" fill="#f58518" rx="3"/>
+<text x="512.0" y="361.79527559055117" class="value" text-anchor="middle">2342</text>
+<text x="485.0" y="484" class="label" text-anchor="middle">Spine</text>
+<rect x="698.3" y="82.0" width="46" height="380.0" fill="#4c78a8" rx="3"/>
+<text x="721.3333333333333" y="74.0" class="value" text-anchor="middle">9652</text>
+<rect x="752.3" y="102.7" width="46" height="359.3" fill="#f58518" rx="3"/>
+<text x="775.3333333333333" y="94.6692913385827" class="value" text-anchor="middle">9127</text>
+<text x="748.3333333333333" y="484" class="label" text-anchor="middle">Total</text>
+<text x="30" y="536" class="subtitle">Best total: Baseline 9652 -&gt; ISC 9127 (5.4% fewer forwarded packets)</text>
+<rect x="590" y="22" width="14" height="14" fill="#4c78a8"/>
+<text x="610" y="34" class="label">Baseline</text>
+<rect x="698" y="22" width="14" height="14" fill="#f58518"/>
+<text x="718" y="34" class="label">ISC</text>
+</svg>

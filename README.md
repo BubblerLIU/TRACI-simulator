@@ -1,4 +1,4 @@
-# TRACI 网络结构模拟
+# TRACI 网络模拟器
 
 论文 [TRACI: Network Acceleration of Input-Dynamic Communication for Large-Scale Deep Learning Recommendation Model](https://dl.acm.org/doi/10.1145/3695053.3731105) 的网络结构模拟。
 
@@ -13,7 +13,7 @@
 
 TRACI 通过在交换机内引入 Reduction Table（RTB）和 In-Switch Cache，并引入 `GetReduce` 原语，实现了上述两个复用。
 
-## GetReduce
+### GetReduce
 
 `GetReduce` 原语的请求和回复格式分别为：
 
@@ -27,11 +27,11 @@ TRACI 通过在交换机内引入 Reduction Table（RTB）和 In-Switch Cache，
 - `count`：当前数据包内已经聚合的向量个数（输出复用计数）；
 - `data`：向量数据。
 
-## Reduction Table（RTB）
+### Reduction Table（RTB）
 
 RTB 是存储在交换机里的一张表，用于实现输出复用，其结构和功能如下。
 
-### 条目结构
+#### 条目结构
 
 ![RTB Entry](./assets/RTB_entry.png)
 
@@ -42,7 +42,7 @@ RTB 是存储在交换机里的一张表，用于实现输出复用，其结构�
 - `Waiting count`：当前条目正在等待返回的请求数；
 - `Arrived count`：当前条目已经返回并聚合的请求数。
 
-### 归约逻辑
+#### 归约逻辑
 
 当一条 `GetReduce.req` 到达交换机时，交换机检查 RTB：
 
@@ -57,11 +57,11 @@ RTB 是存储在交换机里的一张表，用于实现输出复用，其结构�
 1. 若 RTB 内有 `Tag` 与当前回复的 `OAddr` 相同的条目，则将当前回复的数据聚合到 RTB 的 `Data` 中，并使 `Waiting count -= 1` 和 `Arrived count += 1`，然后**丢弃当前回复**;
 2. 若 RTB 内没有 `Tag` 与当前回复的 `OAddr` 相同的条目，则执行 Baseline 逻辑。
 
-## In-Switch Cache（ISC）
+### In-Switch Cache（ISC）
 
 ISC 是交换机上的缓存，用于实现输入复用，其结构和功能如下。
 
-### 缓存块结构
+#### 缓存块结构
 
 ![ISC Block](./assets/isc_block.png)
 
@@ -71,7 +71,7 @@ ISC 是交换机上的缓存，用于实现输入复用，其结构和功能如�
 - `Status`：当前块状态，论文中的数据可能分为多片传输，`Status` 可以用于标识传输是否完成，我们的模拟器暂不考虑多片传输的情况，这个字段仅用于标识当前块是否有效；
 - `Data`：缓存的向量数据。
 
-### 缓存逻辑
+#### 缓存逻辑
 
 当一个 `GetReduce.resp` 到达交换机时，交换机检查缓存：
 
@@ -82,4 +82,14 @@ ISC 是交换机上的缓存，用于实现输入复用，其结构和功能如�
 
 当一个 `GetReduce.req` 到达交换机时，**先进行 RTB 条目检查**，然后交换机检查缓存，如果命中 `Tag == IAddr`，则直接用缓存进行回复，不再继续向后传输请求。
 
-**注意，由缓存回复时，要先进行本交换机上的 RTB 归约，然后再向前发送回复。**
+由缓存回复时，要**先进行本交换机上的 RTB 归约**，然后再向前发送回复。
+
+## 项目结构
+
+本项目使用 Docker 容器构建网络拓扑，容器内部用 libpcap 库捕获和发送 packet，实现前面“背景概述”中的逻辑。
+
+容器网络完全运行在第二层（链路层），通过 Ehternet Header 中的
+
+## 使用方法
+
+## 实验结果

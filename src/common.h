@@ -24,8 +24,8 @@ typedef unsigned char u_char;
 #define MAX_PACKETS 1024
 #define MAX_LINE 21
 #define MAX_FILENAME 21
-#define RTB_ENTRY_NUM 64
-#define ISC_ENTRY_NUM 64
+#define RTB_ENTRY_NUM 8192
+#define ISC_ENTRY_NUM 8192
 #define TRACI_TYPE_REQUEST 1
 #define TRACI_TYPE_RESPONSE 2
 

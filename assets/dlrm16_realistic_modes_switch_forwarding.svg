@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="560" viewBox="0 0 920 560">
+<style>
+text { font-family: Arial, sans-serif; fill: #1f2933; }
+.title { font-size: 24px; font-weight: 700; }
+.subtitle { font-size: 13px; fill: #52606d; }
+.axis { stroke: #9aa5b1; stroke-width: 1; }
+.grid { stroke: #e4e7eb; stroke-width: 1; }
+.label { font-size: 14px; }
+.value { font-size: 13px; font-weight: 700; }
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="30" y="38" class="title">Switch Forwarded Packet Count</text>
+<text x="30" y="62" class="subtitle">dlrm16_realistic_b.txt    dlrm16_realistic_i.txt    dlrm16_realistic_r.txt    dlrm16_realistic_t.txt</text>
+<line x1="90" y1="462.0" x2="880" y2="462.0" class="grid"/>
+<text x="22" y="466.0" class="label">0</text>
+<line x1="90" y1="386.0" x2="880" y2="386.0" class="grid"/>
+<text x="22" y="390.01162790697674" class="label">1307</text>
+<line x1="90" y1="310.0" x2="880" y2="310.0" class="grid"/>
+<text x="22" y="314.0232558139535" class="label">2614</text>
+<line x1="90" y1="234.0" x2="880" y2="234.0" class="grid"/>
+<text x="22" y="237.97674418604652" class="label">3922</text>
+<line x1="90" y1="158.0" x2="880" y2="158.0" class="grid"/>
+<text x="22" y="161.98837209302326" class="label">5229</text>
+<line x1="90" y1="82.0" x2="880" y2="82.0" class="grid"/>
+<text x="22" y="86.0" class="label">6536</text>
+<line x1="90" y1="82" x2="90" y2="462" class="axis"/>
+<line x1="90" y1="462" x2="880" y2="462" class="axis"/>
+<rect x="117.7" y="219.5" width="46" height="242.5" fill="#4c78a8" rx="3"/>
+<text x="140.66666666666666" y="211.49999999999997" class="value" text-anchor="middle">4171</text>
+<rect x="171.7" y="193.0" width="46" height="269.0" fill="#f58518" rx="3"/>
+<text x="194.66666666666666" y="185.04651162790697" class="value" text-anchor="middle">4626</text>
+<rect x="225.7" y="366.2" width="46" height="95.8" fill="#54a24b" rx="3"/>
+<text x="248.66666666666666" y="358.1860465116279" class="value" text-anchor="middle">1648</text>
+<rect x="279.7" y="391.0" width="46" height="71.0" fill="#e45756" rx="3"/>
+<text x="302.66666666666663" y="382.95348837209303" class="value" text-anchor="middle">1222</text>
+<text x="221.66666666666666" y="484" class="label" text-anchor="middle">Leaf</text>
+<rect x="381.0" y="382.1" width="46" height="79.9" fill="#4c78a8" rx="3"/>
+<text x="404.0" y="374.1162790697674" class="value" text-anchor="middle">1374</text>
+<rect x="435.0" y="351.0" width="46" height="111.0" fill="#f58518" rx="3"/>
+<text x="458.0" y="342.95348837209303" class="value" text-anchor="middle">1910</text>
+<rect x="489.0" y="432.3" width="46" height="29.7" fill="#54a24b" rx="3"/>
+<text x="512.0" y="424.2906976744186" class="value" text-anchor="middle">511</text>
+<rect x="543.0" y="437.9" width="46" height="24.1" fill="#e45756" rx="3"/>
+<text x="566.0" y="429.87209302325584" class="value" text-anchor="middle">415</text>
+<text x="485.0" y="484" class="label" text-anchor="middle">Spine</text>
+<rect x="644.3" y="139.6" width="46" height="322.4" fill="#4c78a8" rx="3"/>
+<text x="667.3333333333333" y="131.61627906976747" class="value" text-anchor="middle">5545</text>
+<rect x="698.3" y="82.0" width="46" height="380.0" fill="#f58518" rx="3"/>
+<text x="721.3333333333333" y="74.0" class="value" text-anchor="middle">6536</text>
+<rect x="752.3" y="336.5" width="46" height="125.5" fill="#54a24b" rx="3"/>
+<text x="775.3333333333333" y="328.4767441860465" class="value" text-anchor="middle">2159</text>
+<rect x="806.3" y="366.8" width="46" height="95.2" fill="#e45756" rx="3"/>
+<text x="829.3333333333333" y="358.8255813953488" class="value" text-anchor="middle">1637</text>
+<text x="748.3333333333333" y="484" class="label" text-anchor="middle">Total</text>
+<text x="30" y="536" class="subtitle">Best total: Baseline 5545 -&gt; TRACI 1637 (70.5% fewer forwarded packets)</text>
+<rect x="590" y="22" width="14" height="14" fill="#4c78a8"/>
+<text x="610" y="34" class="label">Baseline</text>
+<rect x="698" y="22" width="14" height="14" fill="#f58518"/>
+<text x="718" y="34" class="label">ISC</text>
+<rect x="806" y="22" width="14" height="14" fill="#54a24b"/>
+<text x="826" y="34" class="label">RTB</text>
+<rect x="590" y="46" width="14" height="14" fill="#e45756"/>
+<text x="610" y="58" class="label">TRACI</text>
+</svg>
