@@ -76,7 +76,7 @@ static void parse_pkt(packet_entry_t *entry) {
 
         // 收到 response
         if (traci->traci_type == TRACI_TYPE_RESPONSE) {
-            if (sim_mode == SIM_MODE_TRACI) {
+            if (sim_mode != SIM_MODE_BASELINE) {
                 printf("GPU %s: got a response from GPU %d, "
                     "seq_num=%" PRIu32 ", count=%" PRIu32
                     ", data=%" PRIu32 "\n",

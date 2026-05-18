@@ -94,14 +94,19 @@ static void make_isc_response(eth_header_t *eth, traci_header_t *traci,
     traci->traci_type = TRACI_TYPE_RESPONSE;
 }
 
-static void traci_handle_response(packet_entry_t *entry, eth_header_t *eth,
+static void optimized_handle_response(packet_entry_t *entry, eth_header_t *eth,
     traci_header_t *traci) {
 
-    if (traci->count == 1 && traci->iaddr != 0) {
+    if (sim_mode_has_isc(sim_mode) && traci->count == 1 && traci->iaddr != 0) {
         isc_insert(&isc, traci->iaddr, traci->data);
         printf("Spine %s: ISC inserted iaddr=%" PRIu32
             ", data=%" PRIu32 "\n",
             node_id, traci->iaddr, traci->data);
+    }
+
+    if (!sim_mode_has_rtb(sim_mode)) {
+        baseline_route_packet(entry, eth, traci);
+        return;
     }
 
     rtb_response_result_t result = rtb_reduce_response(&rtb, traci);
@@ -124,27 +129,29 @@ static void traci_handle_response(packet_entry_t *entry, eth_header_t *eth,
 }
 
 /*
- * traci_route_packet - TRACI 模式：RTB 处理后复用 Baseline 转发路径
+ * optimized_route_packet - 按当前优化模式处理包
  */
-static void traci_route_packet(packet_entry_t *entry, eth_header_t *eth,
+static void optimized_route_packet(packet_entry_t *entry, eth_header_t *eth,
     traci_header_t *traci) {
 
     if (traci->traci_type == TRACI_TYPE_REQUEST) {
-        rtb_request_result_t result = rtb_track_request(&rtb, traci, 0);
-        if (result == RTB_REQUEST_BYPASS) {
-            printf("Spine %s: RTB full, bypassed request seq_num=%" PRIu32
-                ", oaddr=%" PRIu32 "\n",
-                node_id, traci->seq_num, traci->oaddr);
+        if (sim_mode_has_rtb(sim_mode)) {
+            rtb_request_result_t result = rtb_track_request(&rtb, traci, 0);
+            if (result == RTB_REQUEST_BYPASS) {
+                printf("Spine %s: RTB full, bypassed request seq_num=%" PRIu32
+                    ", oaddr=%" PRIu32 "\n",
+                    node_id, traci->seq_num, traci->oaddr);
+            }
         }
 
         uint32_t cached_data = 0;
-        if (result == RTB_REQUEST_TRACKED &&
+        if (sim_mode_has_isc(sim_mode) &&
             isc_lookup(&isc, traci->iaddr, &cached_data)) {
             printf("Spine %s: ISC hit iaddr=%" PRIu32
                 ", generated response seq_num=%" PRIu32 "\n",
                 node_id, traci->iaddr, traci->seq_num);
             make_isc_response(eth, traci, cached_data);
-            traci_handle_response(entry, eth, traci);
+            optimized_handle_response(entry, eth, traci);
             return;
         }
 
@@ -153,7 +160,7 @@ static void traci_route_packet(packet_entry_t *entry, eth_header_t *eth,
     }
 
     if (traci->traci_type == TRACI_TYPE_RESPONSE) {
-        traci_handle_response(entry, eth, traci);
+        optimized_handle_response(entry, eth, traci);
         return;
     }
 
@@ -179,8 +186,8 @@ static void parse_pkt(packet_entry_t *entry) {
     traci_header_t *traci =
         (traci_header_t *)(entry->data + sizeof(eth_header_t));
 
-    if (sim_mode == SIM_MODE_TRACI) {
-        traci_route_packet(entry, eth, traci);
+    if (sim_mode != SIM_MODE_BASELINE) {
+        optimized_route_packet(entry, eth, traci);
         return;
     }
 

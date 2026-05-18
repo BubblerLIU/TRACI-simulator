@@ -15,7 +15,7 @@ APP_DIR="/traci"
 
 # 通过目录名选择必需的 workload 集
 usage() {
-    echo "Usage: $0 <WORKLOAD_DIR> [-b|-t] [GPU_START_DELAY_SECONDS]"
+    echo "Usage: $0 <WORKLOAD_DIR> [-b|-r|-i|-t] [GPU_START_DELAY_SECONDS]"
 }
 
 if [ $# -lt 1 ] || [ $# -gt 3 ]; then
@@ -38,7 +38,8 @@ for arg in "$@"; do
         fi
         GPU_START_DELAY="$arg"
         delay_specified=1
-    elif [ "$arg" = "-b" ] || [ "$arg" = "-t" ]; then
+    elif [ "$arg" = "-b" ] || [ "$arg" = "-r" ] ||
+        [ "$arg" = "-i" ] || [ "$arg" = "-t" ]; then
         if [ "$mode_specified" -eq 1 ]; then
             usage
             exit 1

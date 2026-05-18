@@ -236,8 +236,12 @@ int send_packet(net_device_t *dev, const uint8_t *data, uint32_t len) {
     return 0;
 }
 
+static void print_mode_usage(const char *program) {
+    fprintf(stderr, "Usage: %s [-b|-r|-i|-t]\n", program);
+}
+
 /*
- * parse_sim_mode_args - 解析 -b/-t 模式参数
+ * parse_sim_mode_args - 解析 -b/-r/-i/-t 模式参数
  */
 int parse_sim_mode_args(int argc, char **argv, sim_mode_t *mode,
     const char *program) {
@@ -251,22 +255,38 @@ int parse_sim_mode_args(int argc, char **argv, sim_mode_t *mode,
     for (int i = 1; i < argc; ++i) {
         if (strcmp(argv[i], "-b") == 0) {
             if (mode_specified) {
-                fprintf(stderr, "Usage: %s [-b|-t]\n", program);
+                print_mode_usage(program);
                 return -1;
             }
             *mode = SIM_MODE_BASELINE;
             mode_specified = 1;
         }
+        else if (strcmp(argv[i], "-r") == 0) {
+            if (mode_specified) {
+                print_mode_usage(program);
+                return -1;
+            }
+            *mode = SIM_MODE_RTB;
+            mode_specified = 1;
+        }
+        else if (strcmp(argv[i], "-i") == 0) {
+            if (mode_specified) {
+                print_mode_usage(program);
+                return -1;
+            }
+            *mode = SIM_MODE_ISC;
+            mode_specified = 1;
+        }
         else if (strcmp(argv[i], "-t") == 0) {
             if (mode_specified) {
-                fprintf(stderr, "Usage: %s [-b|-t]\n", program);
+                print_mode_usage(program);
                 return -1;
             }
             *mode = SIM_MODE_TRACI;
             mode_specified = 1;
         }
         else {
-            fprintf(stderr, "Usage: %s [-b|-t]\n", program);
+            print_mode_usage(program);
             return -1;
         }
     }
@@ -275,7 +295,25 @@ int parse_sim_mode_args(int argc, char **argv, sim_mode_t *mode,
 }
 
 const char *sim_mode_name(sim_mode_t mode) {
-    return mode == SIM_MODE_TRACI ? "TRACI" : "Baseline";
+    switch (mode) {
+        case SIM_MODE_RTB:
+            return "RTB";
+        case SIM_MODE_ISC:
+            return "ISC";
+        case SIM_MODE_TRACI:
+            return "TRACI";
+        case SIM_MODE_BASELINE:
+        default:
+            return "Baseline";
+    }
+}
+
+int sim_mode_has_rtb(sim_mode_t mode) {
+    return (mode & SIM_MODE_RTB) != 0;
+}
+
+int sim_mode_has_isc(sim_mode_t mode) {
+    return (mode & SIM_MODE_ISC) != 0;
 }
 
 /*

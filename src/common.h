@@ -49,7 +49,9 @@ typedef struct {
 /* 模拟模式 */
 typedef enum {
     SIM_MODE_BASELINE = 0,
-    SIM_MODE_TRACI = 1,
+    SIM_MODE_RTB = 1 << 0,
+    SIM_MODE_ISC = 1 << 1,
+    SIM_MODE_TRACI = SIM_MODE_RTB | SIM_MODE_ISC,
 } sim_mode_t;
 
 /* RTB 表项 */
@@ -124,6 +126,8 @@ int send_packet(net_device_t *dev, const uint8_t *data, uint32_t len);
 int parse_sim_mode_args(int argc, char **argv, sim_mode_t *mode,
     const char *program);
 const char *sim_mode_name(sim_mode_t mode);
+int sim_mode_has_rtb(sim_mode_t mode);
+int sim_mode_has_isc(sim_mode_t mode);
 void rtb_init(rtb_table_t *rtb);
 rtb_request_result_t rtb_track_request(rtb_table_t *rtb,
     const traci_header_t *traci, int can_stall);
