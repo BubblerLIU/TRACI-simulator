@@ -247,7 +247,13 @@ static packet_result_t parse_pkt(packet_entry_t *entry) {
  * leaf - 执行 Leaf Switch 的行为：接收和转发包 
  */
 void leaf() {
-    packet_entry_t stalled_packets[RTB_ENTRY_NUM];
+    packet_entry_t *stalled_packets =
+        calloc(RTB_ENTRY_NUM, sizeof(*stalled_packets));
+    if (stalled_packets == NULL) {
+        fprintf(stderr, "Leaf %s: failed to allocate stalled packet buffer\n",
+            node_id);
+        return;
+    }
     int stalled_count = 0;
 
     while (!stop) {
@@ -302,6 +308,8 @@ void leaf() {
             usleep(1000);
         }
     }
+
+    free(stalled_packets);
 }
 
 int main(int argc, char **argv)

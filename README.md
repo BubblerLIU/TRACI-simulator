@@ -86,9 +86,33 @@ ISC 是交换机上的缓存，用于实现输入复用，其结构和功能如�
 
 ## 项目结构
 
-本项目使用 Docker 容器构建网络拓扑，容器内部用 libpcap 库捕获和发送 packet，实现前面“背景概述”中的逻辑。
+（终端树状图）
 
-容器网络完全运行在第二层（链路层），通过 Ehternet Header 中的
+## 实现方案
+
+本项目使用 Docker 容器构建网络拓扑，容器内部用 libpcap 库捕获和发送 packet，实现前面“背景概述”中的逻辑。根据论文中的实验，拓扑结构采用胖树拓扑（fat-tree topology）。
+
+### Ethernet Header
+
+容器网络完全运行在第二层（链路层），通过 Ehternet Header 中自定义的 MAC 地址确定转发路径。MAC 地址规则如下：
+
+（这里替换成 MAC 规则表）
+
+交换机通过计算知道接收到的包该被转发到哪里，leaf switch 在决定发往哪个 spine switch 时，是通过对 TRACI Header 中 `OAddr` 字段的哈希得到的。
+
+### TRACI Header
+
+TRACI Header 是实现 TRACI 协议逻辑的头部，结构如下图所示：
+
+（TRACI Header 图）
+
+### 内存地址系统
+
+论文中的实验环境模拟了 NVLink 系统的全局共享内存地址，为了用 Docker 模拟这一点设计了 32 位的“全局地址”，结构如下：
+
+（32位全局地址图示）
+
+在 workload 中，每个请求条目的结构为 `Input_GPU Input_local_addr Output_loacl_addr`，程序读取后会自动将其封装为 32 位的“全局地址”填充到 TRACI Header 的 `IAddr` 和 `OAddr` 字段中。
 
 ## 使用方法
 
