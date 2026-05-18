@@ -130,6 +130,9 @@ static void make_isc_response(eth_header_t *eth, traci_header_t *traci,
     traci->traci_type = TRACI_TYPE_RESPONSE;
 }
 
+/*
+ * traci_handle_response - 使用 TRACI 模式处理 response 包
+ */
 static packet_result_t traci_handle_response(packet_entry_t *entry,
     eth_header_t *eth, traci_header_t *traci) {
 
