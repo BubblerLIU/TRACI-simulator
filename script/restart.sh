@@ -168,6 +168,59 @@ start_node() {
         "exec stdbuf -oL -eL '$APP_DIR/bin/$binary' '$mode_arg' > '$APP_DIR/logs/$container.log' 2>&1"
 }
 
+gpu_workload_complete() {
+    local gpu_id="$1"
+    local container="gpu$gpu_id"
+    local log_file="$APP_DIR/logs/$container.log"
+
+    docker exec "$container" sh -c \
+        "test -f '$log_file' && grep -q 'workload complete' '$log_file'"
+}
+
+wait_for_gpu_completion() {
+    local all_done
+    local completed
+    local start
+    local elapsed
+    local timeout
+
+    echo "Waiting for all GPUs to receive responses..."
+    start="$(date +%s)"
+    timeout="${TEST_WAIT_TIMEOUT_SECONDS:-600}"
+    while true; do
+        all_done=1
+        completed=0
+
+        for ((i=0; i<GPU_NUM; i++)); do
+            if gpu_workload_complete "$i"; then
+                completed=$((completed + 1))
+            else
+                all_done=0
+            fi
+        done
+
+        if [ "$all_done" -eq 1 ]; then
+            echo "All GPUs completed workload responses."
+            return
+        fi
+
+        elapsed=$(($(date +%s) - start))
+        if [ "$elapsed" -ge "$timeout" ]; then
+            echo "Error: timed out after ${timeout}s waiting for responses."
+            echo "Incomplete GPUs:"
+            for ((i=0; i<GPU_NUM; i++)); do
+                if ! gpu_workload_complete "$i"; then
+                    echo "  gpu$i"
+                fi
+            done
+            return 1
+        fi
+
+        echo "Completed GPUs: $completed/$GPU_NUM"
+        sleep 2
+    done
+}
+
 echo "======== FAT-TREE-RESTART ========"
 echo "$GPU_NUM GPUs, $LEAF_NUM leaf switches, $SPINE_NUM spine switches"
 echo "$GPU_PER_LEAF GPUs under a leaf switch"
@@ -231,3 +284,5 @@ done
 
 echo "Restarted test programs"
 echo "Logs are stored in each container under $APP_DIR/logs/<container>.log"
+wait_for_gpu_completion
+echo "Simulation complete. You can now run script/logs.sh to save logs."

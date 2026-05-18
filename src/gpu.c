@@ -16,6 +16,10 @@
 static FILE *workload = NULL;
 static uint32_t next_seq = 0;
 static uint32_t next_line = 0;
+static uint32_t sent_requests = 0;
+static uint32_t received_responses = 0;
+static int workload_exhausted = 0;
+static int completion_reported = 0;
 static sim_mode_t sim_mode = SIM_MODE_BASELINE;
 
 /*
@@ -76,6 +80,7 @@ static void parse_pkt(packet_entry_t *entry) {
 
         // 收到 response
         if (traci->traci_type == TRACI_TYPE_RESPONSE) {
+            ++received_responses;
             if (sim_mode != SIM_MODE_BASELINE) {
                 printf("GPU %s: got a response from GPU %d, "
                     "seq_num=%" PRIu32 ", count=%" PRIu32
@@ -87,6 +92,13 @@ static void parse_pkt(packet_entry_t *entry) {
                 printf("GPU %s: got a response from GPU %d, "
                     "seq_num=%" PRIu32 "\n",
                     node_id, src_id, traci->seq_num);
+            }
+            if (workload_exhausted && !completion_reported &&
+                received_responses >= sent_requests) {
+                completion_reported = 1;
+                printf("GPU %s: workload complete, sent=%" PRIu32
+                    ", received=%" PRIu32 "\n",
+                    node_id, sent_requests, received_responses);
             }
             return;
         }
@@ -204,6 +216,7 @@ void gpu() {
             traci_header_t *traci =
                 (traci_header_t *)(pkt + sizeof(eth_header_t));
             if (send_packet(gpu_dev, pkt, TRACI_PKT_LEN) == 0) {
+                ++sent_requests;
                 printf("GPU %s: sent a request to GPU %" PRIu8 ", "
                     "seq_num=%" PRIu32 "\n",
                     node_id, input_gpu, traci->seq_num);
@@ -214,6 +227,16 @@ void gpu() {
         // 没事干就休息一会儿
         if (!operation) {
             usleep(1000);
+        }
+
+        if (workload != NULL && !workload_exhausted && feof(workload)) {
+            workload_exhausted = 1;
+            if (!completion_reported && received_responses >= sent_requests) {
+                completion_reported = 1;
+                printf("GPU %s: workload complete, sent=%" PRIu32
+                    ", received=%" PRIu32 "\n",
+                    node_id, sent_requests, received_responses);
+            }
         }
     }
 }
