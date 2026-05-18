@@ -21,6 +21,7 @@ fi
 
 GPU_START_DELAY=3
 WORKLOAD_SET=""
+WORKLOAD_EXPLICIT=0
 RUN_MODE="-b"
 delay_specified=0
 mode_specified=0
@@ -43,6 +44,7 @@ for arg in "$@"; do
         mode_specified=1
     elif [ -z "$WORKLOAD_SET" ]; then
         WORKLOAD_SET="$arg"
+        WORKLOAD_EXPLICIT=1
     else
         usage
         exit 1
@@ -269,10 +271,14 @@ for ((i=0; i<SPINE_NUM; i++)); do
     stop_program "spine$i" "spine"
 done
 
-echo "Copying workloads and clearing logs..."
-for ((i=0; i<GPU_NUM; i++)); do
-    copy_workload_if_present "$i"
-done
+if [ "$WORKLOAD_EXPLICIT" -eq 1 ]; then
+    echo "Copying workloads and clearing logs..."
+    for ((i=0; i<GPU_NUM; i++)); do
+        copy_workload_if_present "$i"
+    done
+else
+    echo "Reusing previous workloads and clearing logs..."
+fi
 for ((i=0; i<GPU_NUM; i++)); do
     clear_log "gpu$i"
 done

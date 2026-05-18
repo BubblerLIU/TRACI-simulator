@@ -1,0 +1,2618 @@
+===== gpu0 =====
+Hello from GPU 0, 8 GPUs per Leaf, 2 Spines
+GPU 0: mode=RTB
+GPU 0: Initialized 1 network devices
+GPU 0: wait 3 seconds before sending requests
+GPU 0: Starting capture on gpu0-eth0
+GPU 0: sent a request to GPU 0, seq_num=0
+GPU 0: sent a request to GPU 7, seq_num=1
+GPU 0: sent a request to GPU 12, seq_num=2
+GPU 0: sent a request to GPU 12, seq_num=3
+GPU 0: sent a request to GPU 8, seq_num=4
+GPU 0: sent a request to GPU 12, seq_num=5
+GPU 0: sent a request to GPU 1, seq_num=6
+GPU 0: sent a request to GPU 10, seq_num=7
+GPU 0: sent a request to GPU 11, seq_num=8
+GPU 0: sent a request to GPU 0, seq_num=9
+GPU 0: sent a request to GPU 13, seq_num=10
+GPU 0: sent a request to GPU 14, seq_num=11
+GPU 0: sent a request to GPU 0, seq_num=12
+GPU 0: sent a request to GPU 1, seq_num=13
+GPU 0: sent a request to GPU 5, seq_num=14
+GPU 0: sent a request to GPU 15, seq_num=15
+GPU 0: sent a request to GPU 4, seq_num=16
+GPU 0: sent a request to GPU 5, seq_num=17
+GPU 0: sent a request to GPU 8, seq_num=18
+GPU 0: sent a request to GPU 9, seq_num=19
+GPU 0: sent a request to GPU 10, seq_num=20
+GPU 0: sent a request to GPU 11, seq_num=21
+GPU 0: sent a request to GPU 3, seq_num=22
+GPU 0: sent a request to GPU 8, seq_num=23
+GPU 0: got a request from GPU 0, seq_num=0
+GPU 0: got a request from GPU 0, seq_num=9
+GPU 0: got a request from GPU 0, seq_num=12
+GPU 0: got a request from GPU 2, seq_num=0
+GPU 0: got a request from GPU 1, seq_num=4
+GPU 0: got a request from GPU 1, seq_num=23
+GPU 0: got a request from GPU 2, seq_num=20
+GPU 0: got a request from GPU 5, seq_num=1
+GPU 0: got a request from GPU 5, seq_num=14
+GPU 0: got a request from GPU 6, seq_num=5
+GPU 0: got a request from GPU 6, seq_num=11
+GPU 0: got a request from GPU 9, seq_num=17
+GPU 0: got a request from GPU 10, seq_num=15
+GPU 0: got a request from GPU 8, seq_num=9
+GPU 0: got a request from GPU 8, seq_num=12
+GPU 0: got a request from GPU 14, seq_num=21
+GPU 0: got a request from GPU 12, seq_num=22
+GPU 0: got a request from GPU 14, seq_num=5
+GPU 0: got a request from GPU 12, seq_num=18
+GPU 0: got a response from GPU 8, seq_num=16, count=3, data=28813
+GPU 0: got a response from GPU 15, seq_num=12, count=4, data=5377
+GPU 0: got a response from GPU 12, seq_num=0, count=3, data=17669
+GPU 0: got a response from GPU 12, seq_num=3, count=4, data=4106
+GPU 0: got a response from GPU 11, seq_num=19, count=5, data=46314
+GPU 0: got a response from GPU 11, seq_num=7, count=5, data=45896
+GPU 0: workload complete, sent=24, received=24
+
+===== gpu1 =====
+Hello from GPU 1, 8 GPUs per Leaf, 2 Spines
+GPU 1: mode=RTB
+GPU 1: Initialized 1 network devices
+GPU 1: wait 3 seconds before sending requests
+GPU 1: Starting capture on gpu1-eth0
+GPU 1: sent a request to GPU 5, seq_num=0
+GPU 1: sent a request to GPU 4, seq_num=1
+GPU 1: sent a request to GPU 11, seq_num=2
+GPU 1: sent a request to GPU 8, seq_num=3
+GPU 1: sent a request to GPU 0, seq_num=4
+GPU 1: sent a request to GPU 5, seq_num=5
+GPU 1: sent a request to GPU 11, seq_num=6
+GPU 1: sent a request to GPU 12, seq_num=7
+GPU 1: sent a request to GPU 10, seq_num=8
+GPU 1: sent a request to GPU 15, seq_num=9
+GPU 1: sent a request to GPU 8, seq_num=10
+GPU 1: sent a request to GPU 12, seq_num=11
+GPU 1: sent a request to GPU 2, seq_num=12
+GPU 1: sent a request to GPU 4, seq_num=13
+GPU 1: sent a request to GPU 9, seq_num=14
+GPU 1: sent a request to GPU 5, seq_num=15
+GPU 1: sent a request to GPU 9, seq_num=16
+GPU 1: sent a request to GPU 8, seq_num=17
+GPU 1: sent a request to GPU 9, seq_num=18
+GPU 1: sent a request to GPU 8, seq_num=19
+GPU 1: sent a request to GPU 13, seq_num=20
+GPU 1: sent a request to GPU 1, seq_num=21
+GPU 1: sent a request to GPU 2, seq_num=22
+GPU 1: sent a request to GPU 0, seq_num=23
+GPU 1: got a request from GPU 0, seq_num=6
+GPU 1: got a request from GPU 0, seq_num=13
+GPU 1: got a request from GPU 1, seq_num=21
+GPU 1: got a request from GPU 3, seq_num=1
+GPU 1: got a request from GPU 2, seq_num=7
+GPU 1: got a request from GPU 2, seq_num=15
+GPU 1: got a request from GPU 2, seq_num=18
+GPU 1: got a request from GPU 2, seq_num=22
+GPU 1: got a request from GPU 4, seq_num=9
+GPU 1: got a request from GPU 4, seq_num=10
+GPU 1: got a request from GPU 4, seq_num=13
+GPU 1: got a request from GPU 4, seq_num=17
+GPU 1: got a request from GPU 4, seq_num=22
+GPU 1: got a request from GPU 3, seq_num=18
+GPU 1: got a request from GPU 5, seq_num=5
+GPU 1: got a request from GPU 5, seq_num=15
+GPU 1: got a request from GPU 7, seq_num=1
+GPU 1: got a request from GPU 7, seq_num=3
+GPU 1: got a request from GPU 5, seq_num=21
+GPU 1: got a request from GPU 7, seq_num=9
+GPU 1: got a request from GPU 7, seq_num=10
+GPU 1: got a request from GPU 7, seq_num=14
+GPU 1: got a request from GPU 7, seq_num=17
+GPU 1: got a request from GPU 7, seq_num=19
+GPU 1: got a request from GPU 7, seq_num=22
+GPU 1: got a request from GPU 6, seq_num=12
+GPU 1: got a request from GPU 6, seq_num=15
+GPU 1: got a request from GPU 6, seq_num=18
+GPU 1: got a request from GPU 9, seq_num=18
+GPU 1: got a request from GPU 10, seq_num=2
+GPU 1: got a request from GPU 9, seq_num=0
+GPU 1: got a request from GPU 9, seq_num=4
+GPU 1: got a request from GPU 9, seq_num=5
+GPU 1: got a request from GPU 9, seq_num=8
+GPU 1: got a request from GPU 10, seq_num=18
+GPU 1: got a request from GPU 10, seq_num=20
+GPU 1: got a request from GPU 10, seq_num=22
+GPU 1: got a request from GPU 8, seq_num=4
+GPU 1: got a request from GPU 8, seq_num=13
+GPU 1: got a request from GPU 8, seq_num=22
+GPU 1: got a request from GPU 11, seq_num=0
+GPU 1: got a request from GPU 11, seq_num=1
+GPU 1: got a request from GPU 11, seq_num=19
+GPU 1: got a request from GPU 13, seq_num=7
+GPU 1: got a request from GPU 13, seq_num=12
+GPU 1: got a request from GPU 15, seq_num=9
+GPU 1: got a request from GPU 15, seq_num=10
+GPU 1: got a request from GPU 15, seq_num=17
+GPU 1: got a request from GPU 15, seq_num=19
+GPU 1: got a request from GPU 11, seq_num=18
+GPU 1: got a response from GPU 13, seq_num=19, count=5, data=31777
+GPU 1: got a response from GPU 12, seq_num=7, count=5, data=18394
+GPU 1: got a request from GPU 13, seq_num=5
+GPU 1: got a request from GPU 13, seq_num=20
+GPU 1: got a request from GPU 14, seq_num=4
+GPU 1: got a request from GPU 14, seq_num=18
+GPU 1: got a request from GPU 12, seq_num=10
+GPU 1: got a request from GPU 15, seq_num=14
+GPU 1: got a response from GPU 9, seq_num=12, count=4, data=32202
+GPU 1: got a response from GPU 9, seq_num=16, count=3, data=30184
+GPU 1: got a response from GPU 11, seq_num=0, count=3, data=16688
+GPU 1: got a response from GPU 11, seq_num=3, count=4, data=18712
+GPU 1: workload complete, sent=24, received=24
+
+===== gpu2 =====
+Hello from GPU 2, 8 GPUs per Leaf, 2 Spines
+GPU 2: mode=RTB
+GPU 2: Initialized 1 network devices
+GPU 2: wait 3 seconds before sending requests
+GPU 2: Starting capture on gpu2-eth0
+GPU 2: sent a request to GPU 0, seq_num=0
+GPU 2: sent a request to GPU 12, seq_num=1
+GPU 2: sent a request to GPU 10, seq_num=2
+GPU 2: sent a request to GPU 11, seq_num=3
+GPU 2: sent a request to GPU 12, seq_num=4
+GPU 2: sent a request to GPU 13, seq_num=5
+GPU 2: sent a request to GPU 8, seq_num=6
+GPU 2: sent a request to GPU 1, seq_num=7
+GPU 2: sent a request to GPU 5, seq_num=8
+GPU 2: sent a request to GPU 2, seq_num=9
+GPU 2: sent a request to GPU 3, seq_num=10
+GPU 2: sent a request to GPU 4, seq_num=11
+GPU 2: sent a request to GPU 5, seq_num=12
+GPU 2: sent a request to GPU 8, seq_num=13
+GPU 2: sent a request to GPU 7, seq_num=14
+GPU 2: sent a request to GPU 1, seq_num=15
+GPU 2: sent a request to GPU 8, seq_num=16
+GPU 2: sent a request to GPU 13, seq_num=17
+GPU 2: sent a request to GPU 1, seq_num=18
+GPU 2: sent a request to GPU 15, seq_num=19
+GPU 2: sent a request to GPU 0, seq_num=20
+GPU 2: sent a request to GPU 5, seq_num=21
+GPU 2: sent a request to GPU 1, seq_num=22
+GPU 2: sent a request to GPU 12, seq_num=23
+GPU 2: got a request from GPU 1, seq_num=12
+GPU 2: got a request from GPU 1, seq_num=22
+GPU 2: got a request from GPU 2, seq_num=9
+GPU 2: got a request from GPU 4, seq_num=18
+GPU 2: got a request from GPU 3, seq_num=19
+GPU 2: got a request from GPU 6, seq_num=0
+GPU 2: got a request from GPU 5, seq_num=17
+GPU 2: got a request from GPU 7, seq_num=4
+GPU 2: got a request from GPU 8, seq_num=0
+GPU 2: got a response from GPU 5, seq_num=7, count=5, data=31721
+GPU 2: got a request from GPU 9, seq_num=22
+GPU 2: got a request from GPU 8, seq_num=7
+GPU 2: got a request from GPU 11, seq_num=10
+GPU 2: got a request from GPU 15, seq_num=3
+GPU 2: got a request from GPU 14, seq_num=9
+GPU 2: got a request from GPU 11, seq_num=13
+GPU 2: got a request from GPU 12, seq_num=21
+GPU 2: got a response from GPU 13, seq_num=16, count=3, data=4967
+GPU 2: got a response from GPU 12, seq_num=19, count=5, data=31986
+GPU 2: got a request from GPU 13, seq_num=21
+GPU 2: got a request from GPU 12, seq_num=7
+GPU 2: got a response from GPU 8, seq_num=12, count=4, data=29662
+GPU 2: got a response from GPU 12, seq_num=0, count=3, data=4718
+GPU 2: got a response from GPU 11, seq_num=3, count=4, data=43025
+GPU 2: workload complete, sent=24, received=24
+
+===== gpu3 =====
+Hello from GPU 3, 8 GPUs per Leaf, 2 Spines
+GPU 3: mode=RTB
+GPU 3: Initialized 1 network devices
+GPU 3: wait 3 seconds before sending requests
+GPU 3: Starting capture on gpu3-eth0
+GPU 3: sent a request to GPU 12, seq_num=0
+GPU 3: sent a request to GPU 1, seq_num=1
+GPU 3: sent a request to GPU 9, seq_num=2
+GPU 3: sent a request to GPU 14, seq_num=3
+GPU 3: sent a request to GPU 15, seq_num=4
+GPU 3: sent a request to GPU 3, seq_num=5
+GPU 3: sent a request to GPU 12, seq_num=6
+GPU 3: sent a request to GPU 3, seq_num=7
+GPU 3: sent a request to GPU 8, seq_num=8
+GPU 3: sent a request to GPU 13, seq_num=9
+GPU 3: sent a request to GPU 6, seq_num=10
+GPU 3: sent a request to GPU 7, seq_num=11
+GPU 3: sent a request to GPU 8, seq_num=12
+GPU 3: sent a request to GPU 9, seq_num=13
+GPU 3: sent a request to GPU 10, seq_num=14
+GPU 3: sent a request to GPU 11, seq_num=15
+GPU 3: sent a request to GPU 7, seq_num=16
+GPU 3: sent a request to GPU 14, seq_num=17
+GPU 3: sent a request to GPU 1, seq_num=18
+GPU 3: sent a request to GPU 2, seq_num=19
+GPU 3: sent a request to GPU 3, seq_num=20
+GPU 3: sent a request to GPU 8, seq_num=21
+GPU 3: sent a request to GPU 5, seq_num=22
+GPU 3: sent a request to GPU 5, seq_num=23
+GPU 3: got a request from GPU 0, seq_num=22
+GPU 3: got a request from GPU 3, seq_num=5
+GPU 3: got a request from GPU 3, seq_num=7
+GPU 3: got a request from GPU 2, seq_num=10
+GPU 3: got a request from GPU 4, seq_num=5
+GPU 3: got a request from GPU 3, seq_num=20
+GPU 3: got a request from GPU 6, seq_num=1
+GPU 3: got a request from GPU 5, seq_num=16
+GPU 3: got a request from GPU 10, seq_num=3
+GPU 3: got a request from GPU 8, seq_num=8
+GPU 3: got a request from GPU 8, seq_num=21
+GPU 3: got a request from GPU 11, seq_num=2
+GPU 3: got a request from GPU 15, seq_num=4
+GPU 3: got a request from GPU 14, seq_num=19
+GPU 3: got a request from GPU 15, seq_num=18
+GPU 3: got a request from GPU 11, seq_num=15
+GPU 3: got a response from GPU 14, seq_num=16, count=3, data=18573
+GPU 3: got a response from GPU 12, seq_num=0, count=3, data=3549
+GPU 3: got a response from GPU 12, seq_num=3, count=4, data=31148
+GPU 3: got a response from GPU 8, seq_num=19, count=5, data=45547
+GPU 3: got a response from GPU 13, seq_num=7, count=5, data=33279
+GPU 3: got a response from GPU 11, seq_num=12, count=4, data=43184
+GPU 3: workload complete, sent=24, received=24
+
+===== gpu4 =====
+Hello from GPU 4, 8 GPUs per Leaf, 2 Spines
+GPU 4: mode=RTB
+GPU 4: Initialized 1 network devices
+GPU 4: wait 3 seconds before sending requests
+GPU 4: Starting capture on gpu4-eth0
+GPU 4: sent a request to GPU 12, seq_num=0
+GPU 4: sent a request to GPU 13, seq_num=1
+GPU 4: sent a request to GPU 8, seq_num=2
+GPU 4: sent a request to GPU 8, seq_num=3
+GPU 4: sent a request to GPU 13, seq_num=4
+GPU 4: sent a request to GPU 3, seq_num=5
+GPU 4: sent a request to GPU 7, seq_num=6
+GPU 4: sent a request to GPU 8, seq_num=7
+GPU 4: sent a request to GPU 7, seq_num=8
+GPU 4: sent a request to GPU 1, seq_num=9
+GPU 4: sent a request to GPU 1, seq_num=10
+GPU 4: sent a request to GPU 8, seq_num=11
+GPU 4: sent a request to GPU 11, seq_num=12
+GPU 4: sent a request to GPU 1, seq_num=13
+GPU 4: sent a request to GPU 6, seq_num=14
+GPU 4: sent a request to GPU 11, seq_num=15
+GPU 4: sent a request to GPU 6, seq_num=16
+GPU 4: sent a request to GPU 1, seq_num=17
+GPU 4: sent a request to GPU 2, seq_num=18
+GPU 4: sent a request to GPU 5, seq_num=19
+GPU 4: sent a request to GPU 6, seq_num=20
+GPU 4: sent a request to GPU 7, seq_num=21
+GPU 4: sent a request to GPU 1, seq_num=22
+GPU 4: sent a request to GPU 5, seq_num=23
+GPU 4: got a request from GPU 0, seq_num=16
+GPU 4: got a request from GPU 1, seq_num=1
+GPU 4: got a request from GPU 1, seq_num=13
+GPU 4: got a request from GPU 2, seq_num=11
+GPU 4: got a response from GPU 6, seq_num=16, count=3, data=30631
+GPU 4: got a response from GPU 5, seq_num=19, count=5, data=30547
+GPU 4: got a request from GPU 14, seq_num=7
+GPU 4: got a request from GPU 14, seq_num=20
+GPU 4: got a request from GPU 12, seq_num=13
+GPU 4: got a request from GPU 15, seq_num=22
+GPU 4: got a response from GPU 8, seq_num=7, count=5, data=18638
+GPU 4: got a response from GPU 13, seq_num=3, count=4, data=20626
+GPU 4: got a response from GPU 12, seq_num=0, count=3, data=30443
+GPU 4: got a response from GPU 11, seq_num=12, count=4, data=20958
+GPU 4: workload complete, sent=24, received=24
+
+===== gpu5 =====
+Hello from GPU 5, 8 GPUs per Leaf, 2 Spines
+GPU 5: mode=RTB
+GPU 5: Initialized 1 network devices
+GPU 5: wait 3 seconds before sending requests
+GPU 5: Starting capture on gpu5-eth0
+GPU 5: sent a request to GPU 5, seq_num=0
+GPU 5: sent a request to GPU 0, seq_num=1
+GPU 5: sent a request to GPU 7, seq_num=2
+GPU 5: sent a request to GPU 8, seq_num=3
+GPU 5: sent a request to GPU 5, seq_num=4
+GPU 5: sent a request to GPU 1, seq_num=5
+GPU 5: sent a request to GPU 5, seq_num=6
+GPU 5: sent a request to GPU 12, seq_num=7
+GPU 5: sent a request to GPU 6, seq_num=8
+GPU 5: sent a request to GPU 11, seq_num=9
+GPU 5: sent a request to GPU 12, seq_num=10
+GPU 5: sent a request to GPU 5, seq_num=11
+GPU 5: sent a request to GPU 11, seq_num=12
+GPU 5: sent a request to GPU 15, seq_num=13
+GPU 5: sent a request to GPU 0, seq_num=14
+GPU 5: sent a request to GPU 1, seq_num=15
+GPU 5: sent a request to GPU 3, seq_num=16
+GPU 5: sent a request to GPU 2, seq_num=17
+GPU 5: sent a request to GPU 12, seq_num=18
+GPU 5: sent a request to GPU 8, seq_num=19
+GPU 5: sent a request to GPU 12, seq_num=20
+GPU 5: sent a request to GPU 1, seq_num=21
+GPU 5: sent a request to GPU 5, seq_num=22
+GPU 5: sent a request to GPU 12, seq_num=23
+GPU 5: got a request from GPU 0, seq_num=14
+GPU 5: got a request from GPU 0, seq_num=17
+GPU 5: got a request from GPU 1, seq_num=0
+GPU 5: got a request from GPU 1, seq_num=5
+GPU 5: got a request from GPU 1, seq_num=15
+GPU 5: got a request from GPU 2, seq_num=8
+GPU 5: got a request from GPU 2, seq_num=12
+GPU 5: got a request from GPU 2, seq_num=21
+GPU 5: got a request from GPU 4, seq_num=19
+GPU 5: got a request from GPU 4, seq_num=23
+GPU 5: got a request from GPU 3, seq_num=22
+GPU 5: got a request from GPU 3, seq_num=23
+GPU 5: got a request from GPU 5, seq_num=0
+GPU 5: got a request from GPU 7, seq_num=0
+GPU 5: got a request from GPU 5, seq_num=4
+GPU 5: got a request from GPU 5, seq_num=6
+GPU 5: got a request from GPU 5, seq_num=11
+GPU 5: got a request from GPU 5, seq_num=22
+GPU 5: got a request from GPU 6, seq_num=6
+GPU 5: got a request from GPU 7, seq_num=11
+GPU 5: got a request from GPU 7, seq_num=15
+GPU 5: got a request from GPU 7, seq_num=18
+GPU 5: got a request from GPU 7, seq_num=20
+GPU 5: got a request from GPU 6, seq_num=21
+GPU 5: got a request from GPU 6, seq_num=22
+GPU 5: got a request from GPU 10, seq_num=5
+GPU 5: got a request from GPU 8, seq_num=1
+GPU 5: got a response from GPU 5, seq_num=0, count=3, data=17124
+GPU 5: got a request from GPU 9, seq_num=6
+GPU 5: got a request from GPU 9, seq_num=7
+GPU 5: got a request from GPU 8, seq_num=3
+GPU 5: got a request from GPU 8, seq_num=10
+GPU 5: got a request from GPU 8, seq_num=19
+GPU 5: got a request from GPU 11, seq_num=7
+GPU 5: got a request from GPU 15, seq_num=2
+GPU 5: got a request from GPU 13, seq_num=9
+GPU 5: got a request from GPU 13, seq_num=11
+GPU 5: got a request from GPU 13, seq_num=13
+GPU 5: got a request from GPU 15, seq_num=7
+GPU 5: got a request from GPU 13, seq_num=14
+GPU 5: got a request from GPU 13, seq_num=16
+GPU 5: got a request from GPU 14, seq_num=8
+GPU 5: got a request from GPU 14, seq_num=12
+GPU 5: got a request from GPU 12, seq_num=14
+GPU 5: got a request from GPU 12, seq_num=19
+GPU 5: got a response from GPU 8, seq_num=3, count=4, data=17940
+GPU 5: got a response from GPU 12, seq_num=19, count=5, data=31742
+GPU 5: got a request from GPU 13, seq_num=6
+GPU 5: got a request from GPU 12, seq_num=1
+GPU 5: got a request from GPU 13, seq_num=22
+GPU 5: got a request from GPU 12, seq_num=17
+GPU 5: got a response from GPU 12, seq_num=16, count=3, data=16820
+GPU 5: got a response from GPU 11, seq_num=7, count=5, data=33814
+GPU 5: got a response from GPU 11, seq_num=12, count=4, data=44943
+GPU 5: workload complete, sent=24, received=24
+
+===== gpu6 =====
+Hello from GPU 6, 8 GPUs per Leaf, 2 Spines
+GPU 6: mode=RTB
+GPU 6: Initialized 1 network devices
+GPU 6: wait 3 seconds before sending requests
+GPU 6: Starting capture on gpu6-eth0
+GPU 6: sent a request to GPU 2, seq_num=0
+GPU 6: sent a request to GPU 3, seq_num=1
+GPU 6: sent a request to GPU 6, seq_num=2
+GPU 6: sent a request to GPU 12, seq_num=3
+GPU 6: sent a request to GPU 11, seq_num=4
+GPU 6: sent a request to GPU 0, seq_num=5
+GPU 6: sent a request to GPU 5, seq_num=6
+GPU 6: sent a request to GPU 12, seq_num=7
+GPU 6: sent a request to GPU 13, seq_num=8
+GPU 6: sent a request to GPU 14, seq_num=9
+GPU 6: sent a request to GPU 12, seq_num=10
+GPU 6: sent a request to GPU 0, seq_num=11
+GPU 6: sent a request to GPU 1, seq_num=12
+GPU 6: sent a request to GPU 8, seq_num=13
+GPU 6: sent a request to GPU 12, seq_num=14
+GPU 6: sent a request to GPU 1, seq_num=15
+GPU 6: sent a request to GPU 8, seq_num=16
+GPU 6: sent a request to GPU 12, seq_num=17
+GPU 6: sent a request to GPU 1, seq_num=18
+GPU 6: sent a request to GPU 11, seq_num=19
+GPU 6: sent a request to GPU 12, seq_num=20
+GPU 6: sent a request to GPU 5, seq_num=21
+GPU 6: sent a request to GPU 5, seq_num=22
+GPU 6: sent a request to GPU 15, seq_num=23
+GPU 6: got a request from GPU 3, seq_num=10
+GPU 6: got a request from GPU 4, seq_num=14
+GPU 6: got a request from GPU 4, seq_num=16
+GPU 6: got a request from GPU 4, seq_num=20
+GPU 6: got a request from GPU 5, seq_num=8
+GPU 6: got a request from GPU 6, seq_num=2
+GPU 6: got a request from GPU 10, seq_num=6
+GPU 6: got a response from GPU 6, seq_num=0, count=3, data=30741
+GPU 6: got a request from GPU 11, seq_num=3
+GPU 6: got a request from GPU 11, seq_num=20
+GPU 6: got a request from GPU 13, seq_num=8
+GPU 6: got a request from GPU 14, seq_num=22
+GPU 6: got a response from GPU 12, seq_num=7, count=5, data=57811
+GPU 6: got a request from GPU 12, seq_num=16
+GPU 6: got a response from GPU 12, seq_num=12, count=4, data=18737
+GPU 6: got a response from GPU 12, seq_num=16, count=3, data=2260
+GPU 6: got a response from GPU 11, seq_num=19, count=5, data=45508
+GPU 6: got a response from GPU 11, seq_num=3, count=4, data=7714
+GPU 6: workload complete, sent=24, received=24
+
+===== gpu7 =====
+Hello from GPU 7, 8 GPUs per Leaf, 2 Spines
+GPU 7: mode=RTB
+GPU 7: Initialized 1 network devices
+GPU 7: wait 3 seconds before sending requests
+GPU 7: Starting capture on gpu7-eth0
+GPU 7: sent a request to GPU 5, seq_num=0
+GPU 7: sent a request to GPU 1, seq_num=1
+GPU 7: sent a request to GPU 7, seq_num=2
+GPU 7: sent a request to GPU 1, seq_num=3
+GPU 7: sent a request to GPU 2, seq_num=4
+GPU 7: sent a request to GPU 7, seq_num=5
+GPU 7: sent a request to GPU 12, seq_num=6
+GPU 7: sent a request to GPU 7, seq_num=7
+GPU 7: sent a request to GPU 8, seq_num=8
+GPU 7: sent a request to GPU 1, seq_num=9
+GPU 7: sent a request to GPU 1, seq_num=10
+GPU 7: sent a request to GPU 5, seq_num=11
+GPU 7: sent a request to GPU 8, seq_num=12
+GPU 7: sent a request to GPU 12, seq_num=13
+GPU 7: sent a request to GPU 1, seq_num=14
+GPU 7: sent a request to GPU 5, seq_num=15
+GPU 7: sent a request to GPU 11, seq_num=16
+GPU 7: sent a request to GPU 1, seq_num=17
+GPU 7: sent a request to GPU 5, seq_num=18
+GPU 7: sent a request to GPU 1, seq_num=19
+GPU 7: sent a request to GPU 5, seq_num=20
+GPU 7: sent a request to GPU 8, seq_num=21
+GPU 7: sent a request to GPU 1, seq_num=22
+GPU 7: sent a request to GPU 9, seq_num=23
+GPU 7: got a request from GPU 0, seq_num=1
+GPU 7: got a request from GPU 3, seq_num=11
+GPU 7: got a request from GPU 2, seq_num=14
+GPU 7: got a request from GPU 4, seq_num=6
+GPU 7: got a request from GPU 4, seq_num=8
+GPU 7: got a request from GPU 4, seq_num=21
+GPU 7: got a request from GPU 3, seq_num=16
+GPU 7: got a request from GPU 5, seq_num=2
+GPU 7: got a request from GPU 7, seq_num=2
+GPU 7: got a request from GPU 7, seq_num=5
+GPU 7: got a request from GPU 7, seq_num=7
+GPU 7: got a response from GPU 5, seq_num=0, count=3, data=29262
+GPU 7: got a request from GPU 9, seq_num=23
+GPU 7: got a request from GPU 10, seq_num=19
+GPU 7: got a request from GPU 13, seq_num=18
+GPU 7: got a request from GPU 14, seq_num=10
+GPU 7: got a request from GPU 14, seq_num=13
+GPU 7: got a request from GPU 15, seq_num=20
+GPU 7: got a request from GPU 11, seq_num=14
+GPU 7: got a request from GPU 11, seq_num=16
+GPU 7: got a response from GPU 9, seq_num=19, count=5, data=18562
+GPU 7: got a request from GPU 13, seq_num=0
+GPU 7: got a response from GPU 12, seq_num=12, count=4, data=2992
+GPU 7: got a request from GPU 13, seq_num=2
+GPU 7: got a request from GPU 13, seq_num=19
+GPU 7: got a response from GPU 8, seq_num=7, count=5, data=5888
+GPU 7: got a response from GPU 12, seq_num=3, count=4, data=5119
+GPU 7: got a response from GPU 11, seq_num=16, count=3, data=4576
+GPU 7: workload complete, sent=24, received=24
+
+===== gpu8 =====
+Hello from GPU 8, 8 GPUs per Leaf, 2 Spines
+GPU 8: mode=RTB
+GPU 8: Initialized 1 network devices
+GPU 8: wait 3 seconds before sending requests
+GPU 8: Starting capture on gpu8-eth0
+GPU 8: sent a request to GPU 2, seq_num=0
+GPU 8: sent a request to GPU 5, seq_num=1
+GPU 8: sent a request to GPU 10, seq_num=2
+GPU 8: sent a request to GPU 5, seq_num=3
+GPU 8: sent a request to GPU 1, seq_num=4
+GPU 8: sent a request to GPU 15, seq_num=5
+GPU 8: sent a request to GPU 11, seq_num=6
+GPU 8: sent a request to GPU 2, seq_num=7
+GPU 8: sent a request to GPU 3, seq_num=8
+GPU 8: sent a request to GPU 0, seq_num=9
+GPU 8: sent a request to GPU 5, seq_num=10
+GPU 8: sent a request to GPU 8, seq_num=11
+GPU 8: sent a request to GPU 0, seq_num=12
+GPU 8: sent a request to GPU 1, seq_num=13
+GPU 8: sent a request to GPU 9, seq_num=14
+GPU 8: sent a request to GPU 10, seq_num=15
+GPU 8: sent a request to GPU 12, seq_num=16
+GPU 8: sent a request to GPU 15, seq_num=17
+GPU 8: sent a request to GPU 14, seq_num=18
+GPU 8: sent a request to GPU 5, seq_num=19
+GPU 8: sent a request to GPU 8, seq_num=20
+GPU 8: sent a request to GPU 3, seq_num=21
+GPU 8: sent a request to GPU 1, seq_num=22
+GPU 8: sent a request to GPU 8, seq_num=23
+GPU 8: got a request from GPU 10, seq_num=0
+GPU 8: got a request from GPU 9, seq_num=1
+GPU 8: got a request from GPU 9, seq_num=3
+GPU 8: got a request from GPU 9, seq_num=10
+GPU 8: got a request from GPU 9, seq_num=19
+GPU 8: got a request from GPU 10, seq_num=7
+GPU 8: got a request from GPU 10, seq_num=16
+GPU 8: got a request from GPU 8, seq_num=11
+GPU 8: got a request from GPU 8, seq_num=20
+GPU 8: got a request from GPU 8, seq_num=23
+GPU 8: got a request from GPU 11, seq_num=5
+GPU 8: got a request from GPU 0, seq_num=4
+GPU 8: got a request from GPU 15, seq_num=5
+GPU 8: got a request from GPU 1, seq_num=10
+GPU 8: got a request from GPU 1, seq_num=19
+GPU 8: got a request from GPU 13, seq_num=1
+GPU 8: got a request from GPU 13, seq_num=3
+GPU 8: got a request from GPU 13, seq_num=10
+GPU 8: got a request from GPU 0, seq_num=18
+GPU 8: got a request from GPU 2, seq_num=16
+GPU 8: got a request from GPU 5, seq_num=3
+GPU 8: got a request from GPU 15, seq_num=8
+GPU 8: got a request from GPU 14, seq_num=6
+GPU 8: got a request from GPU 12, seq_num=2
+GPU 8: got a request from GPU 12, seq_num=3
+GPU 8: got a request from GPU 12, seq_num=11
+GPU 8: got a request from GPU 1, seq_num=3
+GPU 8: got a request from GPU 5, seq_num=19
+GPU 8: got a request from GPU 15, seq_num=12
+GPU 8: got a request from GPU 7, seq_num=12
+GPU 8: got a request from GPU 1, seq_num=17
+GPU 8: got a request from GPU 7, seq_num=21
+GPU 8: got a request from GPU 0, seq_num=23
+GPU 8: got a request from GPU 12, seq_num=15
+GPU 8: got a request from GPU 3, seq_num=8
+GPU 8: got a request from GPU 3, seq_num=12
+GPU 8: got a request from GPU 2, seq_num=6
+GPU 8: got a request from GPU 2, seq_num=13
+GPU 8: got a request from GPU 15, seq_num=21
+GPU 8: got a request from GPU 4, seq_num=2
+GPU 8: got a request from GPU 4, seq_num=3
+GPU 8: got a response from GPU 12, seq_num=16, count=3, data=30697
+GPU 8: got a request from GPU 4, seq_num=7
+GPU 8: got a request from GPU 4, seq_num=11
+GPU 8: got a request from GPU 3, seq_num=21
+GPU 8: got a request from GPU 7, seq_num=8
+GPU 8: got a request from GPU 6, seq_num=13
+GPU 8: got a request from GPU 6, seq_num=16
+GPU 8: got a response from GPU 0, seq_num=12, count=4, data=31319
+GPU 8: got a response from GPU 5, seq_num=3, count=4, data=18844
+GPU 8: got a response from GPU 5, seq_num=7, count=5, data=33328
+GPU 8: got a response from GPU 5, seq_num=19, count=5, data=18670
+GPU 8: got a response from GPU 5, seq_num=0, count=3, data=16854
+GPU 8: workload complete, sent=24, received=24
+
+===== gpu9 =====
+Hello from GPU 9, 8 GPUs per Leaf, 2 Spines
+GPU 9: mode=RTB
+GPU 9: Initialized 1 network devices
+GPU 9: wait 3 seconds before sending requests
+GPU 9: Starting capture on gpu9-eth0
+GPU 9: sent a request to GPU 1, seq_num=0
+GPU 9: sent a request to GPU 8, seq_num=1
+GPU 9: sent a request to GPU 11, seq_num=2
+GPU 9: sent a request to GPU 8, seq_num=3
+GPU 9: sent a request to GPU 1, seq_num=4
+GPU 9: sent a request to GPU 1, seq_num=5
+GPU 9: sent a request to GPU 5, seq_num=6
+GPU 9: sent a request to GPU 5, seq_num=7
+GPU 9: sent a request to GPU 1, seq_num=8
+GPU 9: sent a request to GPU 15, seq_num=9
+GPU 9: sent a request to GPU 8, seq_num=10
+GPU 9: sent a request to GPU 9, seq_num=11
+GPU 9: sent a request to GPU 10, seq_num=12
+GPU 9: sent a request to GPU 11, seq_num=13
+GPU 9: sent a request to GPU 12, seq_num=14
+GPU 9: sent a request to GPU 12, seq_num=15
+GPU 9: sent a request to GPU 9, seq_num=16
+GPU 9: sent a request to GPU 0, seq_num=17
+GPU 9: sent a request to GPU 1, seq_num=18
+GPU 9: sent a request to GPU 8, seq_num=19
+GPU 9: sent a request to GPU 12, seq_num=20
+GPU 9: sent a request to GPU 13, seq_num=21
+GPU 9: sent a request to GPU 2, seq_num=22
+GPU 9: sent a request to GPU 7, seq_num=23
+GPU 9: got a request from GPU 9, seq_num=11
+GPU 9: got a request from GPU 9, seq_num=16
+GPU 9: got a request from GPU 10, seq_num=8
+GPU 9: got a request from GPU 10, seq_num=21
+GPU 9: got a request from GPU 8, seq_num=14
+GPU 9: got a request from GPU 3, seq_num=2
+GPU 9: got a request from GPU 0, seq_num=19
+GPU 9: got a request from GPU 1, seq_num=14
+GPU 9: got a request from GPU 1, seq_num=16
+GPU 9: got a request from GPU 1, seq_num=18
+GPU 9: got a request from GPU 7, seq_num=23
+GPU 9: got a request from GPU 3, seq_num=13
+GPU 9: got a request from GPU 15, seq_num=23
+GPU 9: got a response from GPU 10, seq_num=12, count=4, data=43933
+GPU 9: got a response from GPU 1, seq_num=0, count=3, data=4548
+GPU 9: got a response from GPU 7, seq_num=19, count=5, data=8064
+GPU 9: got a response from GPU 5, seq_num=3, count=4, data=16563
+GPU 9: got a response from GPU 5, seq_num=7, count=5, data=19808
+GPU 9: got a response from GPU 0, seq_num=16, count=3, data=30824
+GPU 9: workload complete, sent=24, received=24
+
+===== gpu10 =====
+Hello from GPU 10, 8 GPUs per Leaf, 2 Spines
+GPU 10: mode=RTB
+GPU 10: Initialized 1 network devices
+GPU 10: wait 3 seconds before sending requests
+GPU 10: Starting capture on gpu10-eth0
+GPU 10: sent a request to GPU 8, seq_num=0
+GPU 10: sent a request to GPU 12, seq_num=1
+GPU 10: sent a request to GPU 1, seq_num=2
+GPU 10: sent a request to GPU 3, seq_num=3
+GPU 10: sent a request to GPU 15, seq_num=4
+GPU 10: sent a request to GPU 5, seq_num=5
+GPU 10: sent a request to GPU 6, seq_num=6
+GPU 10: sent a request to GPU 8, seq_num=7
+GPU 10: sent a request to GPU 9, seq_num=8
+GPU 10: sent a request to GPU 14, seq_num=9
+GPU 10: sent a request to GPU 11, seq_num=10
+GPU 10: sent a request to GPU 12, seq_num=11
+GPU 10: sent a request to GPU 13, seq_num=12
+GPU 10: sent a request to GPU 14, seq_num=13
+GPU 10: sent a request to GPU 15, seq_num=14
+GPU 10: sent a request to GPU 0, seq_num=15
+GPU 10: sent a request to GPU 8, seq_num=16
+GPU 10: sent a request to GPU 13, seq_num=17
+GPU 10: sent a request to GPU 1, seq_num=18
+GPU 10: sent a request to GPU 7, seq_num=19
+GPU 10: sent a request to GPU 1, seq_num=20
+GPU 10: sent a request to GPU 9, seq_num=21
+GPU 10: sent a request to GPU 1, seq_num=22
+GPU 10: sent a request to GPU 12, seq_num=23
+GPU 10: got a request from GPU 9, seq_num=12
+GPU 10: got a request from GPU 8, seq_num=2
+GPU 10: got a request from GPU 8, seq_num=15
+GPU 10: got a request from GPU 0, seq_num=7
+GPU 10: got a request from GPU 1, seq_num=8
+GPU 10: got a request from GPU 14, seq_num=0
+GPU 10: got a request from GPU 0, seq_num=20
+GPU 10: got a request from GPU 12, seq_num=4
+GPU 10: got a request from GPU 14, seq_num=23
+GPU 10: got a request from GPU 3, seq_num=14
+GPU 10: got a request from GPU 2, seq_num=2
+GPU 10: got a response from GPU 12, seq_num=7, count=5, data=47372
+GPU 10: got a response from GPU 1, seq_num=16, count=3, data=4967
+GPU 10: got a response from GPU 7, seq_num=19, count=5, data=32595
+GPU 10: got a response from GPU 1, seq_num=0, count=3, data=2260
+GPU 10: got a response from GPU 0, seq_num=12, count=4, data=57678
+GPU 10: got a response from GPU 5, seq_num=3, count=4, data=31554
+GPU 10: workload complete, sent=24, received=24
+
+===== gpu11 =====
+Hello from GPU 11, 8 GPUs per Leaf, 2 Spines
+GPU 11: mode=RTB
+GPU 11: Initialized 1 network devices
+GPU 11: wait 3 seconds before sending requests
+GPU 11: Starting capture on gpu11-eth0
+GPU 11: sent a request to GPU 1, seq_num=0
+GPU 11: sent a request to GPU 1, seq_num=1
+GPU 11: sent a request to GPU 3, seq_num=2
+GPU 11: sent a request to GPU 6, seq_num=3
+GPU 11: sent a request to GPU 14, seq_num=4
+GPU 11: sent a request to GPU 8, seq_num=5
+GPU 11: sent a request to GPU 12, seq_num=6
+GPU 11: sent a request to GPU 5, seq_num=7
+GPU 11: sent a request to GPU 12, seq_num=8
+GPU 11: sent a request to GPU 13, seq_num=9
+GPU 11: sent a request to GPU 2, seq_num=10
+GPU 11: sent a request to GPU 15, seq_num=11
+GPU 11: sent a request to GPU 13, seq_num=12
+GPU 11: sent a request to GPU 2, seq_num=13
+GPU 11: sent a request to GPU 7, seq_num=14
+GPU 11: sent a request to GPU 3, seq_num=15
+GPU 11: sent a request to GPU 7, seq_num=16
+GPU 11: sent a request to GPU 12, seq_num=17
+GPU 11: sent a request to GPU 1, seq_num=18
+GPU 11: sent a request to GPU 1, seq_num=19
+GPU 11: sent a request to GPU 6, seq_num=20
+GPU 11: sent a request to GPU 12, seq_num=21
+GPU 11: sent a request to GPU 12, seq_num=22
+GPU 11: sent a request to GPU 14, seq_num=23
+GPU 11: got a request from GPU 9, seq_num=2
+GPU 11: got a request from GPU 9, seq_num=13
+GPU 11: got a request from GPU 10, seq_num=10
+GPU 11: got a request from GPU 8, seq_num=6
+GPU 11: got a request from GPU 0, seq_num=8
+GPU 11: got a request from GPU 5, seq_num=9
+GPU 11: got a request from GPU 13, seq_num=23
+GPU 11: got a request from GPU 0, seq_num=21
+GPU 11: got a request from GPU 14, seq_num=1
+GPU 11: got a request from GPU 1, seq_num=2
+GPU 11: got a request from GPU 5, seq_num=12
+GPU 11: got a request from GPU 1, seq_num=6
+GPU 11: got a request from GPU 15, seq_num=11
+GPU 11: got a request from GPU 6, seq_num=4
+GPU 11: got a request from GPU 7, seq_num=16
+GPU 11: got a request from GPU 3, seq_num=15
+GPU 11: got a request from GPU 2, seq_num=3
+GPU 11: got a request from GPU 4, seq_num=12
+GPU 11: got a request from GPU 4, seq_num=15
+GPU 11: got a request from GPU 6, seq_num=19
+GPU 11: got a response from GPU 3, seq_num=0, count=3, data=29582
+GPU 11: got a response from GPU 6, seq_num=3, count=4, data=18082
+GPU 11: got a response from GPU 7, seq_num=12, count=4, data=20965
+GPU 11: got a response from GPU 5, seq_num=7, count=5, data=46263
+GPU 11: got a response from GPU 6, seq_num=19, count=5, data=32702
+GPU 11: got a response from GPU 7, seq_num=16, count=3, data=6642
+GPU 11: workload complete, sent=24, received=24
+
+===== gpu12 =====
+Hello from GPU 12, 8 GPUs per Leaf, 2 Spines
+GPU 12: mode=RTB
+GPU 12: Initialized 1 network devices
+GPU 12: wait 3 seconds before sending requests
+GPU 12: Starting capture on gpu12-eth0
+GPU 12: sent a request to GPU 14, seq_num=0
+GPU 12: sent a request to GPU 5, seq_num=1
+GPU 12: sent a request to GPU 8, seq_num=2
+GPU 12: sent a request to GPU 8, seq_num=3
+GPU 12: sent a request to GPU 10, seq_num=4
+GPU 12: sent a request to GPU 12, seq_num=5
+GPU 12: sent a request to GPU 12, seq_num=6
+GPU 12: sent a request to GPU 2, seq_num=7
+GPU 12: sent a request to GPU 12, seq_num=8
+GPU 12: sent a request to GPU 12, seq_num=9
+GPU 12: sent a request to GPU 1, seq_num=10
+GPU 12: sent a request to GPU 8, seq_num=11
+GPU 12: sent a request to GPU 12, seq_num=12
+GPU 12: sent a request to GPU 4, seq_num=13
+GPU 12: sent a request to GPU 5, seq_num=14
+GPU 12: sent a request to GPU 8, seq_num=15
+GPU 12: sent a request to GPU 6, seq_num=16
+GPU 12: sent a request to GPU 5, seq_num=17
+GPU 12: sent a request to GPU 0, seq_num=18
+GPU 12: sent a request to GPU 5, seq_num=19
+GPU 12: sent a request to GPU 14, seq_num=20
+GPU 12: sent a request to GPU 2, seq_num=21
+GPU 12: sent a request to GPU 0, seq_num=22
+GPU 12: sent a request to GPU 12, seq_num=23
+GPU 12: got a request from GPU 9, seq_num=14
+GPU 12: got a request from GPU 9, seq_num=15
+GPU 12: got a request from GPU 10, seq_num=1
+GPU 12: got a request from GPU 9, seq_num=20
+GPU 12: got a request from GPU 10, seq_num=11
+GPU 12: got a request from GPU 10, seq_num=23
+GPU 12: got a request from GPU 8, seq_num=16
+GPU 12: got a request from GPU 11, seq_num=6
+GPU 12: got a request from GPU 11, seq_num=8
+GPU 12: got a request from GPU 11, seq_num=17
+GPU 12: got a request from GPU 11, seq_num=21
+GPU 12: got a request from GPU 11, seq_num=22
+GPU 12: got a request from GPU 15, seq_num=0
+GPU 12: got a request from GPU 0, seq_num=2
+GPU 12: got a request from GPU 0, seq_num=3
+GPU 12: got a request from GPU 0, seq_num=5
+GPU 12: got a request from GPU 15, seq_num=6
+GPU 12: got a request from GPU 1, seq_num=7
+GPU 12: got a request from GPU 1, seq_num=11
+GPU 12: got a request from GPU 13, seq_num=4
+GPU 12: got a request from GPU 13, seq_num=15
+GPU 12: got a request from GPU 3, seq_num=0
+GPU 12: got a request from GPU 3, seq_num=6
+GPU 12: got a request from GPU 2, seq_num=23
+GPU 12: got a request from GPU 5, seq_num=7
+GPU 12: got a request from GPU 13, seq_num=17
+GPU 12: got a request from GPU 5, seq_num=10
+GPU 12: got a request from GPU 14, seq_num=2
+GPU 12: got a request from GPU 14, seq_num=3
+GPU 12: got a request from GPU 14, seq_num=11
+GPU 12: got a request from GPU 14, seq_num=14
+GPU 12: got a request from GPU 14, seq_num=15
+GPU 12: got a request from GPU 14, seq_num=17
+GPU 12: got a request from GPU 12, seq_num=5
+GPU 12: got a request from GPU 12, seq_num=6
+GPU 12: got a request from GPU 12, seq_num=8
+GPU 12: got a request from GPU 12, seq_num=9
+GPU 12: got a request from GPU 12, seq_num=12
+GPU 12: got a request from GPU 5, seq_num=20
+GPU 12: got a request from GPU 5, seq_num=23
+GPU 12: got a request from GPU 6, seq_num=3
+GPU 12: got a request from GPU 7, seq_num=13
+GPU 12: got a request from GPU 6, seq_num=7
+GPU 12: got a request from GPU 6, seq_num=10
+GPU 12: got a request from GPU 15, seq_num=16
+GPU 12: got a request from GPU 12, seq_num=23
+GPU 12: got a request from GPU 2, seq_num=1
+GPU 12: got a request from GPU 2, seq_num=4
+GPU 12: got a request from GPU 4, seq_num=0
+GPU 12: got a request from GPU 5, seq_num=18
+GPU 12: got a request from GPU 7, seq_num=6
+GPU 12: got a request from GPU 6, seq_num=14
+GPU 12: got a request from GPU 6, seq_num=17
+GPU 12: got a request from GPU 6, seq_num=20
+GPU 12: got a response from GPU 12, seq_num=3, count=4, data=31894
+GPU 12: got a response from GPU 5, seq_num=12, count=4, data=18209
+GPU 12: got a response from GPU 5, seq_num=19, count=5, data=33402
+GPU 12: got a response from GPU 2, seq_num=7, count=5, data=8179
+GPU 12: got a response from GPU 5, seq_num=0, count=3, data=3572
+GPU 12: got a response from GPU 5, seq_num=16, count=3, data=5298
+GPU 12: workload complete, sent=24, received=24
+
+===== gpu13 =====
+Hello from GPU 13, 8 GPUs per Leaf, 2 Spines
+GPU 13: mode=RTB
+GPU 13: Initialized 1 network devices
+GPU 13: wait 3 seconds before sending requests
+GPU 13: Starting capture on gpu13-eth0
+GPU 13: sent a request to GPU 7, seq_num=0
+GPU 13: sent a request to GPU 8, seq_num=1
+GPU 13: sent a request to GPU 7, seq_num=2
+GPU 13: sent a request to GPU 8, seq_num=3
+GPU 13: sent a request to GPU 12, seq_num=4
+GPU 13: sent a request to GPU 1, seq_num=5
+GPU 13: sent a request to GPU 5, seq_num=6
+GPU 13: sent a request to GPU 1, seq_num=7
+GPU 13: sent a request to GPU 6, seq_num=8
+GPU 13: sent a request to GPU 5, seq_num=9
+GPU 13: sent a request to GPU 8, seq_num=10
+GPU 13: sent a request to GPU 5, seq_num=11
+GPU 13: sent a request to GPU 1, seq_num=12
+GPU 13: sent a request to GPU 5, seq_num=13
+GPU 13: sent a request to GPU 5, seq_num=14
+GPU 13: sent a request to GPU 12, seq_num=15
+GPU 13: sent a request to GPU 5, seq_num=16
+GPU 13: sent a request to GPU 12, seq_num=17
+GPU 13: sent a request to GPU 7, seq_num=18
+GPU 13: sent a request to GPU 7, seq_num=19
+GPU 13: sent a request to GPU 1, seq_num=20
+GPU 13: sent a request to GPU 2, seq_num=21
+GPU 13: sent a request to GPU 5, seq_num=22
+GPU 13: sent a request to GPU 11, seq_num=23
+GPU 13: got a request from GPU 9, seq_num=21
+GPU 13: got a request from GPU 10, seq_num=12
+GPU 13: got a request from GPU 10, seq_num=17
+GPU 13: got a request from GPU 11, seq_num=9
+GPU 13: got a request from GPU 11, seq_num=12
+GPU 13: got a request from GPU 0, seq_num=10
+GPU 13: got a request from GPU 1, seq_num=20
+GPU 13: got a request from GPU 2, seq_num=17
+GPU 13: got a request from GPU 15, seq_num=13
+GPU 13: got a request from GPU 6, seq_num=8
+GPU 13: got a request from GPU 3, seq_num=9
+GPU 13: got a request from GPU 2, seq_num=5
+GPU 13: got a request from GPU 4, seq_num=1
+GPU 13: got a request from GPU 4, seq_num=4
+GPU 13: got a response from GPU 5, seq_num=12, count=4, data=4557
+GPU 13: got a response from GPU 6, seq_num=7, count=5, data=20529
+GPU 13: got a response from GPU 7, seq_num=16, count=3, data=18697
+GPU 13: got a response from GPU 7, seq_num=0, count=3, data=17475
+GPU 13: got a response from GPU 5, seq_num=3, count=4, data=5947
+GPU 13: got a response from GPU 5, seq_num=19, count=5, data=33573
+GPU 13: workload complete, sent=24, received=24
+
+===== gpu14 =====
+Hello from GPU 14, 8 GPUs per Leaf, 2 Spines
+GPU 14: mode=RTB
+GPU 14: Initialized 1 network devices
+GPU 14: wait 3 seconds before sending requests
+GPU 14: Starting capture on gpu14-eth0
+GPU 14: sent a request to GPU 10, seq_num=0
+GPU 14: sent a request to GPU 11, seq_num=1
+GPU 14: sent a request to GPU 12, seq_num=2
+GPU 14: sent a request to GPU 12, seq_num=3
+GPU 14: sent a request to GPU 1, seq_num=4
+GPU 14: sent a request to GPU 0, seq_num=5
+GPU 14: sent a request to GPU 8, seq_num=6
+GPU 14: sent a request to GPU 4, seq_num=7
+GPU 14: sent a request to GPU 5, seq_num=8
+GPU 14: sent a request to GPU 2, seq_num=9
+GPU 14: sent a request to GPU 7, seq_num=10
+GPU 14: sent a request to GPU 12, seq_num=11
+GPU 14: sent a request to GPU 5, seq_num=12
+GPU 14: sent a request to GPU 7, seq_num=13
+GPU 14: sent a request to GPU 12, seq_num=14
+GPU 14: sent a request to GPU 12, seq_num=15
+GPU 14: sent a request to GPU 14, seq_num=16
+GPU 14: sent a request to GPU 12, seq_num=17
+GPU 14: sent a request to GPU 1, seq_num=18
+GPU 14: sent a request to GPU 3, seq_num=19
+GPU 14: sent a request to GPU 4, seq_num=20
+GPU 14: sent a request to GPU 0, seq_num=21
+GPU 14: sent a request to GPU 6, seq_num=22
+GPU 14: sent a request to GPU 10, seq_num=23
+GPU 14: got a request from GPU 10, seq_num=9
+GPU 14: got a request from GPU 10, seq_num=13
+GPU 14: got a request from GPU 8, seq_num=18
+GPU 14: got a request from GPU 11, seq_num=4
+GPU 14: got a request from GPU 11, seq_num=23
+GPU 14: got a request from GPU 15, seq_num=1
+GPU 14: got a request from GPU 0, seq_num=11
+GPU 14: got a request from GPU 12, seq_num=0
+GPU 14: got a request from GPU 3, seq_num=3
+GPU 14: got a request from GPU 3, seq_num=17
+GPU 14: got a request from GPU 14, seq_num=16
+GPU 14: got a request from GPU 6, seq_num=9
+GPU 14: got a request from GPU 12, seq_num=20
+GPU 14: got a response from GPU 11, seq_num=0, count=3, data=43683
+GPU 14: got a response from GPU 6, seq_num=19, count=5, data=47696
+GPU 14: got a response from GPU 7, seq_num=7, count=5, data=35122
+GPU 14: got a response from GPU 7, seq_num=12, count=4, data=18982
+GPU 14: got a response from GPU 1, seq_num=3, count=4, data=4566
+GPU 14: got a response from GPU 1, seq_num=16, count=3, data=16080
+GPU 14: workload complete, sent=24, received=24
+
+===== gpu15 =====
+Hello from GPU 15, 8 GPUs per Leaf, 2 Spines
+GPU 15: mode=RTB
+GPU 15: Initialized 1 network devices
+GPU 15: wait 3 seconds before sending requests
+GPU 15: Starting capture on gpu15-eth0
+GPU 15: sent a request to GPU 12, seq_num=0
+GPU 15: sent a request to GPU 14, seq_num=1
+GPU 15: sent a request to GPU 5, seq_num=2
+GPU 15: sent a request to GPU 2, seq_num=3
+GPU 15: sent a request to GPU 3, seq_num=4
+GPU 15: sent a request to GPU 8, seq_num=5
+GPU 15: sent a request to GPU 12, seq_num=6
+GPU 15: sent a request to GPU 5, seq_num=7
+GPU 15: sent a request to GPU 8, seq_num=8
+GPU 15: sent a request to GPU 1, seq_num=9
+GPU 15: sent a request to GPU 1, seq_num=10
+GPU 15: sent a request to GPU 11, seq_num=11
+GPU 15: sent a request to GPU 8, seq_num=12
+GPU 15: sent a request to GPU 13, seq_num=13
+GPU 15: sent a request to GPU 1, seq_num=14
+GPU 15: sent a request to GPU 15, seq_num=15
+GPU 15: sent a request to GPU 12, seq_num=16
+GPU 15: sent a request to GPU 1, seq_num=17
+GPU 15: sent a request to GPU 3, seq_num=18
+GPU 15: sent a request to GPU 1, seq_num=19
+GPU 15: sent a request to GPU 7, seq_num=20
+GPU 15: sent a request to GPU 8, seq_num=21
+GPU 15: sent a request to GPU 4, seq_num=22
+GPU 15: sent a request to GPU 9, seq_num=23
+GPU 15: got a request from GPU 9, seq_num=9
+GPU 15: got a request from GPU 10, seq_num=4
+GPU 15: got a request from GPU 10, seq_num=14
+GPU 15: got a request from GPU 8, seq_num=5
+GPU 15: got a request from GPU 8, seq_num=17
+GPU 15: got a request from GPU 11, seq_num=11
+GPU 15: got a request from GPU 0, seq_num=15
+GPU 15: got a request from GPU 1, seq_num=9
+GPU 15: got a request from GPU 3, seq_num=4
+GPU 15: got a request from GPU 2, seq_num=19
+GPU 15: got a request from GPU 5, seq_num=13
+GPU 15: got a request from GPU 15, seq_num=15
+GPU 15: got a request from GPU 6, seq_num=23
+GPU 15: got a response from GPU 3, seq_num=16, count=3, data=16122
+GPU 15: got a response from GPU 2, seq_num=3, count=4, data=30773
+GPU 15: got a response from GPU 5, seq_num=0, count=3, data=16129
+GPU 15: got a response from GPU 5, seq_num=7, count=5, data=32530
+GPU 15: got a response from GPU 7, seq_num=19, count=5, data=34046
+GPU 15: got a response from GPU 1, seq_num=12, count=4, data=30704
+GPU 15: workload complete, sent=24, received=24
+
+===== leaf0 =====
+Hello from Leaf 0, 8 GPUs per Leaf, 2 Spines
+Leaf 0: mode=RTB
+Leaf 0: Starting capture on leaf0-gpu0
+Leaf 0: Starting capture on leaf0-gpu1
+Leaf 0: Starting capture on leaf0-gpu2
+Leaf 0: Starting capture on leaf0-gpu3
+Leaf 0: Starting capture on leaf0-gpu4
+Leaf 0: Starting capture on leaf0-gpu5
+Leaf 0: Starting capture on leaf0-gpu6
+Leaf 0: Starting capture on leaf0-gpu7
+Leaf 0: Starting capture on leaf0-spine0
+Leaf 0: Initialized 10 network devices
+Leaf 0: Starting capture on leaf0-spine1
+Leaf 0: forwarded seq_num=0 from leaf0-gpu0 to GPU 0
+Leaf 0: forwarded seq_num=1 from leaf0-gpu0 to GPU 7
+Leaf 0: forwarded seq_num=2 from leaf0-gpu0 to spine 0
+Leaf 0: forwarded seq_num=3 from leaf0-gpu0 to spine 0
+Leaf 0: forwarded seq_num=4 from leaf0-gpu0 to spine 0
+Leaf 0: forwarded seq_num=5 from leaf0-gpu0 to spine 0
+Leaf 0: forwarded seq_num=6 from leaf0-gpu0 to GPU 1
+Leaf 0: forwarded seq_num=7 from leaf0-gpu0 to spine 1
+Leaf 0: forwarded seq_num=8 from leaf0-gpu0 to spine 1
+Leaf 0: forwarded seq_num=9 from leaf0-gpu0 to GPU 0
+Leaf 0: forwarded seq_num=10 from leaf0-gpu0 to spine 1
+Leaf 0: forwarded seq_num=11 from leaf0-gpu0 to spine 1
+Leaf 0: forwarded seq_num=12 from leaf0-gpu0 to GPU 0
+Leaf 0: forwarded seq_num=13 from leaf0-gpu0 to GPU 1
+Leaf 0: forwarded seq_num=0 from leaf0-gpu2 to GPU 0
+Leaf 0: forwarded seq_num=14 from leaf0-gpu0 to GPU 5
+Leaf 0: forwarded seq_num=15 from leaf0-gpu0 to spine 0
+Leaf 0: forwarded seq_num=16 from leaf0-gpu0 to GPU 4
+Leaf 0: forwarded seq_num=17 from leaf0-gpu0 to GPU 5
+Leaf 0: forwarded seq_num=18 from leaf0-gpu0 to spine 0
+Leaf 0: forwarded seq_num=0 from leaf0-gpu1 to GPU 5
+Leaf 0: forwarded seq_num=19 from leaf0-gpu0 to spine 0
+Leaf 0: forwarded seq_num=20 from leaf0-gpu0 to spine 0
+Leaf 0: forwarded seq_num=21 from leaf0-gpu0 to spine 0
+Leaf 0: forwarded seq_num=22 from leaf0-gpu0 to GPU 3
+Leaf 0: forwarded seq_num=1 from leaf0-gpu1 to GPU 4
+Leaf 0: forwarded seq_num=2 from leaf0-gpu1 to spine 0
+Leaf 0: forwarded seq_num=3 from leaf0-gpu1 to spine 0
+Leaf 0: forwarded seq_num=4 from leaf0-gpu1 to GPU 0
+Leaf 0: forwarded seq_num=5 from leaf0-gpu1 to GPU 5
+Leaf 0: forwarded seq_num=6 from leaf0-gpu1 to spine 0
+Leaf 0: forwarded seq_num=7 from leaf0-gpu1 to spine 1
+Leaf 0: forwarded seq_num=8 from leaf0-gpu1 to spine 1
+Leaf 0: forwarded seq_num=9 from leaf0-gpu1 to spine 1
+Leaf 0: forwarded seq_num=10 from leaf0-gpu1 to spine 1
+Leaf 0: forwarded seq_num=11 from leaf0-gpu1 to spine 1
+Leaf 0: forwarded seq_num=12 from leaf0-gpu1 to GPU 2
+Leaf 0: forwarded seq_num=13 from leaf0-gpu1 to GPU 4
+Leaf 0: forwarded seq_num=14 from leaf0-gpu1 to spine 0
+Leaf 0: forwarded seq_num=15 from leaf0-gpu1 to GPU 5
+Leaf 0: forwarded seq_num=16 from leaf0-gpu1 to spine 0
+Leaf 0: forwarded seq_num=17 from leaf0-gpu1 to spine 0
+Leaf 0: forwarded seq_num=18 from leaf0-gpu1 to spine 0
+Leaf 0: forwarded seq_num=19 from leaf0-gpu1 to spine 1
+Leaf 0: forwarded seq_num=20 from leaf0-gpu1 to spine 1
+Leaf 0: forwarded seq_num=21 from leaf0-gpu1 to GPU 1
+Leaf 0: forwarded seq_num=22 from leaf0-gpu1 to GPU 2
+Leaf 0: forwarded seq_num=23 from leaf0-gpu1 to GPU 0
+Leaf 0: forwarded seq_num=0 from leaf0-gpu3 to spine 1
+Leaf 0: forwarded seq_num=1 from leaf0-gpu3 to GPU 1
+Leaf 0: forwarded seq_num=2 from leaf0-gpu3 to spine 1
+Leaf 0: forwarded seq_num=3 from leaf0-gpu3 to spine 1
+Leaf 0: forwarded seq_num=23 from leaf0-gpu0 to spine 0
+Leaf 0: forwarded seq_num=4 from leaf0-gpu3 to spine 1
+Leaf 0: forwarded seq_num=5 from leaf0-gpu3 to GPU 3
+Leaf 0: forwarded seq_num=6 from leaf0-gpu3 to spine 1
+Leaf 0: forwarded seq_num=7 from leaf0-gpu3 to GPU 3
+Leaf 0: forwarded seq_num=8 from leaf0-gpu3 to spine 0
+Leaf 0: forwarded seq_num=9 from leaf0-gpu3 to spine 0
+Leaf 0: forwarded seq_num=10 from leaf0-gpu3 to GPU 6
+Leaf 0: forwarded seq_num=11 from leaf0-gpu3 to GPU 7
+Leaf 0: forwarded seq_num=12 from leaf0-gpu3 to spine 0
+Leaf 0: forwarded seq_num=13 from leaf0-gpu3 to spine 0
+Leaf 0: forwarded seq_num=14 from leaf0-gpu3 to spine 0
+Leaf 0: forwarded seq_num=15 from leaf0-gpu3 to spine 0
+Leaf 0: forwarded seq_num=1 from leaf0-gpu2 to spine 0
+Leaf 0: forwarded seq_num=2 from leaf0-gpu2 to spine 0
+Leaf 0: forwarded seq_num=3 from leaf0-gpu2 to spine 0
+Leaf 0: forwarded seq_num=4 from leaf0-gpu2 to spine 0
+Leaf 0: forwarded seq_num=5 from leaf0-gpu2 to spine 0
+Leaf 0: forwarded seq_num=6 from leaf0-gpu2 to spine 0
+Leaf 0: forwarded seq_num=7 from leaf0-gpu2 to GPU 1
+Leaf 0: forwarded seq_num=8 from leaf0-gpu2 to GPU 5
+Leaf 0: forwarded seq_num=9 from leaf0-gpu2 to GPU 2
+Leaf 0: forwarded seq_num=10 from leaf0-gpu2 to GPU 3
+Leaf 0: forwarded seq_num=11 from leaf0-gpu2 to GPU 4
+Leaf 0: forwarded seq_num=12 from leaf0-gpu2 to GPU 5
+Leaf 0: forwarded seq_num=13 from leaf0-gpu2 to spine 0
+Leaf 0: forwarded seq_num=14 from leaf0-gpu2 to GPU 7
+Leaf 0: forwarded seq_num=15 from leaf0-gpu2 to GPU 1
+Leaf 0: forwarded seq_num=16 from leaf0-gpu2 to spine 1
+Leaf 0: forwarded seq_num=17 from leaf0-gpu2 to spine 1
+Leaf 0: forwarded seq_num=18 from leaf0-gpu2 to GPU 1
+Leaf 0: forwarded seq_num=19 from leaf0-gpu2 to spine 1
+Leaf 0: forwarded seq_num=20 from leaf0-gpu2 to GPU 0
+Leaf 0: forwarded seq_num=21 from leaf0-gpu2 to GPU 5
+Leaf 0: forwarded seq_num=22 from leaf0-gpu2 to GPU 1
+Leaf 0: forwarded seq_num=23 from leaf0-gpu2 to spine 1
+Leaf 0: forwarded seq_num=0 from leaf0-gpu4 to spine 0
+Leaf 0: forwarded seq_num=1 from leaf0-gpu4 to spine 0
+Leaf 0: forwarded seq_num=2 from leaf0-gpu4 to spine 0
+Leaf 0: forwarded seq_num=3 from leaf0-gpu4 to spine 0
+Leaf 0: forwarded seq_num=4 from leaf0-gpu4 to spine 0
+Leaf 0: forwarded seq_num=5 from leaf0-gpu4 to GPU 3
+Leaf 0: forwarded seq_num=6 from leaf0-gpu4 to GPU 7
+Leaf 0: forwarded seq_num=7 from leaf0-gpu4 to spine 0
+Leaf 0: forwarded seq_num=8 from leaf0-gpu4 to GPU 7
+Leaf 0: forwarded seq_num=9 from leaf0-gpu4 to GPU 1
+Leaf 0: forwarded seq_num=10 from leaf0-gpu4 to GPU 1
+Leaf 0: forwarded seq_num=11 from leaf0-gpu4 to spine 0
+Leaf 0: forwarded seq_num=12 from leaf0-gpu4 to spine 0
+Leaf 0: forwarded seq_num=13 from leaf0-gpu4 to GPU 1
+Leaf 0: forwarded seq_num=14 from leaf0-gpu4 to GPU 6
+Leaf 0: forwarded seq_num=15 from leaf0-gpu4 to spine 0
+Leaf 0: forwarded seq_num=16 from leaf0-gpu4 to GPU 6
+Leaf 0: forwarded seq_num=17 from leaf0-gpu4 to GPU 1
+Leaf 0: forwarded seq_num=18 from leaf0-gpu4 to GPU 2
+Leaf 0: forwarded seq_num=19 from leaf0-gpu4 to GPU 5
+Leaf 0: forwarded seq_num=20 from leaf0-gpu4 to GPU 6
+Leaf 0: forwarded seq_num=21 from leaf0-gpu4 to GPU 7
+Leaf 0: forwarded seq_num=22 from leaf0-gpu4 to GPU 1
+Leaf 0: forwarded seq_num=23 from leaf0-gpu4 to GPU 5
+Leaf 0: forwarded seq_num=16 from leaf0-gpu3 to GPU 7
+Leaf 0: forwarded seq_num=17 from leaf0-gpu3 to spine 1
+Leaf 0: forwarded seq_num=18 from leaf0-gpu3 to GPU 1
+Leaf 0: forwarded seq_num=19 from leaf0-gpu3 to GPU 2
+Leaf 0: forwarded seq_num=20 from leaf0-gpu3 to GPU 3
+Leaf 0: forwarded seq_num=21 from leaf0-gpu3 to spine 0
+Leaf 0: forwarded seq_num=22 from leaf0-gpu3 to GPU 5
+Leaf 0: forwarded seq_num=23 from leaf0-gpu3 to GPU 5
+Leaf 0: forwarded seq_num=0 from leaf0-gpu5 to GPU 5
+Leaf 0: forwarded seq_num=1 from leaf0-gpu5 to GPU 0
+Leaf 0: forwarded seq_num=2 from leaf0-gpu5 to GPU 7
+Leaf 0: forwarded seq_num=0 from leaf0-gpu7 to GPU 5
+Leaf 0: forwarded seq_num=3 from leaf0-gpu5 to spine 1
+Leaf 0: forwarded seq_num=0 from leaf0-gpu6 to GPU 2
+Leaf 0: forwarded seq_num=4 from leaf0-gpu5 to GPU 5
+Leaf 0: forwarded seq_num=5 from leaf0-gpu5 to GPU 1
+Leaf 0: forwarded seq_num=6 from leaf0-gpu5 to GPU 5
+Leaf 0: forwarded seq_num=1 from leaf0-gpu6 to GPU 3
+Leaf 0: forwarded seq_num=7 from leaf0-gpu5 to spine 1
+Leaf 0: forwarded seq_num=8 from leaf0-gpu5 to GPU 6
+Leaf 0: forwarded seq_num=9 from leaf0-gpu5 to spine 1
+Leaf 0: forwarded seq_num=10 from leaf0-gpu5 to spine 1
+Leaf 0: forwarded seq_num=11 from leaf0-gpu5 to GPU 5
+Leaf 0: forwarded seq_num=12 from leaf0-gpu5 to spine 1
+Leaf 0: forwarded seq_num=13 from leaf0-gpu5 to spine 1
+Leaf 0: forwarded seq_num=14 from leaf0-gpu5 to GPU 0
+Leaf 0: forwarded seq_num=15 from leaf0-gpu5 to GPU 1
+Leaf 0: forwarded seq_num=16 from leaf0-gpu5 to GPU 3
+Leaf 0: forwarded seq_num=17 from leaf0-gpu5 to GPU 2
+Leaf 0: forwarded seq_num=18 from leaf0-gpu5 to spine 0
+Leaf 0: forwarded seq_num=19 from leaf0-gpu5 to spine 1
+Leaf 0: forwarded seq_num=2 from leaf0-gpu6 to GPU 6
+Leaf 0: forwarded seq_num=20 from leaf0-gpu5 to spine 1
+Leaf 0: forwarded seq_num=1 from leaf0-gpu7 to GPU 1
+Leaf 0: forwarded seq_num=2 from leaf0-gpu7 to GPU 7
+Leaf 0: forwarded seq_num=3 from leaf0-gpu7 to GPU 1
+Leaf 0: forwarded seq_num=4 from leaf0-gpu7 to GPU 2
+Leaf 0: forwarded seq_num=21 from leaf0-gpu5 to GPU 1
+Leaf 0: forwarded seq_num=22 from leaf0-gpu5 to GPU 5
+Leaf 0: forwarded seq_num=23 from leaf0-gpu5 to spine 1
+Leaf 0: forwarded seq_num=3 from leaf0-gpu6 to spine 1
+Leaf 0: forwarded seq_num=4 from leaf0-gpu6 to spine 1
+Leaf 0: forwarded seq_num=5 from leaf0-gpu6 to GPU 0
+Leaf 0: forwarded seq_num=6 from leaf0-gpu6 to GPU 5
+Leaf 0: forwarded seq_num=5 from leaf0-gpu7 to GPU 7
+Leaf 0: forwarded seq_num=6 from leaf0-gpu7 to spine 0
+Leaf 0: forwarded seq_num=7 from leaf0-gpu7 to GPU 7
+Leaf 0: forwarded seq_num=8 from leaf0-gpu7 to spine 0
+Leaf 0: forwarded seq_num=9 from leaf0-gpu7 to GPU 1
+Leaf 0: forwarded seq_num=10 from leaf0-gpu7 to GPU 1
+Leaf 0: forwarded seq_num=11 from leaf0-gpu7 to GPU 5
+Leaf 0: forwarded seq_num=12 from leaf0-gpu7 to spine 1
+Leaf 0: forwarded seq_num=13 from leaf0-gpu7 to spine 1
+Leaf 0: forwarded seq_num=14 from leaf0-gpu7 to GPU 1
+Leaf 0: forwarded seq_num=15 from leaf0-gpu7 to GPU 5
+Leaf 0: forwarded seq_num=7 from leaf0-gpu6 to spine 1
+Leaf 0: forwarded seq_num=16 from leaf0-gpu7 to spine 1
+Leaf 0: forwarded seq_num=17 from leaf0-gpu7 to GPU 1
+Leaf 0: forwarded seq_num=18 from leaf0-gpu7 to GPU 5
+Leaf 0: forwarded seq_num=19 from leaf0-gpu7 to GPU 1
+Leaf 0: forwarded seq_num=8 from leaf0-gpu6 to spine 1
+Leaf 0: forwarded seq_num=20 from leaf0-gpu7 to GPU 5
+Leaf 0: forwarded seq_num=21 from leaf0-gpu7 to spine 1
+Leaf 0: forwarded seq_num=22 from leaf0-gpu7 to GPU 1
+Leaf 0: forwarded seq_num=23 from leaf0-gpu7 to spine 1
+Leaf 0: forwarded seq_num=9 from leaf0-gpu6 to spine 1
+Leaf 0: forwarded seq_num=10 from leaf0-gpu6 to spine 1
+Leaf 0: forwarded seq_num=11 from leaf0-gpu6 to GPU 0
+Leaf 0: forwarded seq_num=12 from leaf0-gpu6 to GPU 1
+Leaf 0: forwarded seq_num=13 from leaf0-gpu6 to spine 0
+Leaf 0: forwarded seq_num=14 from leaf0-gpu6 to spine 0
+Leaf 0: forwarded seq_num=15 from leaf0-gpu6 to GPU 1
+Leaf 0: forwarded seq_num=16 from leaf0-gpu6 to spine 0
+Leaf 0: forwarded seq_num=17 from leaf0-gpu6 to spine 0
+Leaf 0: forwarded seq_num=18 from leaf0-gpu6 to GPU 1
+Leaf 0: forwarded seq_num=19 from leaf0-gpu6 to spine 0
+Leaf 0: forwarded seq_num=20 from leaf0-gpu6 to spine 0
+Leaf 0: forwarded seq_num=21 from leaf0-gpu6 to GPU 5
+Leaf 0: forwarded seq_num=22 from leaf0-gpu6 to GPU 5
+Leaf 0: forwarded seq_num=23 from leaf0-gpu6 to spine 0
+Leaf 0: RTB reduced and dropped response seq_num=12, oaddr=16786219
+Leaf 0: RTB reduced and dropped response seq_num=22, oaddr=16786221
+Leaf 0: RTB reduced and dropped response seq_num=9, oaddr=33563434
+Leaf 0: RTB reduced and dropped response seq_num=18, oaddr=67117868
+Leaf 0: RTB reduced and dropped response seq_num=19, oaddr=50340653
+Leaf 0: RTB reduced and dropped response seq_num=0, oaddr=100672296
+Leaf 0: RTB reduced and dropped response seq_num=17, oaddr=83895084
+Leaf 0: RTB reduced and dropped response seq_num=4, oaddr=117449513
+Leaf 0: RTB reduced and dropped response seq_num=0, oaddr=9000
+Leaf 0: RTB reduced and dropped response seq_num=9, oaddr=9002
+Leaf 0: RTB reduced and dropped response seq_num=6, oaddr=9001
+Leaf 0: RTB reduced and dropped response seq_num=12, oaddr=9003
+Leaf 0: RTB reduced and dropped response seq_num=16, oaddr=9004
+Leaf 0: RTB reduced and dropped response seq_num=0, oaddr=33563432
+Leaf 0: RTB reduced and dropped response seq_num=4, oaddr=16786217
+Leaf 0: RTB reduced and dropped response seq_num=23, oaddr=16786221
+Leaf 0: RTB reduced and dropped response seq_num=20, oaddr=33563437
+Leaf 0: RTB reduced and dropped response seq_num=1, oaddr=83895080
+Leaf 0: RTB reduced and dropped response seq_num=13, oaddr=9003
+Leaf 0: RTB reduced and dropped response seq_num=14, oaddr=83895083
+Leaf 0: RTB reduced and dropped response seq_num=1, oaddr=16786216
+Leaf 0: RTB reduced and dropped response seq_num=5, oaddr=100672297
+Leaf 0: RTB reduced and dropped response seq_num=22, oaddr=9005
+Leaf 0: RTB reduced and dropped response seq_num=21, oaddr=16786221
+Leaf 0: RTB reduced and dropped response seq_num=1, oaddr=50340648
+Leaf 0: RTB reduced and dropped response seq_num=7, oaddr=33563434
+Leaf 0: RTB reduced and dropped response seq_num=15, oaddr=33563435
+Leaf 0: RTB reduced and dropped response seq_num=18, oaddr=33563436
+Leaf 0: RTB reduced and dropped response seq_num=22, oaddr=33563437
+Leaf 0: RTB reduced and dropped response seq_num=9, oaddr=67117866
+Leaf 0: RTB reduced and dropped response seq_num=10, oaddr=67117866
+Leaf 0: RTB reduced and dropped response seq_num=13, oaddr=67117867
+Leaf 0: RTB reduced and dropped response seq_num=17, oaddr=67117868
+Leaf 0: RTB reduced and dropped response seq_num=22, oaddr=67117869
+Leaf 0: RTB reduced and dropped response seq_num=18, oaddr=50340652
+Leaf 0: RTB reduced and dropped response seq_num=5, oaddr=83895081
+Leaf 0: RTB reduced and dropped response seq_num=15, oaddr=83895083
+Leaf 0: RTB reduced and dropped response seq_num=1, oaddr=117449512
+Leaf 0: RTB reduced and dropped response seq_num=3, oaddr=117449513
+Leaf 0: RTB reduced and dropped response seq_num=21, oaddr=83895085
+Leaf 0: RTB reduced and dropped response seq_num=9, oaddr=117449514
+Leaf 0: RTB reduced and dropped response seq_num=10, oaddr=117449514
+Leaf 0: RTB reduced and dropped response seq_num=14, oaddr=117449515
+Leaf 0: RTB reduced and dropped response seq_num=17, oaddr=117449516
+Leaf 0: RTB reduced and dropped response seq_num=19, oaddr=117449517
+Leaf 0: RTB reduced and dropped response seq_num=22, oaddr=117449517
+Leaf 0: RTB reduced and dropped response seq_num=12, oaddr=100672299
+Leaf 0: RTB reduced and dropped response seq_num=15, oaddr=100672299
+Leaf 0: RTB reduced and dropped response seq_num=18, oaddr=100672300
+Leaf 0: RTB reduced and dropped response seq_num=5, oaddr=50340649
+Leaf 0: RTB reduced and dropped response seq_num=7, oaddr=50340650
+Leaf 0: RTB reduced and dropped response seq_num=10, oaddr=33563434
+Leaf 0: RTB reduced and dropped response seq_num=5, oaddr=67117865
+Leaf 0: RTB reduced and dropped response seq_num=20, oaddr=50340653
+Leaf 0: RTB reduced and dropped response seq_num=1, oaddr=100672296
+Leaf 0: RTB reduced and dropped response seq_num=16, oaddr=83895084
+Leaf 0: RTB reduced and dropped response seq_num=11, oaddr=100672298
+Leaf 0: RTB reduced and dropped response seq_num=13, oaddr=16786219
+Leaf 0: RTB reduced and dropped response seq_num=11, oaddr=33563434
+Leaf 0: RTB reduced and dropped response seq_num=1, oaddr=9000
+Leaf 0: RTB reduced and dropped response seq_num=11, oaddr=50340650
+Leaf 0: RTB reduced and dropped response seq_num=14, oaddr=33563435
+Leaf 0: RTB reduced and dropped response seq_num=6, oaddr=67117865
+Leaf 0: RTB reduced and dropped response seq_num=8, oaddr=67117866
+Leaf 0: RTB reduced and dropped response seq_num=21, oaddr=67117869
+Leaf 0: RTB reduced and dropped response seq_num=16, oaddr=50340652
+Leaf 0: RTB reduced and dropped response seq_num=2, oaddr=83895080
+Leaf 0: RTB reduced and dropped response seq_num=2, oaddr=117449512
+Leaf 0: RTB reduced and dropped response seq_num=5, oaddr=117449513
+Leaf 0: RTB reduced and dropped response seq_num=7, oaddr=117449514
+Leaf 0: forwarded seq_num=17 from leaf0-spine1 to GPU 0
+Leaf 0: forwarded seq_num=18 from leaf0-spine1 to GPU 1
+Leaf 0: forwarded seq_num=2 from leaf0-spine1 to GPU 1
+Leaf 0: RTB reduced and dropped response seq_num=10, oaddr=50340650
+Leaf 0: forwarded seq_num=3 from leaf0-spine1 to GPU 3
+Leaf 0: forwarded seq_num=0 from leaf0-spine1 to GPU 2
+Leaf 0: forwarded seq_num=5 from leaf0-spine1 to GPU 5
+Leaf 0: RTB reduced and dropped response seq_num=14, oaddr=67117867
+Leaf 0: forwarded seq_num=6 from leaf0-spine1 to GPU 6
+Leaf 0: forwarded seq_num=0 from leaf0-spine0 to GPU 1
+Leaf 0: forwarded seq_num=15 from leaf0-spine1 to GPU 0
+Leaf 0: forwarded seq_num=1 from leaf0-spine1 to GPU 5
+Leaf 0: RTB emitted response seq_num=16, oaddr=67117868, count=3, data=30631
+Leaf 0: forwarded seq_num=16 from leaf0-gpu6 to GPU 4
+Leaf 0: RTB reduced and dropped response seq_num=20, oaddr=67117869
+Leaf 0: RTB reduced and dropped response seq_num=8, oaddr=83895082
+Leaf 0: RTB emitted response seq_num=0, oaddr=100672296, count=3, data=30741
+Leaf 0: forwarded seq_num=0 from leaf0-gpu6 to GPU 6
+Leaf 0: RTB reduced and dropped response seq_num=14, oaddr=9003
+Leaf 0: RTB reduced and dropped response seq_num=17, oaddr=9004
+Leaf 0: RTB reduced and dropped response seq_num=0, oaddr=16786216
+Leaf 0: RTB reduced and dropped response seq_num=5, oaddr=16786217
+Leaf 0: RTB reduced and dropped response seq_num=15, oaddr=16786219
+Leaf 0: RTB emitted response seq_num=7, oaddr=33563434, count=5, data=31721
+Leaf 0: forwarded seq_num=7 from leaf0-gpu5 to GPU 2
+Leaf 0: RTB reduced and dropped response seq_num=12, oaddr=33563435
+Leaf 0: RTB reduced and dropped response seq_num=21, oaddr=33563437
+Leaf 0: RTB reduced and dropped response seq_num=19, oaddr=67117869
+Leaf 0: RTB emitted response seq_num=19, oaddr=67117869, count=5, data=30547
+Leaf 0: forwarded seq_num=19 from leaf0-gpu5 to GPU 4
+Leaf 0: RTB reduced and dropped response seq_num=22, oaddr=50340653
+Leaf 0: RTB reduced and dropped response seq_num=23, oaddr=50340653
+Leaf 0: RTB emitted response seq_num=0, oaddr=83895080, count=3, data=17124
+Leaf 0: forwarded seq_num=0 from leaf0-gpu5 to GPU 5
+Leaf 0: forwarded seq_num=4 from leaf0-spine0 to GPU 1
+Leaf 0: RTB emitted response seq_num=0, oaddr=117449512, count=3, data=29262
+Leaf 0: forwarded seq_num=0 from leaf0-gpu5 to GPU 7
+Leaf 0: RTB reduced and dropped response seq_num=4, oaddr=83895081
+Leaf 0: RTB reduced and dropped response seq_num=6, oaddr=83895081
+Leaf 0: RTB reduced and dropped response seq_num=11, oaddr=83895082
+Leaf 0: RTB reduced and dropped response seq_num=22, oaddr=83895085
+Leaf 0: RTB reduced and dropped response seq_num=6, oaddr=100672297
+Leaf 0: RTB reduced and dropped response seq_num=11, oaddr=117449514
+Leaf 0: forwarded seq_num=5 from leaf0-spine0 to GPU 1
+Leaf 0: RTB reduced and dropped response seq_num=15, oaddr=117449515
+Leaf 0: RTB reduced and dropped response seq_num=18, oaddr=117449516
+Leaf 0: RTB reduced and dropped response seq_num=20, oaddr=117449517
+Leaf 0: RTB reduced and dropped response seq_num=21, oaddr=100672301
+Leaf 0: RTB reduced and dropped response seq_num=22, oaddr=100672301
+Leaf 0: forwarded seq_num=6 from leaf0-spine0 to GPU 5
+Leaf 0: forwarded seq_num=7 from leaf0-spine0 to GPU 5
+Leaf 0: forwarded seq_num=8 from leaf0-spine0 to GPU 1
+Leaf 0: forwarded seq_num=22 from leaf0-spine0 to GPU 2
+Leaf 0: forwarded seq_num=23 from leaf0-spine0 to GPU 7
+Leaf 0: forwarded seq_num=18 from leaf0-spine0 to GPU 1
+Leaf 0: forwarded seq_num=19 from leaf0-spine0 to GPU 7
+Leaf 0: forwarded seq_num=20 from leaf0-spine0 to GPU 1
+Leaf 0: forwarded seq_num=22 from leaf0-spine0 to GPU 1
+Leaf 0: forwarded seq_num=3 from leaf0-spine0 to GPU 5
+Leaf 0: forwarded seq_num=4 from leaf0-spine0 to GPU 1
+Leaf 0: forwarded seq_num=7 from leaf0-spine0 to GPU 2
+Leaf 0: forwarded seq_num=8 from leaf0-spine0 to GPU 3
+Leaf 0: forwarded seq_num=9 from leaf0-spine0 to GPU 0
+Leaf 0: forwarded seq_num=10 from leaf0-spine0 to GPU 5
+Leaf 0: forwarded seq_num=12 from leaf0-spine0 to GPU 0
+Leaf 0: forwarded seq_num=13 from leaf0-spine0 to GPU 1
+Leaf 0: forwarded seq_num=19 from leaf0-spine0 to GPU 5
+Leaf 0: forwarded seq_num=21 from leaf0-spine0 to GPU 3
+Leaf 0: forwarded seq_num=22 from leaf0-spine0 to GPU 1
+Leaf 0: RTB reduced and dropped response seq_num=3, oaddr=167781161
+Leaf 0: RTB reduced and dropped response seq_num=18, oaddr=151003948
+Leaf 0: RTB emitted response seq_num=2, oaddr=167781160, count=1, data=700
+Leaf 0: forwarded seq_num=2 from leaf0-gpu1 to spine 1
+Leaf 0: RTB emitted response seq_num=0, oaddr=151003944, count=1, data=1869
+Leaf 0: forwarded seq_num=0 from leaf0-gpu1 to spine 0
+Leaf 0: RTB reduced and dropped response seq_num=4, oaddr=151003945
+Leaf 0: RTB reduced and dropped response seq_num=5, oaddr=151003945
+Leaf 0: RTB reduced and dropped response seq_num=8, oaddr=151003946
+Leaf 0: RTB emitted response seq_num=18, oaddr=167781164, count=1, data=700
+Leaf 0: forwarded seq_num=18 from leaf0-gpu1 to spine 0
+Leaf 0: RTB reduced and dropped response seq_num=20, oaddr=167781165
+Leaf 0: RTB reduced and dropped response seq_num=22, oaddr=167781165
+Leaf 0: RTB reduced and dropped response seq_num=4, oaddr=134226729
+Leaf 0: RTB reduced and dropped response seq_num=13, oaddr=134226731
+Leaf 0: RTB reduced and dropped response seq_num=22, oaddr=134226733
+Leaf 0: RTB reduced and dropped response seq_num=8, oaddr=134226730
+Leaf 0: RTB reduced and dropped response seq_num=21, oaddr=134226733
+Leaf 0: RTB reduced and dropped response seq_num=0, oaddr=134226728
+Leaf 0: RTB reduced and dropped response seq_num=22, oaddr=151003949
+Leaf 0: RTB reduced and dropped response seq_num=7, oaddr=134226730
+Leaf 0: RTB emitted response seq_num=17, oaddr=151003948, count=2, data=28771
+Leaf 0: forwarded seq_num=17 from leaf0-gpu0 to spine 1
+Leaf 0: RTB emitted response seq_num=15, oaddr=167781163, count=1, data=14421
+Leaf 0: forwarded seq_num=15 from leaf0-gpu0 to spine 1
+Leaf 0: RTB reduced and dropped response seq_num=9, oaddr=134226730
+Leaf 0: RTB emitted response seq_num=12, oaddr=134226731, count=2, data=2638
+Leaf 0: forwarded seq_num=12 from leaf0-gpu0 to spine 0
+Leaf 0: RTB emitted response seq_num=22, oaddr=151003949, count=2, data=4359
+Leaf 0: forwarded seq_num=22 from leaf0-gpu7 to spine 0
+Leaf 0: RTB emitted response seq_num=19, oaddr=167781165, count=3, data=17367
+Leaf 0: forwarded seq_num=19 from leaf0-gpu7 to spine 0
+Leaf 0: RTB reduced and dropped response seq_num=6, oaddr=167781161
+Leaf 0: RTB emitted response seq_num=3, oaddr=167781161, count=3, data=29547
+Leaf 0: forwarded seq_num=3 from leaf0-gpu5 to spine 1
+Leaf 0: RTB emitted response seq_num=0, oaddr=134226728, count=2, data=2532
+Leaf 0: forwarded seq_num=0 from leaf0-gpu5 to spine 1
+Leaf 0: RTB emitted response seq_num=4, oaddr=151003945, count=3, data=15799
+Leaf 0: forwarded seq_num=4 from leaf0-gpu5 to spine 0
+Leaf 0: RTB emitted response seq_num=7, oaddr=151003946, count=2, data=2661
+Leaf 0: forwarded seq_num=7 from leaf0-gpu5 to spine 0
+Leaf 0: RTB emitted response seq_num=3, oaddr=134226729, count=2, data=2601
+Leaf 0: forwarded seq_num=3 from leaf0-gpu5 to spine 0
+Leaf 0: RTB emitted response seq_num=7, oaddr=134226730, count=4, data=32564
+Leaf 0: forwarded seq_num=7 from leaf0-gpu5 to spine 0
+Leaf 0: RTB emitted response seq_num=19, oaddr=134226733, count=3, data=15784
+Leaf 0: forwarded seq_num=19 from leaf0-gpu5 to spine 0
+Leaf 0: forwarded seq_num=0 from leaf0-spine1 to GPU 1
+Leaf 0: forwarded seq_num=1 from leaf0-spine1 to GPU 1
+Leaf 0: forwarded seq_num=2 from leaf0-spine1 to GPU 3
+Leaf 0: forwarded seq_num=3 from leaf0-spine1 to GPU 6
+Leaf 0: forwarded seq_num=7 from leaf0-spine1 to GPU 5
+Leaf 0: forwarded seq_num=10 from leaf0-spine1 to GPU 2
+Leaf 0: forwarded seq_num=19 from leaf0-spine1 to GPU 1
+Leaf 0: forwarded seq_num=20 from leaf0-spine1 to GPU 6
+Leaf 0: forwarded seq_num=2 from leaf0-spine1 to GPU 5
+Leaf 0: forwarded seq_num=3 from leaf0-spine1 to GPU 2
+Leaf 0: forwarded seq_num=4 from leaf0-spine1 to GPU 3
+Leaf 0: forwarded seq_num=7 from leaf0-spine1 to GPU 1
+Leaf 0: forwarded seq_num=8 from leaf0-spine1 to GPU 6
+Leaf 0: forwarded seq_num=9 from leaf0-spine1 to GPU 5
+Leaf 0: forwarded seq_num=11 from leaf0-spine1 to GPU 5
+Leaf 0: forwarded seq_num=12 from leaf0-spine1 to GPU 1
+Leaf 0: forwarded seq_num=13 from leaf0-spine1 to GPU 5
+Leaf 0: forwarded seq_num=7 from leaf0-spine1 to GPU 5
+Leaf 0: forwarded seq_num=14 from leaf0-spine1 to GPU 5
+Leaf 0: forwarded seq_num=16 from leaf0-spine1 to GPU 5
+Leaf 0: forwarded seq_num=9 from leaf0-spine1 to GPU 1
+Leaf 0: forwarded seq_num=18 from leaf0-spine1 to GPU 7
+Leaf 0: forwarded seq_num=7 from leaf0-spine1 to GPU 4
+Leaf 0: forwarded seq_num=8 from leaf0-spine1 to GPU 5
+Leaf 0: forwarded seq_num=9 from leaf0-spine1 to GPU 2
+Leaf 0: forwarded seq_num=10 from leaf0-spine1 to GPU 7
+Leaf 0: forwarded seq_num=12 from leaf0-spine1 to GPU 5
+Leaf 0: forwarded seq_num=13 from leaf0-spine0 to GPU 2
+Leaf 0: forwarded seq_num=13 from leaf0-spine1 to GPU 7
+Leaf 0: forwarded seq_num=19 from leaf0-spine1 to GPU 3
+Leaf 0: forwarded seq_num=20 from leaf0-spine1 to GPU 4
+Leaf 0: forwarded seq_num=10 from leaf0-spine1 to GPU 1
+Leaf 0: forwarded seq_num=21 from leaf0-spine1 to GPU 0
+Leaf 0: forwarded seq_num=22 from leaf0-spine1 to GPU 6
+Leaf 0: forwarded seq_num=13 from leaf0-spine1 to GPU 4
+Leaf 0: forwarded seq_num=14 from leaf0-spine1 to GPU 5
+Leaf 0: forwarded seq_num=19 from leaf0-spine1 to GPU 5
+Leaf 0: forwarded seq_num=21 from leaf0-spine1 to GPU 2
+Leaf 0: forwarded seq_num=22 from leaf0-spine1 to GPU 0
+Leaf 0: forwarded seq_num=17 from leaf0-spine1 to GPU 1
+Leaf 0: forwarded seq_num=18 from leaf0-spine1 to GPU 3
+Leaf 0: forwarded seq_num=19 from leaf0-spine1 to GPU 1
+Leaf 0: forwarded seq_num=20 from leaf0-spine1 to GPU 7
+Leaf 0: forwarded seq_num=22 from leaf0-spine1 to GPU 4
+Leaf 0: forwarded seq_num=14 from leaf0-spine0 to GPU 7
+Leaf 0: forwarded seq_num=15 from leaf0-spine0 to GPU 3
+Leaf 0: forwarded seq_num=16 from leaf0-spine0 to GPU 7
+Leaf 0: forwarded seq_num=18 from leaf0-spine0 to GPU 1
+Leaf 0: RTB reduced and dropped response seq_num=21, oaddr=234890029
+Leaf 0: RTB reduced and dropped response seq_num=10, oaddr=184558378
+Leaf 0: RTB reduced and dropped response seq_num=7, oaddr=234890026
+Leaf 0: RTB reduced and dropped response seq_num=20, oaddr=234890029
+Leaf 0: RTB reduced and dropped response seq_num=13, oaddr=201335595
+Leaf 0: RTB reduced and dropped response seq_num=22, oaddr=251667245
+Leaf 0: RTB reduced and dropped response seq_num=22, oaddr=201335597
+Leaf 0: RTB reduced and dropped response seq_num=0, oaddr=184558376
+Leaf 0: RTB reduced and dropped response seq_num=1, oaddr=184558376
+Leaf 0: RTB reduced and dropped response seq_num=19, oaddr=184558381
+Leaf 0: RTB reduced and dropped response seq_num=7, oaddr=218112810
+Leaf 0: RTB reduced and dropped response seq_num=12, oaddr=218112811
+Leaf 0: RTB reduced and dropped response seq_num=9, oaddr=251667242
+Leaf 0: RTB reduced and dropped response seq_num=10, oaddr=251667242
+Leaf 0: RTB reduced and dropped response seq_num=17, oaddr=251667244
+Leaf 0: RTB reduced and dropped response seq_num=19, oaddr=251667245
+Leaf 0: RTB reduced and dropped response seq_num=18, oaddr=184558380
+Leaf 0: RTB emitted response seq_num=0, oaddr=184558376, count=3, data=29582
+Leaf 0: forwarded seq_num=0 from leaf0-gpu3 to spine 1
+Leaf 0: RTB reduced and dropped response seq_num=4, oaddr=251667241
+Leaf 0: RTB reduced and dropped response seq_num=19, oaddr=234890029
+Leaf 0: RTB emitted response seq_num=17, oaddr=251667244, count=2, data=15326
+Leaf 0: forwarded seq_num=17 from leaf0-gpu3 to spine 1
+Leaf 0: RTB reduced and dropped response seq_num=15, oaddr=184558379
+Leaf 0: RTB emitted response seq_num=3, oaddr=251667241, count=2, data=29213
+Leaf 0: forwarded seq_num=3 from leaf0-gpu2 to spine 1
+Leaf 0: RTB reduced and dropped response seq_num=9, oaddr=234890026
+Leaf 0: RTB reduced and dropped response seq_num=13, oaddr=184558379
+Leaf 0: RTB reduced and dropped response seq_num=21, oaddr=201335597
+Leaf 0: RTB emitted response seq_num=3, oaddr=184558377, count=1, data=14446
+Leaf 0: forwarded seq_num=3 from leaf0-gpu6 to spine 1
+Leaf 0: RTB emitted response seq_num=7, oaddr=184558378, count=2, data=2900
+Leaf 0: forwarded seq_num=7 from leaf0-gpu5 to spine 1
+Leaf 0: RTB emitted response seq_num=2, oaddr=251667240, count=1, data=732
+Leaf 0: forwarded seq_num=2 from leaf0-gpu5 to spine 1
+Leaf 0: RTB reduced and dropped response seq_num=9, oaddr=218112810
+Leaf 0: RTB emitted response seq_num=19, oaddr=184558381, count=2, data=2960
+Leaf 0: forwarded seq_num=19 from leaf0-gpu6 to spine 1
+Leaf 0: RTB reduced and dropped response seq_num=11, oaddr=218112810
+Leaf 0: RTB reduced and dropped response seq_num=13, oaddr=218112811
+Leaf 0: RTB emitted response seq_num=7, oaddr=251667242, count=3, data=3301
+Leaf 0: forwarded seq_num=7 from leaf0-gpu5 to spine 1
+Leaf 0: RTB emitted response seq_num=12, oaddr=218112811, count=3, data=3761
+Leaf 0: forwarded seq_num=12 from leaf0-gpu5 to spine 1
+Leaf 0: RTB emitted response seq_num=7, oaddr=218112810, count=4, data=19765
+Leaf 0: forwarded seq_num=7 from leaf0-gpu6 to spine 1
+Leaf 0: RTB emitted response seq_num=19, oaddr=234890029, count=4, data=45712
+Leaf 0: forwarded seq_num=19 from leaf0-gpu6 to spine 1
+Leaf 0: RTB reduced and dropped response seq_num=16, oaddr=218112812
+Leaf 0: RTB reduced and dropped response seq_num=8, oaddr=234890026
+Leaf 0: RTB reduced and dropped response seq_num=12, oaddr=234890027
+Leaf 0: RTB emitted response seq_num=13, oaddr=201335595, count=2, data=15231
+Leaf 0: forwarded seq_num=13 from leaf0-gpu5 to spine 1
+Leaf 0: RTB emitted response seq_num=19, oaddr=201335597, count=3, data=17045
+Leaf 0: forwarded seq_num=19 from leaf0-gpu5 to spine 1
+Leaf 0: RTB emitted response seq_num=3, oaddr=83895081, count=4, data=17940
+Leaf 0: forwarded seq_num=3 from leaf0-spine1 to GPU 5
+Leaf 0: RTB emitted response seq_num=16, oaddr=218112812, count=2, data=4152
+Leaf 0: forwarded seq_num=16 from leaf0-gpu7 to spine 1
+Leaf 0: RTB emitted response seq_num=7, oaddr=234890026, count=4, data=33276
+Leaf 0: forwarded seq_num=7 from leaf0-gpu7 to spine 1
+Leaf 0: RTB emitted response seq_num=12, oaddr=234890027, count=2, data=2555
+Leaf 0: forwarded seq_num=12 from leaf0-gpu7 to spine 1
+Leaf 0: RTB emitted response seq_num=19, oaddr=251667245, count=3, data=17361
+Leaf 0: forwarded seq_num=19 from leaf0-gpu7 to spine 1
+Leaf 0: RTB emitted response seq_num=13, oaddr=184558379, count=3, data=18820
+Leaf 0: forwarded seq_num=13 from leaf0-gpu7 to spine 0
+Leaf 0: RTB emitted response seq_num=16, oaddr=184558380, count=2, data=4428
+Leaf 0: forwarded seq_num=16 from leaf0-gpu7 to spine 0
+Leaf 0: RTB emitted response seq_num=19, oaddr=117449517, count=5, data=18562
+Leaf 0: forwarded seq_num=19 from leaf0-spine1 to GPU 7
+Leaf 0: RTB emitted response seq_num=16, oaddr=50340652, count=3, data=18573
+Leaf 0: forwarded seq_num=16 from leaf0-spine1 to GPU 3
+Leaf 0: RTB emitted response seq_num=19, oaddr=16786221, count=5, data=31777
+Leaf 0: forwarded seq_num=19 from leaf0-spine1 to GPU 1
+Leaf 0: RTB emitted response seq_num=16, oaddr=33563436, count=3, data=4967
+Leaf 0: forwarded seq_num=16 from leaf0-spine1 to GPU 2
+Leaf 0: RTB emitted response seq_num=7, oaddr=16786218, count=5, data=18394
+Leaf 0: forwarded seq_num=7 from leaf0-spine1 to GPU 1
+Leaf 0: RTB emitted response seq_num=0, oaddr=50340648, count=3, data=3549
+Leaf 0: forwarded seq_num=0 from leaf0-spine1 to GPU 3
+Leaf 0: RTB emitted response seq_num=3, oaddr=50340649, count=4, data=31148
+Leaf 0: forwarded seq_num=3 from leaf0-spine1 to GPU 3
+Leaf 0: RTB emitted response seq_num=19, oaddr=33563437, count=5, data=31986
+Leaf 0: forwarded seq_num=19 from leaf0-spine1 to GPU 2
+Leaf 0: RTB emitted response seq_num=19, oaddr=83895085, count=5, data=31742
+Leaf 0: forwarded seq_num=19 from leaf0-spine1 to GPU 5
+Leaf 0: forwarded seq_num=0 from leaf0-spine0 to GPU 7
+Leaf 0: RTB emitted response seq_num=12, oaddr=117449515, count=4, data=2992
+Leaf 0: forwarded seq_num=12 from leaf0-spine1 to GPU 7
+Leaf 0: RTB emitted response seq_num=7, oaddr=100672298, count=5, data=57811
+Leaf 0: forwarded seq_num=7 from leaf0-spine1 to GPU 6
+Leaf 0: forwarded seq_num=2 from leaf0-spine0 to GPU 7
+Leaf 0: forwarded seq_num=5 from leaf0-spine0 to GPU 1
+Leaf 0: forwarded seq_num=6 from leaf0-spine0 to GPU 5
+Leaf 0: forwarded seq_num=1 from leaf0-spine0 to GPU 5
+Leaf 0: forwarded seq_num=19 from leaf0-spine0 to GPU 7
+Leaf 0: forwarded seq_num=20 from leaf0-spine0 to GPU 1
+Leaf 0: forwarded seq_num=21 from leaf0-spine0 to GPU 2
+Leaf 0: forwarded seq_num=22 from leaf0-spine0 to GPU 5
+Leaf 0: forwarded seq_num=4 from leaf0-spine0 to GPU 1
+Leaf 0: forwarded seq_num=5 from leaf0-spine0 to GPU 0
+Leaf 0: forwarded seq_num=18 from leaf0-spine0 to GPU 1
+Leaf 0: forwarded seq_num=7 from leaf0-spine0 to GPU 2
+Leaf 0: forwarded seq_num=10 from leaf0-spine0 to GPU 1
+Leaf 0: forwarded seq_num=16 from leaf0-spine0 to GPU 6
+Leaf 0: forwarded seq_num=17 from leaf0-spine0 to GPU 5
+Leaf 0: forwarded seq_num=18 from leaf0-spine0 to GPU 0
+Leaf 0: forwarded seq_num=14 from leaf0-spine0 to GPU 1
+Leaf 0: RTB emitted response seq_num=16, oaddr=9004, count=3, data=28813
+Leaf 0: forwarded seq_num=16 from leaf0-spine0 to GPU 0
+Leaf 0: RTB emitted response seq_num=12, oaddr=33563435, count=4, data=29662
+Leaf 0: forwarded seq_num=12 from leaf0-spine0 to GPU 2
+Leaf 0: RTB emitted response seq_num=7, oaddr=67117866, count=5, data=18638
+Leaf 0: forwarded seq_num=7 from leaf0-spine0 to GPU 4
+Leaf 0: RTB emitted response seq_num=19, oaddr=50340653, count=5, data=45547
+Leaf 0: forwarded seq_num=19 from leaf0-spine0 to GPU 3
+Leaf 0: RTB emitted response seq_num=7, oaddr=117449514, count=5, data=5888
+Leaf 0: forwarded seq_num=7 from leaf0-spine0 to GPU 7
+Leaf 0: RTB emitted response seq_num=12, oaddr=16786219, count=4, data=32202
+Leaf 0: forwarded seq_num=12 from leaf0-spine0 to GPU 1
+Leaf 0: RTB emitted response seq_num=16, oaddr=16786220, count=3, data=30184
+Leaf 0: forwarded seq_num=16 from leaf0-spine0 to GPU 1
+Leaf 0: RTB emitted response seq_num=12, oaddr=9003, count=4, data=5377
+Leaf 0: forwarded seq_num=12 from leaf0-spine0 to GPU 0
+Leaf 0: RTB reduced and dropped response seq_num=5, oaddr=234890025
+Leaf 0: RTB reduced and dropped response seq_num=18, oaddr=201335596
+Leaf 0: RTB reduced and dropped response seq_num=21, oaddr=218112813
+Leaf 0: RTB reduced and dropped response seq_num=5, oaddr=218112809
+Leaf 0: RTB reduced and dropped response seq_num=20, oaddr=218112813
+Leaf 0: RTB emitted response seq_num=4, oaddr=234890025, count=2, data=3006
+Leaf 0: forwarded seq_num=4 from leaf0-gpu1 to spine 0
+Leaf 0: RTB emitted response seq_num=18, oaddr=234890028, count=1, data=700
+Leaf 0: forwarded seq_num=18 from leaf0-gpu1 to spine 0
+Leaf 0: RTB reduced and dropped response seq_num=10, oaddr=201335594
+Leaf 0: RTB emitted response seq_num=14, oaddr=251667243, count=1, data=700
+Leaf 0: forwarded seq_num=14 from leaf0-gpu1 to spine 0
+Leaf 0: RTB emitted response seq_num=7, oaddr=201335594, count=2, data=4405
+Leaf 0: forwarded seq_num=7 from leaf0-gpu2 to spine 0
+Leaf 0: RTB reduced and dropped response seq_num=16, oaddr=201335596
+Leaf 0: RTB emitted response seq_num=7, oaddr=50340650, count=5, data=33279
+Leaf 0: forwarded seq_num=7 from leaf0-spine0 to GPU 3
+Leaf 0: RTB emitted response seq_num=3, oaddr=67117865, count=4, data=20626
+Leaf 0: forwarded seq_num=3 from leaf0-spine0 to GPU 4
+Leaf 0: RTB emitted response seq_num=0, oaddr=9000, count=3, data=17669
+Leaf 0: forwarded seq_num=0 from leaf0-spine0 to GPU 0
+Leaf 0: RTB emitted response seq_num=3, oaddr=9001, count=4, data=4106
+Leaf 0: forwarded seq_num=3 from leaf0-spine0 to GPU 0
+Leaf 0: RTB emitted response seq_num=0, oaddr=33563432, count=3, data=4718
+Leaf 0: forwarded seq_num=0 from leaf0-spine0 to GPU 2
+Leaf 0: RTB emitted response seq_num=0, oaddr=67117864, count=3, data=30443
+Leaf 0: forwarded seq_num=0 from leaf0-spine0 to GPU 4
+Leaf 0: RTB emitted response seq_num=16, oaddr=83895084, count=3, data=16820
+Leaf 0: forwarded seq_num=16 from leaf0-spine0 to GPU 5
+Leaf 0: RTB emitted response seq_num=3, oaddr=117449513, count=4, data=5119
+Leaf 0: forwarded seq_num=3 from leaf0-spine0 to GPU 7
+Leaf 0: RTB reduced and dropped response seq_num=0, oaddr=218112808
+Leaf 0: RTB emitted response seq_num=0, oaddr=218112808, count=2, data=16711
+Leaf 0: forwarded seq_num=0 from leaf0-gpu7 to spine 0
+Leaf 0: RTB reduced and dropped response seq_num=19, oaddr=218112813
+Leaf 0: RTB emitted response seq_num=12, oaddr=100672299, count=4, data=18737
+Leaf 0: forwarded seq_num=12 from leaf0-spine0 to GPU 6
+Leaf 0: RTB emitted response seq_num=16, oaddr=100672300, count=3, data=2260
+Leaf 0: forwarded seq_num=16 from leaf0-spine0 to GPU 6
+Leaf 0: RTB emitted response seq_num=19, oaddr=9005, count=5, data=46314
+Leaf 0: forwarded seq_num=19 from leaf0-spine0 to GPU 0
+Leaf 0: RTB emitted response seq_num=0, oaddr=16786216, count=3, data=16688
+Leaf 0: forwarded seq_num=0 from leaf0-spine0 to GPU 1
+Leaf 0: RTB emitted response seq_num=3, oaddr=16786217, count=4, data=18712
+Leaf 0: forwarded seq_num=3 from leaf0-spine0 to GPU 1
+Leaf 0: RTB emitted response seq_num=12, oaddr=50340651, count=4, data=43184
+Leaf 0: forwarded seq_num=12 from leaf0-spine0 to GPU 3
+Leaf 0: RTB emitted response seq_num=3, oaddr=33563433, count=4, data=43025
+Leaf 0: forwarded seq_num=3 from leaf0-spine0 to GPU 2
+Leaf 0: RTB emitted response seq_num=12, oaddr=67117867, count=4, data=20958
+Leaf 0: forwarded seq_num=12 from leaf0-spine0 to GPU 4
+Leaf 0: RTB emitted response seq_num=19, oaddr=100672301, count=5, data=45508
+Leaf 0: forwarded seq_num=19 from leaf0-spine0 to GPU 6
+Leaf 0: RTB emitted response seq_num=5, oaddr=218112809, count=2, data=2969
+Leaf 0: forwarded seq_num=5 from leaf0-gpu5 to spine 0
+Leaf 0: RTB emitted response seq_num=1, oaddr=201335592, count=1, data=732
+Leaf 0: forwarded seq_num=1 from leaf0-gpu5 to spine 0
+Leaf 0: RTB emitted response seq_num=19, oaddr=218112813, count=4, data=31658
+Leaf 0: forwarded seq_num=19 from leaf0-gpu5 to spine 0
+Leaf 0: RTB emitted response seq_num=16, oaddr=201335596, count=3, data=5298
+Leaf 0: forwarded seq_num=16 from leaf0-gpu5 to spine 0
+Leaf 0: RTB emitted response seq_num=7, oaddr=9002, count=5, data=45896
+Leaf 0: forwarded seq_num=7 from leaf0-spine1 to GPU 0
+Leaf 0: RTB emitted response seq_num=7, oaddr=83895082, count=5, data=33814
+Leaf 0: forwarded seq_num=7 from leaf0-spine1 to GPU 5
+Leaf 0: RTB emitted response seq_num=12, oaddr=83895083, count=4, data=44943
+Leaf 0: forwarded seq_num=12 from leaf0-spine1 to GPU 5
+Leaf 0: RTB emitted response seq_num=3, oaddr=100672297, count=4, data=7714
+Leaf 0: forwarded seq_num=3 from leaf0-spine1 to GPU 6
+Leaf 0: RTB emitted response seq_num=16, oaddr=117449516, count=3, data=4576
+Leaf 0: forwarded seq_num=16 from leaf0-spine1 to GPU 7
+
+===== leaf1 =====
+Hello from Leaf 1, 8 GPUs per Leaf, 2 Spines
+Leaf 1: mode=RTB
+Leaf 1: Starting capture on leaf1-gpu8
+Leaf 1: Starting capture on leaf1-gpu9
+Leaf 1: Starting capture on leaf1-gpu10
+Leaf 1: Starting capture on leaf1-gpu11
+Leaf 1: Starting capture on leaf1-gpu12
+Leaf 1: Starting capture on leaf1-gpu13
+Leaf 1: Starting capture on leaf1-gpu14
+Leaf 1: Starting capture on leaf1-gpu15
+Leaf 1: Starting capture on leaf1-spine0
+Leaf 1: Initialized 10 network devices
+Leaf 1: Starting capture on leaf1-spine1
+Leaf 1: forwarded seq_num=0 from leaf1-gpu10 to GPU 8
+Leaf 1: forwarded seq_num=0 from leaf1-gpu9 to spine 0
+Leaf 1: forwarded seq_num=1 from leaf1-gpu9 to GPU 8
+Leaf 1: forwarded seq_num=2 from leaf1-gpu9 to GPU 11
+Leaf 1: forwarded seq_num=3 from leaf1-gpu9 to GPU 8
+Leaf 1: forwarded seq_num=4 from leaf1-gpu9 to spine 0
+Leaf 1: forwarded seq_num=5 from leaf1-gpu9 to spine 0
+Leaf 1: forwarded seq_num=6 from leaf1-gpu9 to spine 0
+Leaf 1: forwarded seq_num=7 from leaf1-gpu9 to spine 0
+Leaf 1: forwarded seq_num=8 from leaf1-gpu9 to spine 0
+Leaf 1: forwarded seq_num=9 from leaf1-gpu9 to GPU 15
+Leaf 1: forwarded seq_num=10 from leaf1-gpu9 to GPU 8
+Leaf 1: forwarded seq_num=11 from leaf1-gpu9 to GPU 9
+Leaf 1: forwarded seq_num=12 from leaf1-gpu9 to GPU 10
+Leaf 1: forwarded seq_num=13 from leaf1-gpu9 to GPU 11
+Leaf 1: forwarded seq_num=14 from leaf1-gpu9 to GPU 12
+Leaf 1: forwarded seq_num=15 from leaf1-gpu9 to GPU 12
+Leaf 1: forwarded seq_num=16 from leaf1-gpu9 to GPU 9
+Leaf 1: forwarded seq_num=17 from leaf1-gpu9 to spine 1
+Leaf 1: forwarded seq_num=18 from leaf1-gpu9 to spine 1
+Leaf 1: forwarded seq_num=1 from leaf1-gpu10 to GPU 12
+Leaf 1: forwarded seq_num=19 from leaf1-gpu9 to GPU 8
+Leaf 1: forwarded seq_num=20 from leaf1-gpu9 to GPU 12
+Leaf 1: forwarded seq_num=21 from leaf1-gpu9 to GPU 13
+Leaf 1: forwarded seq_num=2 from leaf1-gpu10 to spine 1
+Leaf 1: forwarded seq_num=22 from leaf1-gpu9 to spine 0
+Leaf 1: forwarded seq_num=23 from leaf1-gpu9 to spine 0
+Leaf 1: forwarded seq_num=3 from leaf1-gpu10 to spine 1
+Leaf 1: forwarded seq_num=0 from leaf1-gpu8 to spine 1
+Leaf 1: forwarded seq_num=4 from leaf1-gpu10 to GPU 15
+Leaf 1: forwarded seq_num=5 from leaf1-gpu10 to spine 1
+Leaf 1: forwarded seq_num=6 from leaf1-gpu10 to spine 1
+Leaf 1: forwarded seq_num=7 from leaf1-gpu10 to GPU 8
+Leaf 1: forwarded seq_num=8 from leaf1-gpu10 to GPU 9
+Leaf 1: forwarded seq_num=9 from leaf1-gpu10 to GPU 14
+Leaf 1: forwarded seq_num=10 from leaf1-gpu10 to GPU 11
+Leaf 1: forwarded seq_num=11 from leaf1-gpu10 to GPU 12
+Leaf 1: forwarded seq_num=12 from leaf1-gpu10 to GPU 13
+Leaf 1: forwarded seq_num=13 from leaf1-gpu10 to GPU 14
+Leaf 1: forwarded seq_num=14 from leaf1-gpu10 to GPU 15
+Leaf 1: forwarded seq_num=15 from leaf1-gpu10 to spine 1
+Leaf 1: forwarded seq_num=16 from leaf1-gpu10 to GPU 8
+Leaf 1: forwarded seq_num=17 from leaf1-gpu10 to GPU 13
+Leaf 1: forwarded seq_num=18 from leaf1-gpu10 to spine 0
+Leaf 1: forwarded seq_num=19 from leaf1-gpu10 to spine 0
+Leaf 1: forwarded seq_num=20 from leaf1-gpu10 to spine 0
+Leaf 1: forwarded seq_num=21 from leaf1-gpu10 to GPU 9
+Leaf 1: forwarded seq_num=22 from leaf1-gpu10 to spine 0
+Leaf 1: forwarded seq_num=23 from leaf1-gpu10 to GPU 12
+Leaf 1: forwarded seq_num=1 from leaf1-gpu8 to spine 1
+Leaf 1: forwarded seq_num=2 from leaf1-gpu8 to GPU 10
+Leaf 1: forwarded seq_num=3 from leaf1-gpu8 to spine 0
+Leaf 1: forwarded seq_num=4 from leaf1-gpu8 to spine 0
+Leaf 1: forwarded seq_num=5 from leaf1-gpu8 to GPU 15
+Leaf 1: forwarded seq_num=6 from leaf1-gpu8 to GPU 11
+Leaf 1: forwarded seq_num=7 from leaf1-gpu8 to spine 0
+Leaf 1: forwarded seq_num=8 from leaf1-gpu8 to spine 0
+Leaf 1: forwarded seq_num=9 from leaf1-gpu8 to spine 0
+Leaf 1: forwarded seq_num=10 from leaf1-gpu8 to spine 0
+Leaf 1: forwarded seq_num=11 from leaf1-gpu8 to GPU 8
+Leaf 1: forwarded seq_num=12 from leaf1-gpu8 to spine 0
+Leaf 1: forwarded seq_num=13 from leaf1-gpu8 to spine 0
+Leaf 1: forwarded seq_num=14 from leaf1-gpu8 to GPU 9
+Leaf 1: forwarded seq_num=15 from leaf1-gpu8 to GPU 10
+Leaf 1: forwarded seq_num=16 from leaf1-gpu8 to GPU 12
+Leaf 1: forwarded seq_num=17 from leaf1-gpu8 to GPU 15
+Leaf 1: forwarded seq_num=18 from leaf1-gpu8 to GPU 14
+Leaf 1: forwarded seq_num=19 from leaf1-gpu8 to spine 0
+Leaf 1: forwarded seq_num=20 from leaf1-gpu8 to GPU 8
+Leaf 1: forwarded seq_num=21 from leaf1-gpu8 to spine 0
+Leaf 1: forwarded seq_num=22 from leaf1-gpu8 to spine 0
+Leaf 1: forwarded seq_num=23 from leaf1-gpu8 to GPU 8
+Leaf 1: forwarded seq_num=0 from leaf1-gpu11 to spine 1
+Leaf 1: RTB reduced and dropped response seq_num=11, oaddr=151003946
+Leaf 1: RTB reduced and dropped response seq_num=0, oaddr=167781160
+Leaf 1: RTB reduced and dropped response seq_num=1, oaddr=151003944
+Leaf 1: RTB reduced and dropped response seq_num=3, oaddr=151003945
+Leaf 1: RTB reduced and dropped response seq_num=10, oaddr=151003946
+Leaf 1: RTB reduced and dropped response seq_num=19, oaddr=151003949
+Leaf 1: RTB reduced and dropped response seq_num=7, oaddr=167781162
+Leaf 1: RTB reduced and dropped response seq_num=16, oaddr=167781164
+Leaf 1: RTB reduced and dropped response seq_num=11, oaddr=134226730
+Leaf 1: RTB reduced and dropped response seq_num=20, oaddr=134226733
+Leaf 1: RTB reduced and dropped response seq_num=23, oaddr=134226733
+Leaf 1: RTB reduced and dropped response seq_num=16, oaddr=151003948
+Leaf 1: RTB reduced and dropped response seq_num=8, oaddr=167781162
+Leaf 1: RTB reduced and dropped response seq_num=21, oaddr=167781165
+Leaf 1: forwarded seq_num=1 from leaf1-gpu11 to spine 1
+Leaf 1: RTB reduced and dropped response seq_num=14, oaddr=134226731
+Leaf 1: forwarded seq_num=2 from leaf1-gpu11 to spine 1
+Leaf 1: forwarded seq_num=3 from leaf1-gpu11 to spine 1
+Leaf 1: forwarded seq_num=4 from leaf1-gpu11 to GPU 14
+Leaf 1: forwarded seq_num=5 from leaf1-gpu11 to GPU 8
+Leaf 1: forwarded seq_num=6 from leaf1-gpu11 to GPU 12
+Leaf 1: forwarded seq_num=7 from leaf1-gpu11 to spine 1
+Leaf 1: forwarded seq_num=8 from leaf1-gpu11 to GPU 12
+Leaf 1: forwarded seq_num=9 from leaf1-gpu11 to GPU 13
+Leaf 1: forwarded seq_num=10 from leaf1-gpu11 to spine 1
+Leaf 1: forwarded seq_num=11 from leaf1-gpu11 to GPU 15
+Leaf 1: forwarded seq_num=12 from leaf1-gpu11 to GPU 13
+Leaf 1: forwarded seq_num=13 from leaf1-gpu11 to spine 0
+Leaf 1: forwarded seq_num=14 from leaf1-gpu11 to spine 0
+Leaf 1: forwarded seq_num=15 from leaf1-gpu11 to spine 0
+Leaf 1: forwarded seq_num=16 from leaf1-gpu11 to spine 0
+Leaf 1: forwarded seq_num=17 from leaf1-gpu11 to GPU 12
+Leaf 1: forwarded seq_num=18 from leaf1-gpu11 to spine 0
+Leaf 1: forwarded seq_num=19 from leaf1-gpu11 to spine 1
+Leaf 1: forwarded seq_num=20 from leaf1-gpu11 to spine 1
+Leaf 1: forwarded seq_num=21 from leaf1-gpu11 to GPU 12
+Leaf 1: forwarded seq_num=22 from leaf1-gpu11 to GPU 12
+Leaf 1: forwarded seq_num=23 from leaf1-gpu11 to GPU 14
+Leaf 1: RTB reduced and dropped response seq_num=2, oaddr=151003944
+Leaf 1: RTB reduced and dropped response seq_num=13, oaddr=151003947
+Leaf 1: RTB reduced and dropped response seq_num=10, oaddr=167781162
+Leaf 1: RTB reduced and dropped response seq_num=6, oaddr=134226729
+Leaf 1: forwarded seq_num=0 from leaf1-gpu15 to GPU 12
+Leaf 1: forwarded seq_num=1 from leaf1-gpu15 to GPU 14
+Leaf 1: forwarded seq_num=2 from leaf1-spine0 to GPU 12
+Leaf 1: forwarded seq_num=3 from leaf1-spine0 to GPU 12
+Leaf 1: forwarded seq_num=4 from leaf1-spine0 to GPU 8
+Leaf 1: forwarded seq_num=5 from leaf1-spine0 to GPU 12
+Leaf 1: forwarded seq_num=15 from leaf1-spine0 to GPU 15
+Leaf 1: forwarded seq_num=2 from leaf1-gpu15 to spine 1
+Leaf 1: forwarded seq_num=3 from leaf1-gpu15 to spine 1
+Leaf 1: forwarded seq_num=4 from leaf1-gpu15 to spine 1
+Leaf 1: forwarded seq_num=5 from leaf1-gpu15 to GPU 8
+Leaf 1: forwarded seq_num=6 from leaf1-gpu15 to GPU 12
+Leaf 1: forwarded seq_num=0 from leaf1-gpu13 to spine 0
+Leaf 1: forwarded seq_num=7 from leaf1-spine1 to GPU 10
+Leaf 1: forwarded seq_num=8 from leaf1-spine1 to GPU 11
+Leaf 1: forwarded seq_num=10 from leaf1-spine1 to GPU 13
+Leaf 1: forwarded seq_num=11 from leaf1-spine1 to GPU 14
+Leaf 1: forwarded seq_num=7 from leaf1-spine1 to GPU 12
+Leaf 1: forwarded seq_num=8 from leaf1-spine1 to GPU 10
+Leaf 1: forwarded seq_num=9 from leaf1-spine1 to GPU 15
+Leaf 1: forwarded seq_num=0 from leaf1-gpu12 to GPU 14
+Leaf 1: forwarded seq_num=10 from leaf1-spine1 to GPU 8
+Leaf 1: forwarded seq_num=11 from leaf1-spine1 to GPU 12
+Leaf 1: forwarded seq_num=19 from leaf1-spine1 to GPU 8
+Leaf 1: forwarded seq_num=1 from leaf1-gpu13 to GPU 8
+Leaf 1: forwarded seq_num=2 from leaf1-gpu13 to spine 0
+Leaf 1: forwarded seq_num=3 from leaf1-gpu13 to GPU 8
+Leaf 1: forwarded seq_num=4 from leaf1-gpu13 to GPU 12
+Leaf 1: forwarded seq_num=5 from leaf1-gpu13 to spine 0
+Leaf 1: forwarded seq_num=6 from leaf1-gpu13 to spine 0
+Leaf 1: forwarded seq_num=7 from leaf1-gpu13 to spine 1
+Leaf 1: forwarded seq_num=8 from leaf1-gpu13 to spine 1
+Leaf 1: forwarded seq_num=9 from leaf1-gpu13 to spine 1
+Leaf 1: forwarded seq_num=10 from leaf1-gpu13 to GPU 8
+Leaf 1: forwarded seq_num=11 from leaf1-gpu13 to spine 1
+Leaf 1: forwarded seq_num=12 from leaf1-gpu13 to spine 1
+Leaf 1: forwarded seq_num=18 from leaf1-spine0 to GPU 8
+Leaf 1: forwarded seq_num=13 from leaf1-gpu13 to spine 1
+Leaf 1: forwarded seq_num=7 from leaf1-gpu15 to spine 1
+Leaf 1: forwarded seq_num=14 from leaf1-gpu13 to spine 1
+Leaf 1: forwarded seq_num=15 from leaf1-gpu13 to GPU 12
+Leaf 1: forwarded seq_num=20 from leaf1-spine1 to GPU 13
+Leaf 1: forwarded seq_num=0 from leaf1-spine1 to GPU 12
+Leaf 1: forwarded seq_num=2 from leaf1-spine1 to GPU 9
+Leaf 1: forwarded seq_num=3 from leaf1-spine1 to GPU 14
+Leaf 1: forwarded seq_num=4 from leaf1-spine1 to GPU 15
+Leaf 1: forwarded seq_num=6 from leaf1-spine1 to GPU 12
+Leaf 1: forwarded seq_num=16 from leaf1-spine1 to GPU 8
+Leaf 1: forwarded seq_num=17 from leaf1-spine1 to GPU 13
+Leaf 1: forwarded seq_num=19 from leaf1-spine1 to GPU 15
+Leaf 1: forwarded seq_num=23 from leaf1-spine1 to GPU 12
+Leaf 1: forwarded seq_num=17 from leaf1-spine1 to GPU 14
+Leaf 1: forwarded seq_num=3 from leaf1-spine1 to GPU 8
+Leaf 1: forwarded seq_num=7 from leaf1-spine1 to GPU 12
+Leaf 1: forwarded seq_num=0 from leaf1-gpu14 to GPU 10
+Leaf 1: forwarded seq_num=9 from leaf1-spine1 to GPU 11
+Leaf 1: forwarded seq_num=19 from leaf1-spine0 to GPU 9
+Leaf 1: forwarded seq_num=8 from leaf1-gpu15 to GPU 8
+Leaf 1: forwarded seq_num=20 from leaf1-spine0 to GPU 10
+Leaf 1: forwarded seq_num=1 from leaf1-gpu12 to spine 0
+Leaf 1: forwarded seq_num=16 from leaf1-gpu13 to spine 1
+Leaf 1: forwarded seq_num=9 from leaf1-gpu15 to spine 1
+Leaf 1: forwarded seq_num=17 from leaf1-gpu13 to GPU 12
+Leaf 1: forwarded seq_num=18 from leaf1-gpu13 to spine 1
+Leaf 1: forwarded seq_num=19 from leaf1-gpu13 to spine 0
+Leaf 1: forwarded seq_num=20 from leaf1-gpu13 to spine 0
+Leaf 1: forwarded seq_num=21 from leaf1-gpu13 to spine 0
+Leaf 1: forwarded seq_num=22 from leaf1-gpu13 to spine 0
+Leaf 1: forwarded seq_num=23 from leaf1-gpu13 to GPU 11
+Leaf 1: forwarded seq_num=21 from leaf1-spine0 to GPU 11
+Leaf 1: RTB reduced and dropped response seq_num=21, oaddr=151003949
+Leaf 1: forwarded seq_num=1 from leaf1-gpu14 to GPU 11
+Leaf 1: RTB reduced and dropped response seq_num=12, oaddr=167781163
+Leaf 1: forwarded seq_num=10 from leaf1-spine1 to GPU 12
+Leaf 1: RTB reduced and dropped response seq_num=17, oaddr=167781164
+Leaf 1: forwarded seq_num=2 from leaf1-gpu14 to GPU 12
+Leaf 1: forwarded seq_num=3 from leaf1-gpu14 to GPU 12
+Leaf 1: forwarded seq_num=4 from leaf1-gpu14 to spine 0
+Leaf 1: forwarded seq_num=5 from leaf1-gpu14 to spine 0
+Leaf 1: forwarded seq_num=6 from leaf1-gpu14 to GPU 8
+Leaf 1: forwarded seq_num=7 from leaf1-gpu14 to spine 1
+Leaf 1: forwarded seq_num=8 from leaf1-gpu14 to spine 1
+Leaf 1: forwarded seq_num=9 from leaf1-gpu14 to spine 1
+Leaf 1: forwarded seq_num=10 from leaf1-gpu14 to spine 1
+Leaf 1: forwarded seq_num=11 from leaf1-gpu14 to GPU 12
+Leaf 1: forwarded seq_num=12 from leaf1-gpu14 to spine 1
+Leaf 1: forwarded seq_num=13 from leaf1-gpu14 to spine 1
+Leaf 1: forwarded seq_num=14 from leaf1-gpu14 to GPU 12
+Leaf 1: forwarded seq_num=15 from leaf1-gpu14 to GPU 12
+Leaf 1: forwarded seq_num=16 from leaf1-gpu14 to GPU 14
+Leaf 1: forwarded seq_num=17 from leaf1-gpu14 to GPU 12
+Leaf 1: forwarded seq_num=18 from leaf1-gpu14 to spine 0
+Leaf 1: forwarded seq_num=2 from leaf1-gpu12 to GPU 8
+Leaf 1: forwarded seq_num=3 from leaf1-gpu12 to GPU 8
+Leaf 1: forwarded seq_num=4 from leaf1-gpu12 to GPU 10
+Leaf 1: forwarded seq_num=5 from leaf1-gpu12 to GPU 12
+Leaf 1: forwarded seq_num=6 from leaf1-gpu12 to GPU 12
+Leaf 1: forwarded seq_num=7 from leaf1-gpu12 to spine 0
+Leaf 1: forwarded seq_num=8 from leaf1-gpu12 to GPU 12
+Leaf 1: forwarded seq_num=19 from leaf1-gpu14 to spine 1
+Leaf 1: forwarded seq_num=9 from leaf1-gpu12 to GPU 12
+Leaf 1: forwarded seq_num=2 from leaf1-spine0 to GPU 11
+Leaf 1: forwarded seq_num=10 from leaf1-gpu12 to spine 0
+Leaf 1: forwarded seq_num=20 from leaf1-gpu14 to spine 1
+Leaf 1: forwarded seq_num=11 from leaf1-gpu12 to GPU 8
+Leaf 1: forwarded seq_num=10 from leaf1-gpu15 to spine 1
+Leaf 1: forwarded seq_num=12 from leaf1-gpu12 to GPU 12
+Leaf 1: forwarded seq_num=12 from leaf1-spine1 to GPU 11
+Leaf 1: forwarded seq_num=21 from leaf1-gpu14 to spine 1
+Leaf 1: forwarded seq_num=3 from leaf1-spine0 to GPU 8
+Leaf 1: forwarded seq_num=22 from leaf1-gpu14 to spine 1
+Leaf 1: forwarded seq_num=13 from leaf1-spine1 to GPU 15
+Leaf 1: forwarded seq_num=23 from leaf1-gpu14 to GPU 10
+Leaf 1: forwarded seq_num=6 from leaf1-spine0 to GPU 11
+Leaf 1: RTB reduced and dropped response seq_num=9, oaddr=167781162
+Leaf 1: forwarded seq_num=19 from leaf1-spine1 to GPU 8
+Leaf 1: RTB reduced and dropped response seq_num=13, oaddr=167781163
+Leaf 1: forwarded seq_num=14 from leaf1-spine0 to GPU 9
+Leaf 1: RTB reduced and dropped response seq_num=18, oaddr=134226732
+Leaf 1: forwarded seq_num=11 from leaf1-gpu15 to GPU 11
+Leaf 1: forwarded seq_num=20 from leaf1-spine1 to GPU 12
+Leaf 1: forwarded seq_num=23 from leaf1-spine1 to GPU 12
+Leaf 1: forwarded seq_num=3 from leaf1-spine1 to GPU 12
+Leaf 1: forwarded seq_num=16 from leaf1-spine0 to GPU 9
+Leaf 1: forwarded seq_num=4 from leaf1-spine1 to GPU 11
+Leaf 1: forwarded seq_num=12 from leaf1-gpu15 to GPU 8
+Leaf 1: forwarded seq_num=12 from leaf1-spine1 to GPU 8
+Leaf 1: forwarded seq_num=13 from leaf1-spine1 to GPU 12
+Leaf 1: forwarded seq_num=17 from leaf1-spine0 to GPU 8
+Leaf 1: forwarded seq_num=13 from leaf1-gpu15 to GPU 13
+Leaf 1: forwarded seq_num=18 from leaf1-spine0 to GPU 9
+Leaf 1: forwarded seq_num=7 from leaf1-spine1 to GPU 12
+Leaf 1: forwarded seq_num=16 from leaf1-spine1 to GPU 11
+Leaf 1: forwarded seq_num=8 from leaf1-spine1 to GPU 13
+Leaf 1: forwarded seq_num=21 from leaf1-spine1 to GPU 8
+Leaf 1: forwarded seq_num=23 from leaf1-spine0 to GPU 8
+Leaf 1: forwarded seq_num=23 from leaf1-spine1 to GPU 9
+Leaf 1: forwarded seq_num=9 from leaf1-spine1 to GPU 14
+Leaf 1: forwarded seq_num=13 from leaf1-gpu12 to spine 1
+Leaf 1: forwarded seq_num=14 from leaf1-gpu12 to spine 1
+Leaf 1: forwarded seq_num=15 from leaf1-gpu12 to GPU 8
+Leaf 1: forwarded seq_num=16 from leaf1-gpu12 to spine 0
+Leaf 1: forwarded seq_num=17 from leaf1-gpu12 to spine 0
+Leaf 1: forwarded seq_num=18 from leaf1-gpu12 to spine 0
+Leaf 1: forwarded seq_num=19 from leaf1-gpu12 to spine 1
+Leaf 1: forwarded seq_num=20 from leaf1-gpu12 to GPU 14
+Leaf 1: forwarded seq_num=8 from leaf1-spine0 to GPU 8
+Leaf 1: forwarded seq_num=21 from leaf1-gpu12 to spine 1
+Leaf 1: forwarded seq_num=10 from leaf1-spine1 to GPU 12
+Leaf 1: forwarded seq_num=22 from leaf1-gpu12 to spine 1
+Leaf 1: forwarded seq_num=9 from leaf1-spine0 to GPU 13
+Leaf 1: forwarded seq_num=14 from leaf1-gpu15 to spine 0
+Leaf 1: forwarded seq_num=15 from leaf1-gpu15 to GPU 15
+Leaf 1: forwarded seq_num=16 from leaf1-gpu15 to GPU 12
+Leaf 1: forwarded seq_num=23 from leaf1-gpu12 to GPU 12
+Leaf 1: forwarded seq_num=17 from leaf1-gpu15 to spine 1
+Leaf 1: forwarded seq_num=12 from leaf1-spine0 to GPU 8
+Leaf 1: forwarded seq_num=13 from leaf1-spine0 to GPU 9
+Leaf 1: forwarded seq_num=14 from leaf1-spine0 to GPU 10
+Leaf 1: forwarded seq_num=15 from leaf1-spine0 to GPU 11
+Leaf 1: forwarded seq_num=18 from leaf1-gpu15 to spine 1
+Leaf 1: forwarded seq_num=1 from leaf1-spine0 to GPU 12
+Leaf 1: RTB reduced and dropped response seq_num=14, oaddr=151003947
+Leaf 1: forwarded seq_num=2 from leaf1-spine0 to GPU 10
+Leaf 1: forwarded seq_num=19 from leaf1-gpu15 to spine 1
+Leaf 1: forwarded seq_num=3 from leaf1-spine0 to GPU 11
+Leaf 1: forwarded seq_num=4 from leaf1-spine0 to GPU 12
+Leaf 1: forwarded seq_num=5 from leaf1-spine0 to GPU 13
+Leaf 1: forwarded seq_num=20 from leaf1-gpu15 to spine 1
+Leaf 1: forwarded seq_num=6 from leaf1-spine0 to GPU 8
+Leaf 1: RTB reduced and dropped response seq_num=15, oaddr=151003947
+Leaf 1: forwarded seq_num=13 from leaf1-spine0 to GPU 8
+Leaf 1: forwarded seq_num=0 from leaf1-spine0 to GPU 12
+Leaf 1: forwarded seq_num=21 from leaf1-gpu15 to GPU 8
+Leaf 1: forwarded seq_num=22 from leaf1-gpu15 to spine 1
+Leaf 1: forwarded seq_num=23 from leaf1-gpu15 to GPU 9
+Leaf 1: RTB reduced and dropped response seq_num=9, oaddr=151003946
+Leaf 1: RTB reduced and dropped response seq_num=4, oaddr=167781161
+Leaf 1: RTB reduced and dropped response seq_num=14, oaddr=167781163
+Leaf 1: RTB reduced and dropped response seq_num=5, oaddr=134226729
+Leaf 1: RTB reduced and dropped response seq_num=17, oaddr=134226732
+Leaf 1: forwarded seq_num=1 from leaf1-spine0 to GPU 13
+Leaf 1: forwarded seq_num=2 from leaf1-spine0 to GPU 8
+Leaf 1: forwarded seq_num=3 from leaf1-spine0 to GPU 8
+Leaf 1: RTB reduced and dropped response seq_num=1, oaddr=167781160
+Leaf 1: RTB reduced and dropped response seq_num=20, oaddr=151003949
+Leaf 1: RTB emitted response seq_num=7, oaddr=167781162, count=5, data=47372
+Leaf 1: forwarded seq_num=7 from leaf1-gpu12 to GPU 10
+Leaf 1: RTB reduced and dropped response seq_num=23, oaddr=167781165
+Leaf 1: RTB emitted response seq_num=16, oaddr=134226732, count=3, data=30697
+Leaf 1: forwarded seq_num=16 from leaf1-gpu12 to GPU 8
+Leaf 1: forwarded seq_num=4 from leaf1-spine0 to GPU 13
+Leaf 1: forwarded seq_num=7 from leaf1-spine0 to GPU 8
+Leaf 1: forwarded seq_num=11 from leaf1-spine0 to GPU 8
+Leaf 1: forwarded seq_num=12 from leaf1-spine0 to GPU 11
+Leaf 1: forwarded seq_num=15 from leaf1-spine0 to GPU 11
+Leaf 1: forwarded seq_num=21 from leaf1-spine0 to GPU 8
+Leaf 1: forwarded seq_num=18 from leaf1-spine0 to GPU 12
+Leaf 1: forwarded seq_num=6 from leaf1-spine0 to GPU 12
+Leaf 1: forwarded seq_num=8 from leaf1-spine0 to GPU 8
+Leaf 1: forwarded seq_num=13 from leaf1-spine0 to GPU 8
+Leaf 1: forwarded seq_num=14 from leaf1-spine0 to GPU 12
+Leaf 1: forwarded seq_num=16 from leaf1-spine0 to GPU 8
+Leaf 1: forwarded seq_num=17 from leaf1-spine0 to GPU 12
+Leaf 1: forwarded seq_num=19 from leaf1-spine0 to GPU 11
+Leaf 1: forwarded seq_num=20 from leaf1-spine0 to GPU 12
+Leaf 1: forwarded seq_num=23 from leaf1-spine0 to GPU 15
+Leaf 1: RTB emitted response seq_num=12, oaddr=151003947, count=4, data=43933
+Leaf 1: forwarded seq_num=12 from leaf1-gpu10 to GPU 9
+Leaf 1: RTB reduced and dropped response seq_num=2, oaddr=50340648
+Leaf 1: RTB reduced and dropped response seq_num=2, oaddr=134226728
+Leaf 1: RTB reduced and dropped response seq_num=15, oaddr=134226731
+Leaf 1: RTB reduced and dropped response seq_num=7, oaddr=9002
+Leaf 1: RTB reduced and dropped response seq_num=8, oaddr=16786218
+Leaf 1: RTB reduced and dropped response seq_num=0, oaddr=234890024
+Leaf 1: RTB reduced and dropped response seq_num=20, oaddr=9005
+Leaf 1: RTB reduced and dropped response seq_num=4, oaddr=201335593
+Leaf 1: RTB reduced and dropped response seq_num=23, oaddr=234890029
+Leaf 1: RTB reduced and dropped response seq_num=14, oaddr=50340651
+Leaf 1: RTB reduced and dropped response seq_num=2, oaddr=33563432
+Leaf 1: RTB reduced and dropped response seq_num=5, oaddr=184558377
+Leaf 1: RTB reduced and dropped response seq_num=4, oaddr=9001
+Leaf 1: RTB reduced and dropped response seq_num=5, oaddr=251667241
+Leaf 1: RTB reduced and dropped response seq_num=10, oaddr=16786218
+Leaf 1: RTB reduced and dropped response seq_num=19, oaddr=16786221
+Leaf 1: RTB reduced and dropped response seq_num=1, oaddr=218112808
+Leaf 1: RTB reduced and dropped response seq_num=3, oaddr=218112809
+Leaf 1: RTB reduced and dropped response seq_num=10, oaddr=218112810
+Leaf 1: RTB emitted response seq_num=18, oaddr=9004, count=1, data=764
+Leaf 1: forwarded seq_num=18 from leaf1-gpu8 to spine 0
+Leaf 1: RTB reduced and dropped response seq_num=16, oaddr=33563436
+Leaf 1: RTB emitted response seq_num=3, oaddr=83895081, count=1, data=764
+Leaf 1: forwarded seq_num=3 from leaf1-gpu8 to spine 1
+Leaf 1: RTB reduced and dropped response seq_num=8, oaddr=251667242
+Leaf 1: RTB reduced and dropped response seq_num=6, oaddr=234890025
+Leaf 1: RTB reduced and dropped response seq_num=2, oaddr=201335592
+Leaf 1: RTB reduced and dropped response seq_num=3, oaddr=201335593
+Leaf 1: RTB reduced and dropped response seq_num=11, oaddr=201335594
+Leaf 1: RTB reduced and dropped response seq_num=3, oaddr=16786217
+Leaf 1: RTB reduced and dropped response seq_num=19, oaddr=83895085
+Leaf 1: RTB reduced and dropped response seq_num=12, oaddr=251667243
+Leaf 1: RTB reduced and dropped response seq_num=12, oaddr=117449515
+Leaf 1: RTB reduced and dropped response seq_num=17, oaddr=16786220
+Leaf 1: RTB reduced and dropped response seq_num=21, oaddr=117449517
+Leaf 1: RTB reduced and dropped response seq_num=23, oaddr=9005
+Leaf 1: RTB reduced and dropped response seq_num=15, oaddr=201335595
+Leaf 1: RTB reduced and dropped response seq_num=8, oaddr=50340650
+Leaf 1: RTB reduced and dropped response seq_num=12, oaddr=50340651
+Leaf 1: RTB reduced and dropped response seq_num=6, oaddr=33563433
+Leaf 1: RTB emitted response seq_num=13, oaddr=33563435, count=1, data=764
+Leaf 1: forwarded seq_num=13 from leaf1-gpu8 to spine 0
+Leaf 1: RTB reduced and dropped response seq_num=21, oaddr=251667245
+Leaf 1: RTB reduced and dropped response seq_num=2, oaddr=67117864
+Leaf 1: RTB reduced and dropped response seq_num=3, oaddr=67117865
+Leaf 1: RTB reduced and dropped response seq_num=7, oaddr=67117866
+Leaf 1: RTB emitted response seq_num=7, oaddr=67117866, count=2, data=1528
+Leaf 1: forwarded seq_num=7 from leaf1-gpu8 to spine 0
+Leaf 1: RTB emitted response seq_num=21, oaddr=50340653, count=1, data=764
+Leaf 1: forwarded seq_num=21 from leaf1-gpu8 to spine 0
+Leaf 1: RTB reduced and dropped response seq_num=19, oaddr=9005
+Leaf 1: RTB emitted response seq_num=8, oaddr=117449514, count=1, data=764
+Leaf 1: forwarded seq_num=8 from leaf1-gpu8 to spine 0
+Leaf 1: RTB reduced and dropped response seq_num=13, oaddr=100672299
+Leaf 1: RTB reduced and dropped response seq_num=16, oaddr=100672300
+Leaf 1: RTB emitted response seq_num=14, oaddr=16786219, count=1, data=2053
+Leaf 1: forwarded seq_num=14 from leaf1-gpu9 to spine 0
+Leaf 1: RTB reduced and dropped response seq_num=16, oaddr=16786220
+Leaf 1: RTB emitted response seq_num=16, oaddr=16786220, count=3, data=30184
+Leaf 1: forwarded seq_num=16 from leaf1-gpu9 to spine 0
+Leaf 1: RTB emitted response seq_num=21, oaddr=117449517, count=2, data=2817
+Leaf 1: forwarded seq_num=21 from leaf1-gpu9 to spine 1
+Leaf 1: RTB reduced and dropped response seq_num=13, oaddr=50340651
+Leaf 1: RTB reduced and dropped response seq_num=23, oaddr=251667245
+Leaf 1: RTB reduced and dropped response seq_num=11, oaddr=184558378
+Leaf 1: RTB emitted response seq_num=15, oaddr=9003, count=1, data=2007
+Leaf 1: forwarded seq_num=15 from leaf1-gpu15 to spine 0
+Leaf 1: RTB reduced and dropped response seq_num=9, oaddr=16786218
+Leaf 1: RTB reduced and dropped response seq_num=4, oaddr=50340649
+Leaf 1: RTB reduced and dropped response seq_num=19, oaddr=33563437
+Leaf 1: RTB reduced and dropped response seq_num=13, oaddr=83895083
+Leaf 1: RTB reduced and dropped response seq_num=15, oaddr=251667243
+Leaf 1: RTB reduced and dropped response seq_num=23, oaddr=100672301
+Leaf 1: RTB reduced and dropped response seq_num=4, oaddr=184558377
+Leaf 1: RTB reduced and dropped response seq_num=23, oaddr=184558381
+Leaf 1: RTB reduced and dropped response seq_num=1, oaddr=251667240
+Leaf 1: RTB reduced and dropped response seq_num=11, oaddr=9002
+Leaf 1: RTB reduced and dropped response seq_num=0, oaddr=201335592
+Leaf 1: RTB reduced and dropped response seq_num=3, oaddr=50340649
+Leaf 1: RTB emitted response seq_num=17, oaddr=50340652, count=1, data=14145
+Leaf 1: forwarded seq_num=17 from leaf1-gpu14 to spine 1
+Leaf 1: RTB reduced and dropped response seq_num=16, oaddr=234890028
+Leaf 1: RTB reduced and dropped response seq_num=9, oaddr=100672298
+Leaf 1: RTB reduced and dropped response seq_num=20, oaddr=201335597
+Leaf 1: RTB reduced and dropped response seq_num=9, oaddr=184558378
+Leaf 1: RTB reduced and dropped response seq_num=12, oaddr=184558379
+Leaf 1: RTB reduced and dropped response seq_num=10, oaddr=9002
+Leaf 1: RTB emitted response seq_num=19, oaddr=16786221, count=2, data=14835
+Leaf 1: forwarded seq_num=19 from leaf1-gpu13 to spine 1
+Leaf 1: RTB reduced and dropped response seq_num=6, oaddr=184558377
+Leaf 1: RTB emitted response seq_num=16, oaddr=33563436, count=2, data=4267
+Leaf 1: forwarded seq_num=16 from leaf1-gpu13 to spine 1
+Leaf 1: RTB reduced and dropped response seq_num=13, oaddr=251667243
+Leaf 1: RTB reduced and dropped response seq_num=8, oaddr=100672298
+Leaf 1: RTB emitted response seq_num=8, oaddr=50340650, count=2, data=2909
+Leaf 1: forwarded seq_num=8 from leaf1-gpu13 to spine 0
+Leaf 1: RTB reduced and dropped response seq_num=5, oaddr=33563433
+Leaf 1: RTB reduced and dropped response seq_num=1, oaddr=67117864
+Leaf 1: RTB emitted response seq_num=3, oaddr=67117865, count=2, data=4267
+Leaf 1: forwarded seq_num=3 from leaf1-gpu13 to spine 0
+Leaf 1: RTB reduced and dropped response seq_num=8, oaddr=184558378
+Leaf 1: RTB reduced and dropped response seq_num=17, oaddr=184558380
+Leaf 1: RTB reduced and dropped response seq_num=21, oaddr=184558381
+Leaf 1: RTB reduced and dropped response seq_num=22, oaddr=184558381
+Leaf 1: RTB reduced and dropped response seq_num=0, oaddr=251667240
+Leaf 1: RTB emitted response seq_num=2, oaddr=9000, count=1, data=1846
+Leaf 1: forwarded seq_num=2 from leaf1-gpu12 to spine 0
+Leaf 1: RTB reduced and dropped response seq_num=3, oaddr=9001
+Leaf 1: RTB emitted response seq_num=3, oaddr=9001, count=3, data=3406
+Leaf 1: forwarded seq_num=3 from leaf1-gpu12 to spine 0
+Leaf 1: RTB reduced and dropped response seq_num=6, oaddr=251667241
+Leaf 1: RTB reduced and dropped response seq_num=7, oaddr=16786218
+Leaf 1: RTB emitted response seq_num=7, oaddr=16786218, count=5, data=18394
+Leaf 1: forwarded seq_num=7 from leaf1-gpu12 to spine 1
+Leaf 1: RTB reduced and dropped response seq_num=4, oaddr=218112809
+Leaf 1: RTB reduced and dropped response seq_num=15, oaddr=218112811
+Leaf 1: RTB emitted response seq_num=0, oaddr=50340648, count=2, data=2849
+Leaf 1: forwarded seq_num=0 from leaf1-gpu12 to spine 1
+Leaf 1: RTB emitted response seq_num=3, oaddr=50340649, count=3, data=29049
+Leaf 1: forwarded seq_num=3 from leaf1-gpu12 to spine 1
+Leaf 1: RTB emitted response seq_num=19, oaddr=33563437, count=2, data=14906
+Leaf 1: forwarded seq_num=19 from leaf1-gpu12 to spine 1
+Leaf 1: RTB reduced and dropped response seq_num=7, oaddr=83895082
+Leaf 1: RTB reduced and dropped response seq_num=17, oaddr=218112812
+Leaf 1: RTB reduced and dropped response seq_num=10, oaddr=83895082
+Leaf 1: RTB reduced and dropped response seq_num=2, oaddr=234890024
+Leaf 1: RTB reduced and dropped response seq_num=3, oaddr=234890025
+Leaf 1: RTB reduced and dropped response seq_num=11, oaddr=234890026
+Leaf 1: RTB reduced and dropped response seq_num=14, oaddr=234890027
+Leaf 1: RTB reduced and dropped response seq_num=15, oaddr=234890027
+Leaf 1: RTB reduced and dropped response seq_num=17, oaddr=234890028
+Leaf 1: RTB reduced and dropped response seq_num=5, oaddr=201335593
+Leaf 1: RTB emitted response seq_num=3, oaddr=201335593, count=4, data=31894
+Leaf 1: forwarded seq_num=3 from leaf1-gpu12 to GPU 12
+Leaf 1: RTB reduced and dropped response seq_num=8, oaddr=201335594
+Leaf 1: RTB reduced and dropped response seq_num=9, oaddr=201335594
+Leaf 1: RTB reduced and dropped response seq_num=12, oaddr=201335595
+Leaf 1: RTB reduced and dropped response seq_num=20, oaddr=83895085
+Leaf 1: RTB emitted response seq_num=19, oaddr=83895085, count=3, data=30310
+Leaf 1: forwarded seq_num=19 from leaf1-gpu12 to spine 1
+Leaf 1: RTB reduced and dropped response seq_num=3, oaddr=100672297
+Leaf 1: RTB emitted response seq_num=12, oaddr=117449515, count=2, data=1560
+Leaf 1: forwarded seq_num=12 from leaf1-gpu12 to spine 1
+Leaf 1: RTB reduced and dropped response seq_num=7, oaddr=100672298
+Leaf 1: RTB emitted response seq_num=7, oaddr=100672298, count=4, data=43555
+Leaf 1: forwarded seq_num=7 from leaf1-gpu12 to spine 1
+Leaf 1: RTB reduced and dropped response seq_num=16, oaddr=251667244
+Leaf 1: RTB reduced and dropped response seq_num=23, oaddr=201335597
+Leaf 1: RTB emitted response seq_num=1, oaddr=33563432, count=2, data=2780
+Leaf 1: forwarded seq_num=1 from leaf1-gpu12 to spine 0
+Leaf 1: RTB reduced and dropped response seq_num=4, oaddr=33563433
+Leaf 1: RTB emitted response seq_num=0, oaddr=67117864, count=3, data=30443
+Leaf 1: forwarded seq_num=0 from leaf1-gpu12 to spine 0
+Leaf 1: RTB emitted response seq_num=18, oaddr=83895084, count=1, data=796
+Leaf 1: forwarded seq_num=18 from leaf1-gpu12 to spine 0
+Leaf 1: RTB emitted response seq_num=6, oaddr=117449513, count=1, data=796
+Leaf 1: forwarded seq_num=6 from leaf1-gpu12 to spine 0
+Leaf 1: RTB emitted response seq_num=13, oaddr=100672299, count=2, data=2610
+Leaf 1: forwarded seq_num=13 from leaf1-gpu12 to spine 0
+Leaf 1: RTB emitted response seq_num=16, oaddr=100672300, count=2, data=1560
+Leaf 1: forwarded seq_num=16 from leaf1-gpu12 to spine 0
+Leaf 1: RTB reduced and dropped response seq_num=20, oaddr=100672301
+Leaf 1: RTB emitted response seq_num=7, oaddr=9002, count=4, data=43958
+Leaf 1: forwarded seq_num=7 from leaf1-gpu11 to spine 1
+Leaf 1: RTB emitted response seq_num=7, oaddr=83895082, count=3, data=29225
+Leaf 1: forwarded seq_num=7 from leaf1-gpu11 to spine 1
+Leaf 1: RTB reduced and dropped response seq_num=23, oaddr=218112813
+Leaf 1: RTB emitted response seq_num=19, oaddr=9005, count=4, data=44215
+Leaf 1: forwarded seq_num=19 from leaf1-gpu11 to spine 0
+Leaf 1: RTB emitted response seq_num=0, oaddr=234890024, count=3, data=43683
+Leaf 1: forwarded seq_num=0 from leaf1-gpu11 to GPU 14
+Leaf 1: RTB emitted response seq_num=2, oaddr=16786216, count=1, data=1915
+Leaf 1: forwarded seq_num=2 from leaf1-gpu11 to spine 0
+Leaf 1: RTB emitted response seq_num=12, oaddr=83895083, count=2, data=16502
+Leaf 1: forwarded seq_num=12 from leaf1-gpu11 to spine 1
+Leaf 1: RTB emitted response seq_num=3, oaddr=16786217, count=2, data=14813
+Leaf 1: forwarded seq_num=3 from leaf1-gpu11 to spine 0
+Leaf 1: RTB reduced and dropped response seq_num=11, oaddr=251667242
+Leaf 1: RTB emitted response seq_num=3, oaddr=100672297, count=2, data=3079
+Leaf 1: forwarded seq_num=3 from leaf1-gpu11 to spine 1
+Leaf 1: RTB emitted response seq_num=16, oaddr=117449516, count=1, data=1915
+Leaf 1: forwarded seq_num=16 from leaf1-gpu11 to spine 1
+Leaf 1: RTB emitted response seq_num=12, oaddr=50340651, count=4, data=43184
+Leaf 1: forwarded seq_num=12 from leaf1-gpu11 to spine 0
+Leaf 1: RTB emitted response seq_num=3, oaddr=33563433, count=4, data=43025
+Leaf 1: forwarded seq_num=3 from leaf1-gpu11 to spine 0
+Leaf 1: RTB reduced and dropped response seq_num=12, oaddr=67117867
+Leaf 1: RTB emitted response seq_num=12, oaddr=67117867, count=2, data=16461
+Leaf 1: forwarded seq_num=12 from leaf1-gpu11 to spine 0
+Leaf 1: RTB emitted response seq_num=19, oaddr=100672301, count=3, data=42815
+Leaf 1: forwarded seq_num=19 from leaf1-gpu11 to spine 0
+Leaf 1: RTB emitted response seq_num=0, oaddr=151003944, count=3, data=4548
+Leaf 1: forwarded seq_num=0 from leaf1-spine0 to GPU 9
+Leaf 1: RTB emitted response seq_num=16, oaddr=167781164, count=3, data=4967
+Leaf 1: forwarded seq_num=16 from leaf1-spine0 to GPU 10
+Leaf 1: RTB emitted response seq_num=12, oaddr=134226731, count=4, data=31319
+Leaf 1: forwarded seq_num=12 from leaf1-spine0 to GPU 8
+Leaf 1: RTB emitted response seq_num=19, oaddr=151003949, count=5, data=8064
+Leaf 1: forwarded seq_num=19 from leaf1-spine0 to GPU 9
+Leaf 1: RTB emitted response seq_num=19, oaddr=167781165, count=5, data=32595
+Leaf 1: forwarded seq_num=19 from leaf1-spine0 to GPU 10
+Leaf 1: RTB emitted response seq_num=3, oaddr=151003945, count=4, data=16563
+Leaf 1: forwarded seq_num=3 from leaf1-spine0 to GPU 9
+Leaf 1: RTB emitted response seq_num=7, oaddr=151003946, count=5, data=19808
+Leaf 1: forwarded seq_num=7 from leaf1-spine0 to GPU 9
+Leaf 1: RTB emitted response seq_num=3, oaddr=134226729, count=4, data=18844
+Leaf 1: forwarded seq_num=3 from leaf1-spine0 to GPU 8
+Leaf 1: RTB emitted response seq_num=7, oaddr=134226730, count=5, data=33328
+Leaf 1: forwarded seq_num=7 from leaf1-spine0 to GPU 8
+Leaf 1: RTB emitted response seq_num=19, oaddr=134226733, count=5, data=18670
+Leaf 1: forwarded seq_num=19 from leaf1-spine0 to GPU 8
+Leaf 1: RTB emitted response seq_num=0, oaddr=167781160, count=3, data=2260
+Leaf 1: forwarded seq_num=0 from leaf1-spine1 to GPU 10
+Leaf 1: RTB emitted response seq_num=16, oaddr=151003948, count=3, data=30824
+Leaf 1: forwarded seq_num=16 from leaf1-spine1 to GPU 9
+Leaf 1: RTB emitted response seq_num=12, oaddr=167781163, count=4, data=57678
+Leaf 1: forwarded seq_num=12 from leaf1-spine1 to GPU 10
+Leaf 1: RTB emitted response seq_num=3, oaddr=167781161, count=4, data=31554
+Leaf 1: forwarded seq_num=3 from leaf1-spine1 to GPU 10
+Leaf 1: RTB emitted response seq_num=0, oaddr=134226728, count=3, data=16854
+Leaf 1: forwarded seq_num=0 from leaf1-spine1 to GPU 8
+Leaf 1: RTB emitted response seq_num=0, oaddr=184558376, count=3, data=29582
+Leaf 1: forwarded seq_num=0 from leaf1-spine1 to GPU 11
+Leaf 1: RTB emitted response seq_num=16, oaddr=251667244, count=3, data=16122
+Leaf 1: forwarded seq_num=16 from leaf1-spine1 to GPU 15
+Leaf 1: RTB emitted response seq_num=3, oaddr=251667241, count=4, data=30773
+Leaf 1: forwarded seq_num=3 from leaf1-spine1 to GPU 15
+Leaf 1: RTB emitted response seq_num=3, oaddr=184558377, count=4, data=18082
+Leaf 1: forwarded seq_num=3 from leaf1-spine1 to GPU 11
+Leaf 1: RTB emitted response seq_num=12, oaddr=184558379, count=4, data=20965
+Leaf 1: forwarded seq_num=12 from leaf1-spine0 to GPU 11
+Leaf 1: RTB emitted response seq_num=7, oaddr=184558378, count=5, data=46263
+Leaf 1: forwarded seq_num=7 from leaf1-spine1 to GPU 11
+Leaf 1: RTB emitted response seq_num=0, oaddr=251667240, count=3, data=16129
+Leaf 1: forwarded seq_num=0 from leaf1-spine1 to GPU 15
+Leaf 1: RTB emitted response seq_num=19, oaddr=184558381, count=5, data=32702
+Leaf 1: forwarded seq_num=19 from leaf1-spine1 to GPU 11
+Leaf 1: RTB emitted response seq_num=7, oaddr=251667242, count=5, data=32530
+Leaf 1: forwarded seq_num=7 from leaf1-spine1 to GPU 15
+Leaf 1: RTB emitted response seq_num=12, oaddr=218112811, count=4, data=4557
+Leaf 1: forwarded seq_num=12 from leaf1-spine1 to GPU 13
+Leaf 1: RTB emitted response seq_num=7, oaddr=218112810, count=5, data=20529
+Leaf 1: forwarded seq_num=7 from leaf1-spine1 to GPU 13
+Leaf 1: RTB emitted response seq_num=19, oaddr=234890029, count=5, data=47696
+Leaf 1: forwarded seq_num=19 from leaf1-spine1 to GPU 14
+Leaf 1: RTB emitted response seq_num=12, oaddr=201335595, count=4, data=18209
+Leaf 1: forwarded seq_num=12 from leaf1-spine1 to GPU 12
+Leaf 1: RTB emitted response seq_num=19, oaddr=201335597, count=5, data=33402
+Leaf 1: forwarded seq_num=19 from leaf1-spine1 to GPU 12
+Leaf 1: RTB emitted response seq_num=16, oaddr=184558380, count=3, data=6642
+Leaf 1: forwarded seq_num=16 from leaf1-spine0 to GPU 11
+Leaf 1: RTB emitted response seq_num=16, oaddr=218112812, count=3, data=18697
+Leaf 1: forwarded seq_num=16 from leaf1-spine1 to GPU 13
+Leaf 1: RTB emitted response seq_num=7, oaddr=234890026, count=5, data=35122
+Leaf 1: forwarded seq_num=7 from leaf1-spine1 to GPU 14
+Leaf 1: RTB emitted response seq_num=12, oaddr=234890027, count=4, data=18982
+Leaf 1: forwarded seq_num=12 from leaf1-spine1 to GPU 14
+Leaf 1: RTB emitted response seq_num=3, oaddr=234890025, count=4, data=4566
+Leaf 1: forwarded seq_num=3 from leaf1-spine0 to GPU 14
+Leaf 1: RTB emitted response seq_num=19, oaddr=251667245, count=5, data=34046
+Leaf 1: forwarded seq_num=19 from leaf1-spine1 to GPU 15
+Leaf 1: RTB emitted response seq_num=16, oaddr=234890028, count=3, data=16080
+Leaf 1: forwarded seq_num=16 from leaf1-spine0 to GPU 14
+Leaf 1: RTB emitted response seq_num=12, oaddr=251667243, count=4, data=30704
+Leaf 1: forwarded seq_num=12 from leaf1-spine0 to GPU 15
+Leaf 1: RTB emitted response seq_num=7, oaddr=201335594, count=5, data=8179
+Leaf 1: forwarded seq_num=7 from leaf1-spine0 to GPU 12
+Leaf 1: RTB emitted response seq_num=0, oaddr=218112808, count=3, data=17475
+Leaf 1: forwarded seq_num=0 from leaf1-spine0 to GPU 13
+Leaf 1: RTB emitted response seq_num=3, oaddr=218112809, count=4, data=5947
+Leaf 1: forwarded seq_num=3 from leaf1-spine0 to GPU 13
+Leaf 1: RTB emitted response seq_num=0, oaddr=201335592, count=3, data=3572
+Leaf 1: forwarded seq_num=0 from leaf1-spine0 to GPU 12
+Leaf 1: RTB emitted response seq_num=19, oaddr=218112813, count=5, data=33573
+Leaf 1: forwarded seq_num=19 from leaf1-spine0 to GPU 13
+Leaf 1: RTB emitted response seq_num=16, oaddr=201335596, count=3, data=5298
+Leaf 1: forwarded seq_num=16 from leaf1-spine0 to GPU 12
+
+===== spine0 =====
+Hello from Spine 0, 8 GPUs per Leaf, 2 Spines
+Spine 0: mode=RTB
+Spine 0: Starting capture on spine0-leaf0
+Spine 0: Initialized 2 network devices
+Spine 0: Starting capture on spine0-leaf1
+Spine 0: forwarded seq_num=2 from spine0-leaf0 to leaf 1 for GPU 12
+Spine 0: forwarded seq_num=3 from spine0-leaf0 to leaf 1 for GPU 12
+Spine 0: forwarded seq_num=4 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: forwarded seq_num=5 from spine0-leaf0 to leaf 1 for GPU 12
+Spine 0: forwarded seq_num=15 from spine0-leaf0 to leaf 1 for GPU 15
+Spine 0: forwarded seq_num=18 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: forwarded seq_num=19 from spine0-leaf0 to leaf 1 for GPU 9
+Spine 0: forwarded seq_num=20 from spine0-leaf0 to leaf 1 for GPU 10
+Spine 0: forwarded seq_num=21 from spine0-leaf0 to leaf 1 for GPU 11
+Spine 0: forwarded seq_num=2 from spine0-leaf0 to leaf 1 for GPU 11
+Spine 0: forwarded seq_num=3 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: forwarded seq_num=6 from spine0-leaf0 to leaf 1 for GPU 11
+Spine 0: forwarded seq_num=14 from spine0-leaf0 to leaf 1 for GPU 9
+Spine 0: forwarded seq_num=16 from spine0-leaf0 to leaf 1 for GPU 9
+Spine 0: forwarded seq_num=17 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: forwarded seq_num=18 from spine0-leaf0 to leaf 1 for GPU 9
+Spine 0: forwarded seq_num=23 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: forwarded seq_num=8 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: forwarded seq_num=9 from spine0-leaf0 to leaf 1 for GPU 13
+Spine 0: forwarded seq_num=12 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: forwarded seq_num=13 from spine0-leaf0 to leaf 1 for GPU 9
+Spine 0: forwarded seq_num=14 from spine0-leaf0 to leaf 1 for GPU 10
+Spine 0: forwarded seq_num=15 from spine0-leaf0 to leaf 1 for GPU 11
+Spine 0: forwarded seq_num=1 from spine0-leaf0 to leaf 1 for GPU 12
+Spine 0: forwarded seq_num=2 from spine0-leaf0 to leaf 1 for GPU 10
+Spine 0: forwarded seq_num=3 from spine0-leaf0 to leaf 1 for GPU 11
+Spine 0: forwarded seq_num=4 from spine0-leaf0 to leaf 1 for GPU 12
+Spine 0: forwarded seq_num=5 from spine0-leaf0 to leaf 1 for GPU 13
+Spine 0: forwarded seq_num=6 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: forwarded seq_num=13 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: forwarded seq_num=0 from spine0-leaf0 to leaf 1 for GPU 12
+Spine 0: forwarded seq_num=1 from spine0-leaf0 to leaf 1 for GPU 13
+Spine 0: forwarded seq_num=2 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: forwarded seq_num=3 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: forwarded seq_num=4 from spine0-leaf0 to leaf 1 for GPU 13
+Spine 0: forwarded seq_num=7 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: forwarded seq_num=11 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: forwarded seq_num=12 from spine0-leaf0 to leaf 1 for GPU 11
+Spine 0: forwarded seq_num=15 from spine0-leaf0 to leaf 1 for GPU 11
+Spine 0: forwarded seq_num=21 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: forwarded seq_num=18 from spine0-leaf0 to leaf 1 for GPU 12
+Spine 0: forwarded seq_num=6 from spine0-leaf0 to leaf 1 for GPU 12
+Spine 0: forwarded seq_num=8 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: forwarded seq_num=13 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: forwarded seq_num=14 from spine0-leaf0 to leaf 1 for GPU 12
+Spine 0: forwarded seq_num=16 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: forwarded seq_num=17 from spine0-leaf0 to leaf 1 for GPU 12
+Spine 0: forwarded seq_num=19 from spine0-leaf0 to leaf 1 for GPU 11
+Spine 0: forwarded seq_num=20 from spine0-leaf0 to leaf 1 for GPU 12
+Spine 0: forwarded seq_num=23 from spine0-leaf0 to leaf 1 for GPU 15
+Spine 0: forwarded seq_num=0 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: forwarded seq_num=4 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: forwarded seq_num=5 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: forwarded seq_num=6 from spine0-leaf1 to leaf 0 for GPU 5
+Spine 0: forwarded seq_num=7 from spine0-leaf1 to leaf 0 for GPU 5
+Spine 0: forwarded seq_num=8 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: forwarded seq_num=22 from spine0-leaf1 to leaf 0 for GPU 2
+Spine 0: forwarded seq_num=23 from spine0-leaf1 to leaf 0 for GPU 7
+Spine 0: forwarded seq_num=18 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: forwarded seq_num=19 from spine0-leaf1 to leaf 0 for GPU 7
+Spine 0: forwarded seq_num=20 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: forwarded seq_num=22 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: forwarded seq_num=3 from spine0-leaf1 to leaf 0 for GPU 5
+Spine 0: forwarded seq_num=4 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: forwarded seq_num=7 from spine0-leaf1 to leaf 0 for GPU 2
+Spine 0: forwarded seq_num=8 from spine0-leaf1 to leaf 0 for GPU 3
+Spine 0: forwarded seq_num=9 from spine0-leaf1 to leaf 0 for GPU 0
+Spine 0: forwarded seq_num=10 from spine0-leaf1 to leaf 0 for GPU 5
+Spine 0: forwarded seq_num=12 from spine0-leaf1 to leaf 0 for GPU 0
+Spine 0: forwarded seq_num=13 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: forwarded seq_num=19 from spine0-leaf1 to leaf 0 for GPU 5
+Spine 0: forwarded seq_num=21 from spine0-leaf1 to leaf 0 for GPU 3
+Spine 0: forwarded seq_num=22 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: forwarded seq_num=13 from spine0-leaf1 to leaf 0 for GPU 2
+Spine 0: forwarded seq_num=14 from spine0-leaf1 to leaf 0 for GPU 7
+Spine 0: forwarded seq_num=15 from spine0-leaf1 to leaf 0 for GPU 3
+Spine 0: forwarded seq_num=16 from spine0-leaf1 to leaf 0 for GPU 7
+Spine 0: forwarded seq_num=18 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: forwarded seq_num=0 from spine0-leaf1 to leaf 0 for GPU 7
+Spine 0: forwarded seq_num=2 from spine0-leaf1 to leaf 0 for GPU 7
+Spine 0: forwarded seq_num=5 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: forwarded seq_num=6 from spine0-leaf1 to leaf 0 for GPU 5
+Spine 0: forwarded seq_num=1 from spine0-leaf1 to leaf 0 for GPU 5
+Spine 0: forwarded seq_num=19 from spine0-leaf1 to leaf 0 for GPU 7
+Spine 0: forwarded seq_num=20 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: RTB emitted response seq_num=0, oaddr=151003944, count=1, data=1869
+Spine 0: forwarded seq_num=0 from spine0-leaf0 to leaf 1 for GPU 9
+Spine 0: forwarded seq_num=21 from spine0-leaf1 to leaf 0 for GPU 2
+Spine 0: forwarded seq_num=22 from spine0-leaf1 to leaf 0 for GPU 5
+Spine 0: forwarded seq_num=4 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: forwarded seq_num=5 from spine0-leaf1 to leaf 0 for GPU 0
+Spine 0: forwarded seq_num=18 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: RTB emitted response seq_num=18, oaddr=167781164, count=1, data=700
+Spine 0: forwarded seq_num=18 from spine0-leaf0 to leaf 1 for GPU 10
+Spine 0: forwarded seq_num=7 from spine0-leaf1 to leaf 0 for GPU 2
+Spine 0: forwarded seq_num=10 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: forwarded seq_num=16 from spine0-leaf1 to leaf 0 for GPU 6
+Spine 0: forwarded seq_num=17 from spine0-leaf1 to leaf 0 for GPU 5
+Spine 0: forwarded seq_num=18 from spine0-leaf1 to leaf 0 for GPU 0
+Spine 0: forwarded seq_num=14 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: RTB emitted response seq_num=18, oaddr=9004, count=1, data=764
+Spine 0: forwarded seq_num=18 from spine0-leaf1 to leaf 0 for GPU 0
+Spine 0: RTB emitted response seq_num=12, oaddr=134226731, count=2, data=2638
+Spine 0: forwarded seq_num=12 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: RTB emitted response seq_num=13, oaddr=33563435, count=1, data=764
+Spine 0: forwarded seq_num=13 from spine0-leaf1 to leaf 0 for GPU 2
+Spine 0: RTB emitted response seq_num=7, oaddr=67117866, count=2, data=1528
+Spine 0: forwarded seq_num=7 from spine0-leaf1 to leaf 0 for GPU 4
+Spine 0: RTB emitted response seq_num=21, oaddr=50340653, count=1, data=764
+Spine 0: forwarded seq_num=21 from spine0-leaf1 to leaf 0 for GPU 3
+Spine 0: RTB emitted response seq_num=8, oaddr=117449514, count=1, data=764
+Spine 0: forwarded seq_num=8 from spine0-leaf1 to leaf 0 for GPU 7
+Spine 0: RTB emitted response seq_num=14, oaddr=16786219, count=1, data=2053
+Spine 0: forwarded seq_num=14 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: RTB emitted response seq_num=16, oaddr=16786220, count=3, data=30184
+Spine 0: forwarded seq_num=16 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: RTB emitted response seq_num=15, oaddr=9003, count=1, data=2007
+Spine 0: forwarded seq_num=15 from spine0-leaf1 to leaf 0 for GPU 0
+Spine 0: RTB emitted response seq_num=22, oaddr=151003949, count=2, data=4359
+Spine 0: forwarded seq_num=22 from spine0-leaf0 to leaf 1 for GPU 9
+Spine 0: RTB emitted response seq_num=19, oaddr=167781165, count=3, data=17367
+Spine 0: forwarded seq_num=19 from spine0-leaf0 to leaf 1 for GPU 10
+Spine 0: RTB emitted response seq_num=4, oaddr=151003945, count=3, data=15799
+Spine 0: forwarded seq_num=4 from spine0-leaf0 to leaf 1 for GPU 9
+Spine 0: RTB emitted response seq_num=7, oaddr=151003946, count=2, data=2661
+Spine 0: forwarded seq_num=7 from spine0-leaf0 to leaf 1 for GPU 9
+Spine 0: RTB emitted response seq_num=3, oaddr=134226729, count=2, data=2601
+Spine 0: forwarded seq_num=3 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: RTB emitted response seq_num=7, oaddr=134226730, count=4, data=32564
+Spine 0: forwarded seq_num=7 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: RTB emitted response seq_num=19, oaddr=134226733, count=3, data=15784
+Spine 0: forwarded seq_num=19 from spine0-leaf0 to leaf 1 for GPU 8
+Spine 0: RTB emitted response seq_num=8, oaddr=50340650, count=2, data=2909
+Spine 0: forwarded seq_num=8 from spine0-leaf1 to leaf 0 for GPU 3
+Spine 0: RTB emitted response seq_num=3, oaddr=67117865, count=2, data=4267
+Spine 0: forwarded seq_num=3 from spine0-leaf1 to leaf 0 for GPU 4
+Spine 0: RTB emitted response seq_num=2, oaddr=9000, count=1, data=1846
+Spine 0: forwarded seq_num=2 from spine0-leaf1 to leaf 0 for GPU 0
+Spine 0: RTB emitted response seq_num=3, oaddr=9001, count=3, data=3406
+Spine 0: forwarded seq_num=3 from spine0-leaf1 to leaf 0 for GPU 0
+Spine 0: RTB emitted response seq_num=1, oaddr=33563432, count=2, data=2780
+Spine 0: forwarded seq_num=1 from spine0-leaf1 to leaf 0 for GPU 2
+Spine 0: RTB emitted response seq_num=0, oaddr=67117864, count=3, data=30443
+Spine 0: forwarded seq_num=0 from spine0-leaf1 to leaf 0 for GPU 4
+Spine 0: RTB emitted response seq_num=18, oaddr=83895084, count=1, data=796
+Spine 0: forwarded seq_num=18 from spine0-leaf1 to leaf 0 for GPU 5
+Spine 0: RTB emitted response seq_num=6, oaddr=117449513, count=1, data=796
+Spine 0: forwarded seq_num=6 from spine0-leaf1 to leaf 0 for GPU 7
+Spine 0: RTB emitted response seq_num=13, oaddr=100672299, count=2, data=2610
+Spine 0: forwarded seq_num=13 from spine0-leaf1 to leaf 0 for GPU 6
+Spine 0: RTB emitted response seq_num=16, oaddr=100672300, count=2, data=1560
+Spine 0: forwarded seq_num=16 from spine0-leaf1 to leaf 0 for GPU 6
+Spine 0: RTB emitted response seq_num=19, oaddr=9005, count=4, data=44215
+Spine 0: forwarded seq_num=19 from spine0-leaf1 to leaf 0 for GPU 0
+Spine 0: RTB emitted response seq_num=2, oaddr=16786216, count=1, data=1915
+Spine 0: forwarded seq_num=2 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: RTB emitted response seq_num=3, oaddr=16786217, count=2, data=14813
+Spine 0: forwarded seq_num=3 from spine0-leaf1 to leaf 0 for GPU 1
+Spine 0: RTB emitted response seq_num=12, oaddr=50340651, count=4, data=43184
+Spine 0: forwarded seq_num=12 from spine0-leaf1 to leaf 0 for GPU 3
+Spine 0: RTB emitted response seq_num=3, oaddr=33563433, count=4, data=43025
+Spine 0: forwarded seq_num=3 from spine0-leaf1 to leaf 0 for GPU 2
+Spine 0: RTB emitted response seq_num=12, oaddr=67117867, count=2, data=16461
+Spine 0: forwarded seq_num=12 from spine0-leaf1 to leaf 0 for GPU 4
+Spine 0: RTB emitted response seq_num=19, oaddr=100672301, count=3, data=42815
+Spine 0: forwarded seq_num=19 from spine0-leaf1 to leaf 0 for GPU 6
+Spine 0: RTB emitted response seq_num=13, oaddr=184558379, count=3, data=18820
+Spine 0: forwarded seq_num=13 from spine0-leaf0 to leaf 1 for GPU 11
+Spine 0: RTB emitted response seq_num=16, oaddr=184558380, count=2, data=4428
+Spine 0: forwarded seq_num=16 from spine0-leaf0 to leaf 1 for GPU 11
+Spine 0: RTB emitted response seq_num=4, oaddr=234890025, count=2, data=3006
+Spine 0: forwarded seq_num=4 from spine0-leaf0 to leaf 1 for GPU 14
+Spine 0: RTB emitted response seq_num=18, oaddr=234890028, count=1, data=700
+Spine 0: forwarded seq_num=18 from spine0-leaf0 to leaf 1 for GPU 14
+Spine 0: RTB emitted response seq_num=14, oaddr=251667243, count=1, data=700
+Spine 0: forwarded seq_num=14 from spine0-leaf0 to leaf 1 for GPU 15
+Spine 0: RTB emitted response seq_num=7, oaddr=201335594, count=2, data=4405
+Spine 0: forwarded seq_num=7 from spine0-leaf0 to leaf 1 for GPU 12
+Spine 0: RTB emitted response seq_num=0, oaddr=218112808, count=2, data=16711
+Spine 0: forwarded seq_num=0 from spine0-leaf0 to leaf 1 for GPU 13
+Spine 0: RTB emitted response seq_num=5, oaddr=218112809, count=2, data=2969
+Spine 0: forwarded seq_num=5 from spine0-leaf0 to leaf 1 for GPU 13
+Spine 0: RTB emitted response seq_num=1, oaddr=201335592, count=1, data=732
+Spine 0: forwarded seq_num=1 from spine0-leaf0 to leaf 1 for GPU 12
+Spine 0: RTB emitted response seq_num=19, oaddr=218112813, count=4, data=31658
+Spine 0: forwarded seq_num=19 from spine0-leaf0 to leaf 1 for GPU 13
+Spine 0: RTB emitted response seq_num=16, oaddr=201335596, count=3, data=5298
+Spine 0: forwarded seq_num=16 from spine0-leaf0 to leaf 1 for GPU 12
+
+===== spine1 =====
+Hello from Spine 1, 8 GPUs per Leaf, 2 Spines
+Spine 1: mode=RTB
+Spine 1: Starting capture on spine1-leaf0
+Spine 1: Initialized 2 network devices
+Spine 1: Starting capture on spine1-leaf1
+Spine 1: forwarded seq_num=17 from spine1-leaf1 to leaf 0 for GPU 0
+Spine 1: forwarded seq_num=7 from spine1-leaf0 to leaf 1 for GPU 10
+Spine 1: forwarded seq_num=8 from spine1-leaf0 to leaf 1 for GPU 11
+Spine 1: forwarded seq_num=10 from spine1-leaf0 to leaf 1 for GPU 13
+Spine 1: forwarded seq_num=11 from spine1-leaf0 to leaf 1 for GPU 14
+Spine 1: forwarded seq_num=7 from spine1-leaf0 to leaf 1 for GPU 12
+Spine 1: forwarded seq_num=8 from spine1-leaf0 to leaf 1 for GPU 10
+Spine 1: forwarded seq_num=9 from spine1-leaf0 to leaf 1 for GPU 15
+Spine 1: forwarded seq_num=10 from spine1-leaf0 to leaf 1 for GPU 8
+Spine 1: forwarded seq_num=11 from spine1-leaf0 to leaf 1 for GPU 12
+Spine 1: forwarded seq_num=19 from spine1-leaf0 to leaf 1 for GPU 8
+Spine 1: forwarded seq_num=20 from spine1-leaf0 to leaf 1 for GPU 13
+Spine 1: forwarded seq_num=0 from spine1-leaf0 to leaf 1 for GPU 12
+Spine 1: forwarded seq_num=2 from spine1-leaf0 to leaf 1 for GPU 9
+Spine 1: forwarded seq_num=3 from spine1-leaf0 to leaf 1 for GPU 14
+Spine 1: forwarded seq_num=4 from spine1-leaf0 to leaf 1 for GPU 15
+Spine 1: forwarded seq_num=6 from spine1-leaf0 to leaf 1 for GPU 12
+Spine 1: forwarded seq_num=16 from spine1-leaf0 to leaf 1 for GPU 8
+Spine 1: forwarded seq_num=17 from spine1-leaf0 to leaf 1 for GPU 13
+Spine 1: forwarded seq_num=19 from spine1-leaf0 to leaf 1 for GPU 15
+Spine 1: forwarded seq_num=23 from spine1-leaf0 to leaf 1 for GPU 12
+Spine 1: forwarded seq_num=17 from spine1-leaf0 to leaf 1 for GPU 14
+Spine 1: forwarded seq_num=3 from spine1-leaf0 to leaf 1 for GPU 8
+Spine 1: forwarded seq_num=7 from spine1-leaf0 to leaf 1 for GPU 12
+Spine 1: forwarded seq_num=9 from spine1-leaf0 to leaf 1 for GPU 11
+Spine 1: forwarded seq_num=10 from spine1-leaf0 to leaf 1 for GPU 12
+Spine 1: forwarded seq_num=12 from spine1-leaf0 to leaf 1 for GPU 11
+Spine 1: forwarded seq_num=13 from spine1-leaf0 to leaf 1 for GPU 15
+Spine 1: forwarded seq_num=19 from spine1-leaf0 to leaf 1 for GPU 8
+Spine 1: forwarded seq_num=20 from spine1-leaf0 to leaf 1 for GPU 12
+Spine 1: forwarded seq_num=23 from spine1-leaf0 to leaf 1 for GPU 12
+Spine 1: forwarded seq_num=3 from spine1-leaf0 to leaf 1 for GPU 12
+Spine 1: forwarded seq_num=4 from spine1-leaf0 to leaf 1 for GPU 11
+Spine 1: forwarded seq_num=18 from spine1-leaf1 to leaf 0 for GPU 1
+Spine 1: forwarded seq_num=2 from spine1-leaf1 to leaf 0 for GPU 1
+Spine 1: forwarded seq_num=3 from spine1-leaf1 to leaf 0 for GPU 3
+Spine 1: forwarded seq_num=0 from spine1-leaf1 to leaf 0 for GPU 2
+Spine 1: forwarded seq_num=5 from spine1-leaf1 to leaf 0 for GPU 5
+Spine 1: forwarded seq_num=6 from spine1-leaf1 to leaf 0 for GPU 6
+Spine 1: forwarded seq_num=15 from spine1-leaf1 to leaf 0 for GPU 0
+Spine 1: forwarded seq_num=1 from spine1-leaf1 to leaf 0 for GPU 5
+Spine 1: forwarded seq_num=12 from spine1-leaf0 to leaf 1 for GPU 8
+Spine 1: forwarded seq_num=13 from spine1-leaf0 to leaf 1 for GPU 12
+Spine 1: forwarded seq_num=7 from spine1-leaf0 to leaf 1 for GPU 12
+Spine 1: forwarded seq_num=16 from spine1-leaf0 to leaf 1 for GPU 11
+Spine 1: forwarded seq_num=8 from spine1-leaf0 to leaf 1 for GPU 13
+Spine 1: forwarded seq_num=21 from spine1-leaf0 to leaf 1 for GPU 8
+Spine 1: forwarded seq_num=23 from spine1-leaf0 to leaf 1 for GPU 9
+Spine 1: forwarded seq_num=9 from spine1-leaf0 to leaf 1 for GPU 14
+Spine 1: forwarded seq_num=10 from spine1-leaf0 to leaf 1 for GPU 12
+Spine 1: forwarded seq_num=0 from spine1-leaf1 to leaf 0 for GPU 1
+Spine 1: forwarded seq_num=1 from spine1-leaf1 to leaf 0 for GPU 1
+Spine 1: forwarded seq_num=2 from spine1-leaf1 to leaf 0 for GPU 3
+Spine 1: forwarded seq_num=3 from spine1-leaf1 to leaf 0 for GPU 6
+Spine 1: forwarded seq_num=7 from spine1-leaf1 to leaf 0 for GPU 5
+Spine 1: forwarded seq_num=10 from spine1-leaf1 to leaf 0 for GPU 2
+Spine 1: forwarded seq_num=19 from spine1-leaf1 to leaf 0 for GPU 1
+Spine 1: forwarded seq_num=20 from spine1-leaf1 to leaf 0 for GPU 6
+Spine 1: forwarded seq_num=2 from spine1-leaf1 to leaf 0 for GPU 5
+Spine 1: forwarded seq_num=3 from spine1-leaf1 to leaf 0 for GPU 2
+Spine 1: forwarded seq_num=4 from spine1-leaf1 to leaf 0 for GPU 3
+Spine 1: forwarded seq_num=7 from spine1-leaf1 to leaf 0 for GPU 1
+Spine 1: forwarded seq_num=8 from spine1-leaf1 to leaf 0 for GPU 6
+Spine 1: forwarded seq_num=9 from spine1-leaf1 to leaf 0 for GPU 5
+Spine 1: forwarded seq_num=11 from spine1-leaf1 to leaf 0 for GPU 5
+Spine 1: forwarded seq_num=12 from spine1-leaf1 to leaf 0 for GPU 1
+Spine 1: forwarded seq_num=13 from spine1-leaf1 to leaf 0 for GPU 5
+Spine 1: forwarded seq_num=7 from spine1-leaf1 to leaf 0 for GPU 5
+Spine 1: forwarded seq_num=14 from spine1-leaf1 to leaf 0 for GPU 5
+Spine 1: forwarded seq_num=16 from spine1-leaf1 to leaf 0 for GPU 5
+Spine 1: forwarded seq_num=9 from spine1-leaf1 to leaf 0 for GPU 1
+Spine 1: forwarded seq_num=18 from spine1-leaf1 to leaf 0 for GPU 7
+Spine 1: forwarded seq_num=7 from spine1-leaf1 to leaf 0 for GPU 4
+Spine 1: forwarded seq_num=8 from spine1-leaf1 to leaf 0 for GPU 5
+Spine 1: forwarded seq_num=9 from spine1-leaf1 to leaf 0 for GPU 2
+Spine 1: forwarded seq_num=10 from spine1-leaf1 to leaf 0 for GPU 7
+Spine 1: forwarded seq_num=12 from spine1-leaf1 to leaf 0 for GPU 5
+Spine 1: forwarded seq_num=13 from spine1-leaf1 to leaf 0 for GPU 7
+Spine 1: forwarded seq_num=19 from spine1-leaf1 to leaf 0 for GPU 3
+Spine 1: forwarded seq_num=20 from spine1-leaf1 to leaf 0 for GPU 4
+Spine 1: forwarded seq_num=10 from spine1-leaf1 to leaf 0 for GPU 1
+Spine 1: forwarded seq_num=21 from spine1-leaf1 to leaf 0 for GPU 0
+Spine 1: forwarded seq_num=22 from spine1-leaf1 to leaf 0 for GPU 6
+Spine 1: forwarded seq_num=13 from spine1-leaf1 to leaf 0 for GPU 4
+Spine 1: forwarded seq_num=14 from spine1-leaf1 to leaf 0 for GPU 5
+Spine 1: forwarded seq_num=19 from spine1-leaf1 to leaf 0 for GPU 5
+Spine 1: forwarded seq_num=21 from spine1-leaf1 to leaf 0 for GPU 2
+Spine 1: forwarded seq_num=22 from spine1-leaf1 to leaf 0 for GPU 0
+Spine 1: forwarded seq_num=17 from spine1-leaf1 to leaf 0 for GPU 1
+Spine 1: forwarded seq_num=18 from spine1-leaf1 to leaf 0 for GPU 3
+Spine 1: forwarded seq_num=19 from spine1-leaf1 to leaf 0 for GPU 1
+Spine 1: forwarded seq_num=20 from spine1-leaf1 to leaf 0 for GPU 7
+Spine 1: forwarded seq_num=22 from spine1-leaf1 to leaf 0 for GPU 4
+Spine 1: RTB emitted response seq_num=3, oaddr=83895081, count=1, data=764
+Spine 1: forwarded seq_num=3 from spine1-leaf1 to leaf 0 for GPU 5
+Spine 1: RTB emitted response seq_num=21, oaddr=117449517, count=2, data=2817
+Spine 1: forwarded seq_num=21 from spine1-leaf1 to leaf 0 for GPU 7
+Spine 1: RTB emitted response seq_num=17, oaddr=50340652, count=1, data=14145
+Spine 1: forwarded seq_num=17 from spine1-leaf1 to leaf 0 for GPU 3
+Spine 1: RTB emitted response seq_num=19, oaddr=16786221, count=2, data=14835
+Spine 1: forwarded seq_num=19 from spine1-leaf1 to leaf 0 for GPU 1
+Spine 1: RTB emitted response seq_num=16, oaddr=33563436, count=2, data=4267
+Spine 1: forwarded seq_num=16 from spine1-leaf1 to leaf 0 for GPU 2
+Spine 1: RTB emitted response seq_num=7, oaddr=16786218, count=5, data=18394
+Spine 1: forwarded seq_num=7 from spine1-leaf1 to leaf 0 for GPU 1
+Spine 1: RTB emitted response seq_num=0, oaddr=50340648, count=2, data=2849
+Spine 1: forwarded seq_num=0 from spine1-leaf1 to leaf 0 for GPU 3
+Spine 1: RTB emitted response seq_num=3, oaddr=50340649, count=3, data=29049
+Spine 1: forwarded seq_num=3 from spine1-leaf1 to leaf 0 for GPU 3
+Spine 1: RTB emitted response seq_num=19, oaddr=33563437, count=2, data=14906
+Spine 1: forwarded seq_num=19 from spine1-leaf1 to leaf 0 for GPU 2
+Spine 1: RTB emitted response seq_num=19, oaddr=83895085, count=3, data=30310
+Spine 1: forwarded seq_num=19 from spine1-leaf1 to leaf 0 for GPU 5
+Spine 1: RTB emitted response seq_num=12, oaddr=117449515, count=2, data=1560
+Spine 1: forwarded seq_num=12 from spine1-leaf1 to leaf 0 for GPU 7
+Spine 1: RTB emitted response seq_num=2, oaddr=167781160, count=1, data=700
+Spine 1: forwarded seq_num=2 from spine1-leaf0 to leaf 1 for GPU 10
+Spine 1: RTB emitted response seq_num=17, oaddr=151003948, count=2, data=28771
+Spine 1: forwarded seq_num=17 from spine1-leaf0 to leaf 1 for GPU 9
+Spine 1: RTB emitted response seq_num=15, oaddr=167781163, count=1, data=14421
+Spine 1: forwarded seq_num=15 from spine1-leaf0 to leaf 1 for GPU 10
+Spine 1: RTB emitted response seq_num=7, oaddr=100672298, count=4, data=43555
+Spine 1: forwarded seq_num=7 from spine1-leaf1 to leaf 0 for GPU 6
+Spine 1: RTB emitted response seq_num=3, oaddr=167781161, count=3, data=29547
+Spine 1: forwarded seq_num=3 from spine1-leaf0 to leaf 1 for GPU 10
+Spine 1: RTB emitted response seq_num=0, oaddr=134226728, count=2, data=2532
+Spine 1: forwarded seq_num=0 from spine1-leaf0 to leaf 1 for GPU 8
+Spine 1: RTB emitted response seq_num=7, oaddr=9002, count=4, data=43958
+Spine 1: forwarded seq_num=7 from spine1-leaf1 to leaf 0 for GPU 0
+Spine 1: RTB emitted response seq_num=7, oaddr=83895082, count=3, data=29225
+Spine 1: forwarded seq_num=7 from spine1-leaf1 to leaf 0 for GPU 5
+Spine 1: RTB emitted response seq_num=12, oaddr=83895083, count=2, data=16502
+Spine 1: forwarded seq_num=12 from spine1-leaf1 to leaf 0 for GPU 5
+Spine 1: RTB emitted response seq_num=3, oaddr=100672297, count=2, data=3079
+Spine 1: forwarded seq_num=3 from spine1-leaf1 to leaf 0 for GPU 6
+Spine 1: RTB emitted response seq_num=16, oaddr=117449516, count=1, data=1915
+Spine 1: forwarded seq_num=16 from spine1-leaf1 to leaf 0 for GPU 7
+Spine 1: RTB emitted response seq_num=0, oaddr=184558376, count=3, data=29582
+Spine 1: forwarded seq_num=0 from spine1-leaf0 to leaf 1 for GPU 11
+Spine 1: RTB emitted response seq_num=17, oaddr=251667244, count=2, data=15326
+Spine 1: forwarded seq_num=17 from spine1-leaf0 to leaf 1 for GPU 15
+Spine 1: RTB emitted response seq_num=3, oaddr=251667241, count=2, data=29213
+Spine 1: forwarded seq_num=3 from spine1-leaf0 to leaf 1 for GPU 15
+Spine 1: RTB emitted response seq_num=3, oaddr=184558377, count=1, data=14446
+Spine 1: forwarded seq_num=3 from spine1-leaf0 to leaf 1 for GPU 11
+Spine 1: RTB emitted response seq_num=7, oaddr=184558378, count=2, data=2900
+Spine 1: forwarded seq_num=7 from spine1-leaf0 to leaf 1 for GPU 11
+Spine 1: RTB emitted response seq_num=2, oaddr=251667240, count=1, data=732
+Spine 1: forwarded seq_num=2 from spine1-leaf0 to leaf 1 for GPU 15
+Spine 1: RTB emitted response seq_num=19, oaddr=184558381, count=2, data=2960
+Spine 1: forwarded seq_num=19 from spine1-leaf0 to leaf 1 for GPU 11
+Spine 1: RTB emitted response seq_num=7, oaddr=251667242, count=3, data=3301
+Spine 1: forwarded seq_num=7 from spine1-leaf0 to leaf 1 for GPU 15
+Spine 1: RTB emitted response seq_num=12, oaddr=218112811, count=3, data=3761
+Spine 1: forwarded seq_num=12 from spine1-leaf0 to leaf 1 for GPU 13
+Spine 1: RTB emitted response seq_num=7, oaddr=218112810, count=4, data=19765
+Spine 1: forwarded seq_num=7 from spine1-leaf0 to leaf 1 for GPU 13
+Spine 1: RTB emitted response seq_num=19, oaddr=234890029, count=4, data=45712
+Spine 1: forwarded seq_num=19 from spine1-leaf0 to leaf 1 for GPU 14
+Spine 1: RTB emitted response seq_num=13, oaddr=201335595, count=2, data=15231
+Spine 1: forwarded seq_num=13 from spine1-leaf0 to leaf 1 for GPU 12
+Spine 1: RTB emitted response seq_num=19, oaddr=201335597, count=3, data=17045
+Spine 1: forwarded seq_num=19 from spine1-leaf0 to leaf 1 for GPU 12
+Spine 1: RTB emitted response seq_num=16, oaddr=218112812, count=2, data=4152
+Spine 1: forwarded seq_num=16 from spine1-leaf0 to leaf 1 for GPU 13
+Spine 1: RTB emitted response seq_num=7, oaddr=234890026, count=4, data=33276
+Spine 1: forwarded seq_num=7 from spine1-leaf0 to leaf 1 for GPU 14
+Spine 1: RTB emitted response seq_num=12, oaddr=234890027, count=2, data=2555
+Spine 1: forwarded seq_num=12 from spine1-leaf0 to leaf 1 for GPU 14
+Spine 1: RTB emitted response seq_num=19, oaddr=251667245, count=3, data=17361
+Spine 1: forwarded seq_num=19 from spine1-leaf0 to leaf 1 for GPU 15
+

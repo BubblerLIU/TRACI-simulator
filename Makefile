@@ -1,4 +1,4 @@
-.PHONY: simple_16 medium_16 complex_16
+.PHONY: simple_16 medium_16 complex_16 clean
 
 simple_16:
 	./script/setup.sh 16 2 2
@@ -50,3 +50,6 @@ complex_16:
 		result/complex_16_r.txt \
 		result/complex_16_t.txt \
 		-o assets/complex_16.svg
+
+clean:
+	./script/clean.sh
