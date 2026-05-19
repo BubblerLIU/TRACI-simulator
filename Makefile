@@ -1,4 +1,25 @@
-.PHONY: simple_16 medium_16 complex_16 clean
+.PHONY: setup_env simple_16 medium_16 complex_16 clean
+
+setup_env:
+	@if [ "$$(id -u)" -ne 0 ]; then \
+		echo "Please run: sudo make setup_env"; \
+		exit 1; \
+	fi
+	apt-get update
+	DEBIAN_FRONTEND=noninteractive apt-get install -y \
+		docker.io \
+		python3 \
+		libpcap-dev
+	docker --version
+	python3 --version
+	mkdir -p /etc/docker
+	cp daemon.json /etc/docker/daemon.json
+    systemctl daemon-reload
+    systemctl stop docker.service
+    systemctl stop docker.socket
+    systemctl start docker.service
+    systemctl start docker.socket
+
 
 simple_16:
 	./script/setup.sh 16 2 2
