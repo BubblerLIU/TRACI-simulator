@@ -14,11 +14,11 @@ setup_env:
 	python3 --version
 	mkdir -p /etc/docker
 	cp daemon.json /etc/docker/daemon.json
-    systemctl daemon-reload
-    systemctl stop docker.service
-    systemctl stop docker.socket
-    systemctl start docker.service
-    systemctl start docker.socket
+	systemctl daemon-reload
+	systemctl stop docker.service
+	systemctl stop docker.socket
+	systemctl start docker.service
+	systemctl start docker.socket
 
 
 simple_16:
