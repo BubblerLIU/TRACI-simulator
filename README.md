@@ -226,6 +226,14 @@ global_addr = (gpu_id << 24) | (local_addr & 0x00ffffff)
 
 脚本需要创建 Docker 容器和 veth 网络，一般需要 root 权限。建议从 `make` 入口运行：
 
+如果本地没有安装 Docker 及 libpcap-dev 等必要的依赖，可以一键安装：
+
+```bash
+sudo make setup_env
+```
+
+测试给定的 workload：
+
 ```bash
 sudo make simple_16
 sudo make medium_16
