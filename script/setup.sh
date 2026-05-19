@@ -107,7 +107,7 @@ for ((i=0; i<LEAF_NUM; i++)); do
         docker exec ${leaf_name} ip link set $veth_leaf up
         docker exec ${leaf_name} ip link set dev $veth_leaf address $leaf_mac
 
-        let gpu_id++
+        gpu_id=$((gpu_id + 1))
     done
 done
 
