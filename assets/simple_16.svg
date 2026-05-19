@@ -27,32 +27,32 @@ text { font-family: Arial, sans-serif; fill: #1f2933; }
 <line x1="90" y1="462" x2="880" y2="462" class="axis"/>
 <rect x="117.7" y="176.3" width="46" height="285.7" fill="#4c78a8" rx="3"/>
 <text x="140.66666666666666" y="168.251968503937" class="value" text-anchor="middle">1146</text>
-<rect x="171.7" y="213.9" width="46" height="248.1" fill="#f58518" rx="3"/>
-<text x="194.66666666666666" y="205.9028871391076" class="value" text-anchor="middle">995</text>
+<rect x="171.7" y="214.9" width="46" height="247.1" fill="#f58518" rx="3"/>
+<text x="194.66666666666666" y="206.9002624671916" class="value" text-anchor="middle">991</text>
 <rect x="225.7" y="274.0" width="46" height="188.0" fill="#54a24b" rx="3"/>
 <text x="248.66666666666666" y="265.994750656168" class="value" text-anchor="middle">754</text>
-<rect x="279.7" y="291.4" width="46" height="170.6" fill="#e45756" rx="3"/>
-<text x="302.66666666666663" y="283.4488188976378" class="value" text-anchor="middle">684</text>
+<rect x="279.7" y="297.7" width="46" height="164.3" fill="#e45756" rx="3"/>
+<text x="302.66666666666663" y="289.68241469816275" class="value" text-anchor="middle">659</text>
 <text x="221.66666666666666" y="484" class="label" text-anchor="middle">Leaf</text>
 <rect x="381.0" y="367.7" width="46" height="94.3" fill="#4c78a8" rx="3"/>
 <text x="404.0" y="359.748031496063" class="value" text-anchor="middle">378</text>
-<rect x="435.0" y="374.0" width="46" height="88.0" fill="#f58518" rx="3"/>
-<text x="458.0" y="365.98162729658793" class="value" text-anchor="middle">353</text>
+<rect x="435.0" y="373.2" width="46" height="88.8" fill="#f58518" rx="3"/>
+<text x="458.0" y="365.23359580052494" class="value" text-anchor="middle">356</text>
 <rect x="489.0" y="393.7" width="46" height="68.3" fill="#54a24b" rx="3"/>
 <text x="512.0" y="385.67979002624674" class="value" text-anchor="middle">274</text>
-<rect x="543.0" y="393.7" width="46" height="68.3" fill="#e45756" rx="3"/>
-<text x="566.0" y="385.67979002624674" class="value" text-anchor="middle">274</text>
+<rect x="543.0" y="395.9" width="46" height="66.1" fill="#e45756" rx="3"/>
+<text x="566.0" y="387.9238845144357" class="value" text-anchor="middle">265</text>
 <text x="485.0" y="484" class="label" text-anchor="middle">Spine</text>
 <rect x="644.3" y="82.0" width="46" height="380.0" fill="#4c78a8" rx="3"/>
 <text x="667.3333333333333" y="74.0" class="value" text-anchor="middle">1524</text>
-<rect x="698.3" y="125.9" width="46" height="336.1" fill="#f58518" rx="3"/>
-<text x="721.3333333333333" y="117.88451443569556" class="value" text-anchor="middle">1348</text>
+<rect x="698.3" y="126.1" width="46" height="335.9" fill="#f58518" rx="3"/>
+<text x="721.3333333333333" y="118.13385826771656" class="value" text-anchor="middle">1347</text>
 <rect x="752.3" y="205.7" width="46" height="256.3" fill="#54a24b" rx="3"/>
 <text x="775.3333333333333" y="197.67454068241472" class="value" text-anchor="middle">1028</text>
-<rect x="806.3" y="223.1" width="46" height="238.9" fill="#e45756" rx="3"/>
-<text x="829.3333333333333" y="215.12860892388454" class="value" text-anchor="middle">958</text>
+<rect x="806.3" y="231.6" width="46" height="230.4" fill="#e45756" rx="3"/>
+<text x="829.3333333333333" y="223.6062992125984" class="value" text-anchor="middle">924</text>
 <text x="748.3333333333333" y="484" class="label" text-anchor="middle">Total</text>
-<text x="30" y="536" class="subtitle">Best total: Baseline 1524 -&gt; TRACI 958 (37.1% fewer forwarded packets)</text>
+<text x="30" y="536" class="subtitle">Best total: Baseline 1524 -&gt; TRACI 924 (39.4% fewer forwarded packets)</text>
 <rect x="590" y="22" width="14" height="14" fill="#4c78a8"/>
 <text x="610" y="34" class="label">Baseline</text>
 <rect x="698" y="22" width="14" height="14" fill="#f58518"/>

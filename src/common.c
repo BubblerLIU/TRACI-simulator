@@ -407,8 +407,9 @@ rtb_response_result_t rtb_reduce_response(rtb_table_t *rtb,
         return RTB_RESPONSE_DROP;
     }
 
+    uint32_t original_iaddr = traci->iaddr;
     traci->seq_num = entry->seq_num;
-    traci->iaddr = 0;
+    traci->iaddr = entry->arrived_count == 1 ? original_iaddr : 0;
     traci->oaddr = entry->tag;
     traci->count = entry->arrived_count;
     traci->data = entry->data;
