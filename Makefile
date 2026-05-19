@@ -7,7 +7,11 @@ setup_env:
 	fi
 	apt-get update
 	DEBIAN_FRONTEND=noninteractive apt-get install -y \
+		ca-certificates \
 		docker.io \
+		docker-buildx \
+		iproute2 \
+		make \
 		python3 \
 		libpcap-dev
 	docker --version
@@ -15,10 +19,10 @@ setup_env:
 	mkdir -p /etc/docker
 	cp daemon.json /etc/docker/daemon.json
 	systemctl daemon-reload
-	systemctl stop docker.service
-	systemctl stop docker.socket
+	systemctl stop docker.service || true
+	systemctl stop docker.socket || true
 	systemctl start docker.service
-	systemctl start docker.socket
+	systemctl start docker.socket || true
 
 
 simple_16:
