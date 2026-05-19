@@ -2,11 +2,31 @@
 
 # 自动配置 fat-tree 拓扑结构
 
+set -euo pipefail
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+CONFIG_FILE="$ROOT_DIR/.fat_tree_config"
+
+has_container() {
+    local pattern="$1"
+    docker ps -a --format '{{.Names}}' | grep -Eq "^${pattern}[0-9]+$"
+}
 
 if [ $# -ne 3 ]; then
     echo "Usage: $0 <GPU> <Leaf> <Spine>"
+    exit 1
+fi
+
+if [ -f "$CONFIG_FILE" ]; then
+    echo "Error: Configuration file already exists at $CONFIG_FILE"
+    echo "Please run script/clean.sh first to clear the existing topology."
+    exit 1
+fi
+
+if has_container "gpu" || has_container "leaf" || has_container "spine"; then
+    echo "Error: Existing gpu/leaf/spine containers found."
+    echo "Please run script/clean.sh first to clear the existing topology."
     exit 1
 fi
 
@@ -122,8 +142,6 @@ done
 echo "Leaf-Spine connect done"
 
 # 保存配置信息
-
-CONFIG_FILE="$ROOT_DIR/.fat_tree_config"
 
 cat > "$CONFIG_FILE" <<EOF
 GPU_NUM=$GPU_NUM

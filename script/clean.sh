@@ -6,6 +6,12 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 CONFIG_FILE="$ROOT_DIR/.fat_tree_config"
+LAST_WORKLOAD_FILE="$ROOT_DIR/.last_workload"
+
+container_names() {
+    docker ps -a --format '{{.Names}}' |
+        grep -E '^(gpu|leaf|spine)[0-9]+$' || true
+}
 
 # 容器内程序终止逻辑
 is_container_running() {
@@ -56,9 +62,22 @@ stop_program() {
 
 # 确保配置文件存在
 if [ ! -f "$CONFIG_FILE" ]; then
-    echo "Error: Configuration file not found at $CONFIG_FILE"
-    echo "Please run script/setup.sh first."
-    exit 1
+    containers="$(container_names)"
+    if [ -z "$containers" ]; then
+        rm -f "$LAST_WORKLOAD_FILE"
+        echo "No topology configuration or containers found."
+        echo "Removed last workload state if present."
+        exit 0
+    fi
+
+    echo "Configuration file not found at $CONFIG_FILE"
+    echo "Removing detected gpu/leaf/spine containers without topology config."
+    for container in $containers; do
+        docker container rm -f "$container"
+    done
+    rm -f "$LAST_WORKLOAD_FILE"
+    echo "Cleanup complete, stale containers removed."
+    exit 0
 fi
 
 # 读取配置
@@ -103,4 +122,5 @@ echo "Containers removed"
 
 # 删除配置文件
 rm -f "$CONFIG_FILE"
-echo "Cleanup complete, configuration file removed."
+rm -f "$LAST_WORKLOAD_FILE"
+echo "Cleanup complete, configuration files removed."
