@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Restart fat-tree programs with a new mode after a previous simulation run.
+# 以新的模式或 workload 重启容器中的程序
 
 set -euo pipefail
 
